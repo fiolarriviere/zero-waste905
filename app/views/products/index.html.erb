@@ -1,0 +1,19 @@
+<div class="container mt-3 bg-white">
+  <div class="container">
+    <div class="card-trip border">
+      <% @products.each do |product| %>
+      <img src="" />
+      <div class="card-trip-infos">
+        <div>
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/730/730444.png?w=1380&t=st=1665870273~exp=1665870873~hmac=d6819eaf345714540012f99248a25b3b6b605b8f54a58e59c9135e0c3f62b7e1" class="card-trip-user avatar-bordered" />
+        <p class="card-trip-pricing">S/. <%= product.original_price %></p>
+        <p class="card-trip-pricing">S/. <%= product.discount %></p>
+        <p class="card-trip-pricing">S/. <%= product.price %></p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
