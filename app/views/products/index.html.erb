@@ -1,19 +1,26 @@
 <div class="container mt-3 bg-white">
   <div class="container">
-    <div class="card-trip border">
-      <% @products.each do |product| %>
-      <img src="" />
+    <div>
+    <% @products.each do |product| %>
+      <div class="card-trip">
+        <% product.photos.last(1).each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fill %>
+        <% end %>
       <div class="card-trip-infos">
         <div>
-          <h3><%= product.name %></h3>
+          <h2><%= product.name %></h2>
           <p><%= product.description %></p>
         </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/730/730444.png?w=1380&t=st=1665870273~exp=1665870873~hmac=d6819eaf345714540012f99248a25b3b6b605b8f54a58e59c9135e0c3f62b7e1" class="card-trip-user avatar-bordered" />
-        <p class="card-trip-pricing">S/. <%= product.original_price %></p>
-        <p class="card-trip-pricing">S/. <%= product.discount %></p>
-        <p class="card-trip-pricing">S/. <%= product.price %></p>
-      <% end %>
+        <h2 class="card-trip-pricing">S/. <%= product.original_price %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <h2 class="card-trip-pricing">Dsct <%= product.discount %>%</h2>
+        <h2 class="card-trip-pricing">S/. <%= product.price %></h2>
+      </div>
+      <div>
+        <%= link_to "AGREGAR", product_path(product.id), class: "btn btn-light"%> <%= link_to "COMPRAR", product_path(product), class: "btn btn-success" %>
       </div>
     </div>
+    <% end %>
+
   </div>
 </div>

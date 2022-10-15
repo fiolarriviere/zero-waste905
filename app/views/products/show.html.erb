@@ -1,2 +1,21 @@
 <h1>Products#show</h1>
 <p>Find me in app/views/products/show.html.erb</p>
+
+
+<div class="container mt-3 bg-white">
+  <div class="container">
+
+  <div>
+    <% @product.photos.last(1).each do |photo| %>
+      <%= cl_image_tag photo.key, crop: :fill %>
+    <% end %>
+    <h1><%= @product.name %></h1>
+    <p><%= @product.description %></p>
+    <h2 class="card-trip-pricing">S/. <%= @product.original_price %></h2>
+    <h2 class="card-trip-pricing">Dsct <%= @product.discount %>%</h2>
+    <h2 class="card-trip-pricing">S/. <%= @product.price %></h2>
+  </div>
+
+
+  </div>
+</div>
