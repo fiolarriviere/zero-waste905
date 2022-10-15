@@ -8,7 +8,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :email
       t.date :delivery_date
-      t.string :delivery
+      t.string :delivery_type
       t.string :payment
 
       t.timestamps
