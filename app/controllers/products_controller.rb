@@ -10,32 +10,32 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+    @product.id = current_user.id
+  end
 
+  def create
+    @product = Product.new(products_params)
+    @product.user_id = current_user.id
+    @product.category_id = @category.id
+    if @product.save
+      redirect_to root_path
+      flash[:notice] = "Producto creada con éxito"
+    else
+      render :new, status: :unprocessable_entity
+      flash[:notice] = "Error - Revise los datos del producto"
+    end
   end
 
   def edit
-
+    @category = Category.new
+    @product = Product.find(params[:id])
   end
 
-  # def create
-  #   @place = place_params
-  #   @reservation = Reservation.new(reservation_params)
-  #   @reservation.status = "not avaible"
-  #   @reservation.place_id = @place.id
-  #   @reservation.user_id = current_user.id
-  #   if (@reservation.date_finish - @reservation.date_start).zero?
-  #     @reservation.total_price = @place.price
-  #   else
-  #     @reservation.total_price = (@reservation.date_finish - @reservation.date_start) * @place.price
-  #   end
-  #   if @reservation.save
-  #     redirect_to reservation_path(@reservation)
-  #     flash[:notice] = "Reserva creada con éxito"
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #     flash[:notice] = "Error - Revise los datos de la reserva"
-  #   end
-  # end
+  def update
+    # @product.update(Product.find(params[:id]))
+    redirect_to root_path
+  end
 
   def destroy
     @product.destroy
@@ -49,8 +49,9 @@ class ProductsController < ApplicationController
   end
 
   def products_params
-    params.require(:reservation).permit(:date_start, :date_finish, :status, :start_time,
-      :finish_time, :place_id, :user_id
+    params.require(:product).permit(
+      :name, :original_price, :discount, :price, :stock, :expiration_date,
+      :category_id, :user_id, :photos[]
     )
   end
 end
