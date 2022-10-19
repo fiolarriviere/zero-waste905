@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# BUSCADOR %>
+<div class="container py-5 justify-content-center">
+
+  <%= form_with url: "products_path", method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "¿Qué producto buscas?"
+      %>
+      <%= submit_tag "Buscar", class: "btn btn-outline-dark" %>
+    <% end %>
+
+</div>
+
+<%# BANNER %>
+
+
+<%# CATEGORIAS %>
+
+
+<%# CARDS - LO MÁS VENDIDO %>
+
+<div class="container pb-3 d-flex">
+  <h4>Lo más destacado del mes:</h4>
+</div>
+
+<%# BUSCADOR %>
