@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
     @product.id = current_user.id
+    @product = Product.new
   end
 
   def create
