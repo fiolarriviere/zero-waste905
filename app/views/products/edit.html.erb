@@ -1,15 +1,21 @@
-<div class="container bg-white">
-  <h1>Editar Productos</h1>
-
-  <%= simple_form_for (@product) do |f| %>
-    <%= f.input :name, label: "Nombre del Producto:", placeholder: "Ingrese el nombre del producto" %>
-    <%= f.input :name, label: "Categoria del Producto:", placeholder: "Seleccione el nombre de la categoría", :collection => ["Maquillaje", "Abarrotes", "Electrónicos", "Cuidado Personal", "Libreria", "Juguetes"] %>
-    <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Ingrese el nombre del producto" %>
-    <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Ingrese el nombre del producto" %>
-    <%= f.input :price, label: "Precio del Producto:", placeholder: "Original price / discpunt " %>
-    <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración del Producto:" %>
-    <%= f.input :description, label: "Nombre del Producto:", placeholder: "Descripcion acerca del producto a vender" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="grid-container">
+  <div class="grid-item">
+    <h1>Editar Productos:</h1>
+    <%= simple_form_for (@product) do |f| %>
+      <%= f.input :name, label: "Nombre del Producto:", placeholder: "Ingrese el nombre del producto" %>
+      <%= f.input :name, label: "Categoria del Producto:", placeholder: "Seleccione el nombre de la categoría",
+      :collection => ["Maquillaje", "Abarrotes", "Electrónicos", "Cuidado Personal", "Libreria", "Juguetes"] %>
+      <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Ingrese el nombre del producto" %>
+      <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Ingrese el nombre del producto" %>
+      <%= f.input :price, label: "Precio del Producto:", placeholder: "Original price / discount" %>
+      <%= f.input :price, label: "Stock del Producto:", placeholder: "Ingrese Stock del Producto" %>
+      <%= f.input :expiration_date, label: "Fecha de Expiración del Producto:" %>
+      <%= f.input :description, label: "Nombre del Producto:", placeholder: "Descripcion acerca del producto a vender" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %> <br>
+      <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+  <div class="grid-item">
+  </div>
 </div>
