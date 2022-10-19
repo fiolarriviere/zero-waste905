@@ -1,7 +1,5 @@
-
 <div class="container bg-white">
-  <h1>Products#edit</h1>
-  <p>Find me in app/views/products/edit.html.erb</p>
+  <h1>Editar Productos</h1>
 
   <%= simple_form_for (@product) do |f| %>
     <%= f.input :name, label: "Nombre del Producto:", placeholder: "Ingrese el nombre del producto" %>
@@ -9,7 +7,7 @@
     <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Ingrese el nombre del producto" %>
     <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Ingrese el nombre del producto" %>
     <%= f.input :price, label: "Precio del Producto:", placeholder: "Original price / discpunt " %>
-    <%= f.input :expiration_date, label: "Fecha de Expiración del Producto:" %>
+    <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración del Producto:" %>
     <%= f.input :description, label: "Nombre del Producto:", placeholder: "Descripcion acerca del producto a vender" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
