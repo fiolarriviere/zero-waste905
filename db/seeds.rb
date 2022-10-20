@@ -113,183 +113,139 @@ puts "Category 6 creada"
 
 puts "creando Producto 1 categoria 1"
 product1 = Product.new(
-category_id:1,
-name:"Polvo compacto Asepxia FPS 15 Canela Mate",
-original_price: 31.90,
-discount:27,
-price:23.40,
-stock:12,
-expiration_date:"2023/07/02",
-description:"Maquillaje polvo compacto Anti-imperfecciones en tono canela que ayuda a cubrir granitos y espinillas. Cuenta con una textura micronizada que absorbe el exceso de grasa y elimina el brillo en el rostro",
-user_id:1)
+  category_id: 1, name: "Polvo compacto Asepxia FPS 15 Canela Mate", original_price: 31.90,
+  discount: 27, price: 23.40, stock: 12, expiration_date: "2023/07/02",
+  description: "Maquillaje polvo compacto Anti-imperfecciones en tono canela que ayuda a cubrir granitos y espinillas.
+  Cuenta con una textura micronizada que absorbe el exceso de grasa y elimina el brillo en el rostro",
+  user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209767-1000-1000/https---imgproductos.jpg?v=638006047682430000")
-product1.photos.attach(io: photo, filename: "product1.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
 product1.save
 puts "producto 1,Maquillaje creado"
 puts "creando Producto 2 categoria 1"
 
 product1 = Product.new(
-category_id:1,
-name:"Iluminador Milani Strobelight Glowing",
-original_price:64,
-discount:50,
-price:32,
-stock:23,
-expiration_date:"2022/12/21",
-description:"Iluminador instantáneo en polvo compacto que contiene perlas reflectoras de luz que brindan un acabado radiante. Para todo tipo y tono de piel.",
-user_id:2)
+  category_id: 1, name: "Iluminador Milani Strobelight Glowing", original_price: 64, discount: 50,
+  price: 32, stock: 23, expiration_date: "2022/12/21",
+  description: "Iluminador instantáneo en polvo compacto que contiene perlas reflectoras de luz que brindan un
+  acabado radiante. Para todo tipo y tono de piel.",
+  user_id: 2
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209527-280-280/https---imgproductos.jpg?v=638006040065000000")
-product1.photos.attach(io: photo, filename: "product2.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product2.png", content_type: "image/png")
 product1.save
 puts "producto 2,Maquillaje creado"
 
 product1 = Product.new(
-category_id:1,
-name:"Base Maybelline Fit me!Matte+Poreless Tono Java-30 ml",
-original_price:39.90,
-discount:57,
-price:17.10,
-stock:9,
-expiration_date:"2023/01/13",
-description:"Si buscas la base perfecta para tu piel recuerda que esta base debe igualar el tono y la textura de tu piel. Nuestra fórmula líquida matificante es ideal para la piel normal a grasa.",
-user_id:1)
+  category_id: 1, name: "Base Maybelline Fit me!Matte+Poreless Tono Java-30 ml", original_price: 39.90, discount: 57,
+  price: 17.10, stock: 9, expiration_date: "2023/01/13",
+  description: "Si buscas la base perfecta para tu piel recuerda que esta base debe igualar el tono y la textura de
+  tu piel. Nuestra fórmula líquida matificante es ideal para la piel normal a grasa.",
+  user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209745-1000-1000/https---imgproductos.jpg?v=638006047381700000")
-product1.photos.attach(io: photo, filename: "product3.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product3.png", content_type: "image/png")
 product1.save
 puts "producto 3,Maquillaje creado"
 
 product1 = Product.new(
-category_id: 1,
-name: "Brocha Milani MBR551 Pro-Performance Brushes Blending",
-original_price: 74,
-discount: 50,
-price: 37,
-stock: 19,
-expiration_date: "2022/12/19",
-description: "Pincel diseñado para la aplicación de iluminador. Su forma ovalada cónica es precisa para contornear o resaltar, para una fácil aplicación y distribución del producto.",
-user_id: 2)
+  category_id: 1, name: "Brocha Milani MBR551 Pro-Performance Brushes Blending", original_price: 74, discount: 50,
+  price: 37, stock: 19, expiration_date: "2022/12/19",
+  description: "Pincel diseñado para la aplicación de iluminador. Su forma ovalada cónica es precisa para contornear
+  o resaltar, para una fácil aplicación y distribución del producto.",
+  user_id: 2
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209521-280-280/https---imgproductos.jpg?v=638006039903530000")
-product1.photos.attach(io: photo, filename: "product4.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product4.png", content_type: "image/png")
 product1.save
 puts "producto 4,Maquillaje creado"
 
 product1 = Product.new(
-category_id:1,
-name:"Labial Givenchy Le Rouge fearless N332",
-original_price:149,
-discount:46,
-price:80.46,
-stock:15,
-expiration_date:"2022/12/07",
-description: "Labial rojo",
-user_id:1)
+  category_id: 1, name: "Labial Givenchy Le Rouge fearless N332", original_price: 149, discount: 46, price: 80.46,
+  stock: 15, expiration_date: "2022/12/07", description: "Labial rojo", user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209767-1000-1000/https---imgproductos.jpg?v=638006047682430000")
-product1.photos.attach(io: photo, filename: "product5.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product5.png", content_type: "image/png")
 product1.save
 puts "producto 5,Maquillaje creado"
 
 product1 = Product.new(
-category_id:1,
-name:"Labial Elizabeth Arden Beautiful Color Bold Liquid",
-original_price:79,
-discount:50,
-price:39.60,
-stock:05,
-expiration_date:"2023/01/02",
-description:"El color de labios cremoso y de alto impacto combina la cobertura y la intensidad del lápiz labial con el acabado de un brillo.",
-user_id:1)
+  category_id: 1, name: "Labial Elizabeth Arden Beautiful Color Bold Liquid",
+  original_price: 79, discount: 50, price: 39.60, stock: 5, expiration_date: "2023/01/02",
+  description: "El color de labios cremoso y de alto impacto combina la cobertura y la intensidad del lápiz
+  labial con el acabado de un brillo.",
+  user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209724-1000-1000/https---imgproductos.jpg?v=638006047073770000")
-product1.photos.attach(io: photo, filename: "product6.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product6.png", content_type: "image/png")
 product1.save
 puts "producto 6,Maquillaje creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Bombones Chocolate Bon o Bon, Caja Prisma x 75gr",
-original_price:12,
-discount:53,
-price:5.70,
-stock:43,
-expiration_date:"2022/12/09",
-description:"Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
-user_id:1)
+  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
+  price: 5.70, stock: 43, expiration_date: "2022/12/09",
+  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
+  user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
-product1.photos.attach(io: photo, filename: "product7.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
 puts "producto 1,cat Abarrotes creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Tallarines Sabor Bolognesa Nissin-Vaso 68 gr",
-original_price:5,
-discount:50,
-price:2.50,
-stock:99,
-expiration_date:"2023/02/23",
-description:"Tallarines con salsa tipo bolognesa, listos en tan solo 5 minutos.",
-user_id:2)
+  category_id: 2, name: "Tallarines Sabor Bolognesa Nissin-Vaso 68 gr", original_price: 5, discount: 50,
+  price: 2.50, stock: 99, expiration_date: "2023/02/23",
+  description: "Tallarines con salsa tipo bolognesa, listos en tan solo 5 minutos.",
+  user_id: 2
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210718-280-280/https---imgproductos.jpg?v=638012712191000000")
-product1.photos.attach(io: photo, filename: "product8.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product8.png", content_type: "image/png")
 product1.save
 puts "producto 2,cat Abarrotes creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Cerveza en lata Budweiser-SixPack x 269 ML c/u",
-original_price:22,
-discount:34,
-price:14.60,
-stock:41,
-expiration_date:"2023/02/13",
-description:"Budweiser es el rey de las cervezas, ya que es una de las mejores marcas de bebidas alcohólicas en todo el mundo.",
-user_id:1)
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210940-1000-1000/https---imgproductos.jpg?v=638012719607530000")
-product1.photos.attach(io: photo, filename: "product9.png", content_type:"image/png")
+  category_id: 2, name: "Cerveza en lata Budweiser-SixPack x 269 ML c/u", original_price: 22, discount: 34,
+  price: 14.60, stock: 41, expiration_date: "2023/02/13",
+  description: "Budweiser es el rey de las cervezas, ya que es una de las mejores marcas de bebidas alcohólicas en
+  todo el mundo.",
+  user_id: 1
+)
+photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210718-280-280/https---imgproductos.jpg?v=638012712191000000")
+product1.photos.attach(io: photo, filename: "product9.png", content_type: "image/png")
 product1.save
 puts "producto 3,cat Abarrotes creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Infusión Mc Colins En Línea-Paquete x 20 unid",
-original_price:8.50,
-discount:50,
-price:4.25,
-stock:14,
-expiration_date:"2023/03/16",
-description:"Con cola de caballo y diente de León, hierbas finamente seleccionadas. Estas hierbas han sido consumidas para ayudar a que las personas se sientan más livianas.",
-user_id:2)
+  category_id: 2, name: "Infusión Mc Colins En Línea-Paquete x 20 unid", original_price: 8.50, discount: 50,
+  price: 4.25, stock: 14, expiration_date: "2023/03/16",
+  description: "Con cola de caballo y diente de León, hierbas finamente seleccionadas. Estas hierbas han sido consumidas
+  para ayudar a que las personas se sientan más livianas.",
+  user_id: 2
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/191351-1000-1000/https---imgproductos.jpg?v=637982538829200000")
-product1.photos.attach(io: photo, filename: "product10.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product10.png", content_type: "image/png")
 product1.save
 puts "producto 4,cat Abarrotes creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Barra de Proteinas Anku Berries y Vainilla-40gr",
-original_price:8,
-discount:30,
-price:5.60,
-stock:17,
-expiration_date:"2023/05/07",
-description:"Barra proteica con un sabor sútil entre frutos del bosque y cookie dough. Este sabor se debe a una cuidadoso blend de arándanos rojos, sauco, granos andinos y almendras. Contiene 11.2 gramos de proteínas y 154 kcal.",
-user_id:1)
+  category_id: 2, name: "Barra de Proteinas Anku Berries y Vainilla-40gr", original_price: 8, discount: 30,
+  price: 5.60, stock: 17, expiration_date: "2023/05/07",
+  description: "Barra proteica con un sabor sútil entre frutos del bosque y cookie dough. Este sabor se debe a una
+  cuidadoso blend de arándanos rojos, sauco, granos andinos y almendras. Contiene 11.2 gramos de proteínas y 154 kcal.",
+  user_id: 1
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210657-1000-1000/https---imgproductos.jpg?v=638012304135830000")
-product1.photos.attach(io: photo, filename: "product11.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product11.png", content_type: "image/png")
 product1.save
 puts "producto 5,cat Abarrotes creado"
 
 product1 = Product.new(
-category_id:2,
-name:"Panetón Chochotón D'Onofrio-500gr",
-original_price:21.5,
-discount:25,
-price:16.15,
-stock:12,
-expiration_date:"2022/23/12",
-description: "pan chocolate",
-user_id:2)
+  category_id: 2, name: "Panetón Chochotón D'Onofrio-500gr", original_price: 21.5, discount: 25,
+  price: 16.15, stock: 12, expiration_date: "2022/23/12", description: "pan chocolate",user_id: 2
+)
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/193148-1000-1000/https---imgproductos.jpg?v=637995888832700000")
-product1.photos.attach(io: photo, filename: "product12.png", content_type:"image/png")
+product1.photos.attach(io: photo, filename: "product12.png", content_type: "image/png")
 product1.save
 puts "producto 6,cat Abarrotes creado"
 
