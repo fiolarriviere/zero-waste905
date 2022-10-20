@@ -268,7 +268,8 @@ puts "creando Product 14 - category Electrónicos"
 product14 = Product.new(
   category_id: 3, name: "Freidora Tradicional DeLonghi", original_price: 699,
   discount: 40, price: 419.40, stock: 5, expiration_date: "2022/12/20",
-  description: "Freidora de 1800W con capacidad de 2.4L. Tiene 5 niveles de temperatura, tapa extraíble para fácil limpieza e interior de teflón antiadherente. Garantía de 1 año.",
+  description: "Freidora de 1800W con capacidad de 2.4L. Tiene 5 niveles de temperatura, tapa extraíble para fácil
+  limpieza e interior de teflón antiadherente. Garantía de 1 año.",
   user_id: 1
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210206-1000-1000/https---imgproductos.jpg?v=638010093389100000")
@@ -280,35 +281,42 @@ puts "creando Product 15 - category Electrónicos"
 product15 = Product.new(
   category_id: 3, name: "Calentador a Gas FDV paso continuo - 5.5L", original_price: 649,
   discount: 38, price: 402.40, stock: 2, expiration_date: "2022/12/01",
-  description: "No requiere tubo de evacuación y cuenta con deflector incorporado. Botón de encendido eléctrico (pilas no incluidas). No incluye mangueras de abasto. No incluye kit de instalación. Garantía de 1 año.",
+  description: "No requiere tubo de evacuación y cuenta con deflector incorporado. Botón de encendido eléctrico
+  (pilas no incluidas). No incluye mangueras de abasto. No incluye kit de instalación. Garantía de 1 año.",
   user_id: 1
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/190875-1000-1000/https---imgproductos.jpg?v=637982527357970000")
 product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
 product15.save
 puts "Product - category 3 creada"
+
 puts "creando Product 4 - category Electrónicos"
 product16 = Product.new(
   category_id: 3, name: "Parrilla Practika Etna II", original_price: 199.90, discount: 40,
   price: 119.90, stock: 1, expiration_date: "2022/11/29",
-  description: "Parrilla de 2000W con 6 niveles de temperatura, asas frías al tacto, apagado automático y bandeja recolectora de grasa. Garantía de 1 año.",
+  description: "Parrilla de 2000W con 6 niveles de temperatura, asas frías al tacto, apagado automático y bandeja
+   recolectora de grasa. Garantía de 1 año.",
   user_id: 1
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/188204-1000-1000/https---imgproductos.jpg?v=637968645091700000")
 product16.photos.attach(io: photo, filename: "product16.png", content_type: "image/png")
 product16.save
 puts "Product - category 3 creada"
+
 puts "creando Product 17 - category Electrónicos"
 product17 = Product.new(
   category_id: 3, name: "Batidora Taurus Mixing Chef 500", original_price: 429.90,
   discount: 34, price: 283.99, stock: 3, expiration_date: "2022/12/15",
-  description: "Con la batidora amasadora Mixing Chef Compact podrás realizar hasta 5 funciones distintas: amasar, batir, mezclar, montar y emulsionar. Combina sus 3 ganchos según tus preferencias y realiza todo tipo de recetas. Garantía de 1 año.",
+  description: "Con la batidora amasadora Mixing Chef Compact podrás realizar hasta 5 funciones distintas: amasar,
+  batir, mezclar, montar y emulsionar. Combina sus 3 ganchos según tus preferencias y realiza todo tipo de recetas.
+  Garantía de 1 año.",
   user_id: 1
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/192057-1000-1000/https---imgproductos.jpg?v=637987686101330000")
 product17.photos.attach(io: photo, filename: "product17.png", content_type: "image/png")
 product17.save
 puts "Product - category 3 creada"
+
 puts "creando Product 18 - category Electrónicos"
 product18 = Product.new(
   category_id: 3, name: "Exprimidor Practika TC-8", original_price: 69.90, discount: 30,
@@ -320,41 +328,47 @@ product18.photos.attach(io: photo, filename: "product18.png", content_type: "ima
 product18.save
 puts "Product - category 3 creada"
 puts "------------------------------------------------------------------------------------------------"
+
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Product 1 - Cuidado Personal"
 product19 = Product.new(
   category_id: 4, name: "Toallitas Desmaquilladoras Nivea Roses", original_price: 25.90, discount: 75,
   price: 6.60, stock: 23, expiration_date: "2022/12/20",
-  description: "Retiran suave y fácilmente el maquillaje a prueba de agua sin frotar ni enjuagar. Limpieza profunda para la piel e hidratación prolongada hasta por 8 horas.",
+  description: "Retiran suave y fácilmente el maquillaje a prueba de agua sin frotar ni enjuagar. Limpieza profunda para
+  la piel e hidratación prolongada hasta por 8 horas.",
   user_id: 2
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210892-1000-1000/https---imgproductos.jpg?v=638012718291530000")
 product19.photos.attach(io: photo, filename: "product19.png", content_type: "image/png")
 product19.save
 puts "Product 1 - category 4 creada"
+
 puts "creando Product 20 - Cuidado Personal"
 product20 = Product.new(
   category_id: 4, name: "Pastillas dentífricas Just Bite Sabor Menta Ecologics", original_price: 17.90,
   discount: 8, price: 16.5, stock: 25, expiration_date: "2023/02/22",
-  description: "Muerde una pastilla (Cada pastilla es la dosis ideal para el cepillado), Moja tu cepillo, Cepilla y disfruta! Repite tres veces al día, todos los días",
+  description: "Muerde una pastilla (Cada pastilla es la dosis ideal para el cepillado), Moja tu cepillo, Cepilla y
+  disfruta! Repite tres veces al día, todos los días",
   user_id: 2
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
 product20.photos.attach(io: photo, filename: "product20.png", content_type: "image/png")
 product20.save
 puts "Product - category 4 creada"
+
 puts "creando Product 21 - Cuidado Personal"
 product21 = Product.new(
   category_id: 4, name: "Loción Ponds Biohydratante Dual - 200ml", original_price: 24.90,
   discount: 35, price: 16.10, stock: 10, expiration_date: "2022/12/12",
-  description: "Elimina los residuos de maquillaje a prueba de agua y las impurezas de tu rostro y ojos, dejando tu piel hidratada y sin sensación grasosa.",
+  description: "Elimina los residuos de maquillaje a prueba de agua y las impurezas de tu rostro y ojos, dejando tu piel
+  hidratada y sin sensación grasosa.",
   user_id: 2
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
 product21.photos.attach(io: photo, filename: "product21.png", content_type: "image/png")
 product21.save
-puts "https://sugope.vteximg.com.br/arquivos/ids/210793-1000-1000/https---imgproductos.jpg?v=638012716150530000"
 puts "Product - category 4 creada"
+
 puts "creando Product 22 - Cuidado Personal"
 product22 = Product.new(
   category_id: 4, name: "Limpieza Facial Pond's Fruitty Fre Aloe - 200ml", original_price: 28.90,
@@ -365,8 +379,8 @@ product22 = Product.new(
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
 product22.photos.attach(io: photo, filename: "product22.png", content_type: "image/png")
 product22.save
-puts "https://sugope.vteximg.com.br/arquivos/ids/210798-1000-1000/https---imgproductos.jpg?v=638012716259030000"
 puts "Product - category 4 creada"
+
 puts "creando Product 23 - Cuidado Personal"
 product23 = Product.new(
   category_id: 4, name: "Crema Facial Ponds Humectante Nutritiva - 50g", original_price: 12.9,
@@ -377,13 +391,14 @@ product23 = Product.new(
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
 product23.photos.attach(io: photo, filename: "product23.png", content_type: "image/png")
 product23.save
-puts "https://sugope.vteximg.com.br/arquivos/ids/210921-1000-1000/https---imgproductos.jpg?v=638012719080200000"
 puts "Product - category 4 creada"
+
 puts "creando Product 24 - Cuidado Personal"
 product24 = Product.new(
   category_id: 4, name: "Protector Solar Nivea Protect & Bronze - 200ml", original_price: 39.90, discount: 40,
   price: 23.94, stock: 20, expiration_date: "2023/06/17",
-  description: "Su fórmula ultraligera y no grasa contiene un sistema de filtros UVA/UVB altamente eficaz que protege la piel inmediatamente tras su aplicación. Resistente al agua.",
+  description: "Su fórmula ultraligera y no grasa contiene un sistema de filtros UVA/UVB altamente eficaz que protege
+  la piel inmediatamente tras su aplicación. Resistente al agua.",
   user_id: 2
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/191165-1000-1000/https---imgproductos.jpg?v=637982535425270000")
@@ -392,19 +407,19 @@ product24.save
 puts "Product - category 4 creada"
 puts "------------------------------------------------------------------------------------------------"
 
-
-#FIORE
+# FIORE
 
 puts "creando producto = Product 1 - category 5"
 product100 = Product.new(
-  category_id: 5,
-  name: "Ruido. Un fallo en el juicio humano",
-  original_price: 50,
-  discount: 10,
-  price: 40,
-  stock: 3,
-  expiration_date: "",
-  description: "Dos médicos en la misma ciudad pueden dar diagnósticos diferentes a pacientes idénticos; dos jueces pueden dictar sentencias distintas ante delitos similares; nosotros mismos podemos decidir una cosa u otra según sea por la mañana o por la tarde, o según se acerque o no la hora de comer. Estos son ejemplos de ruido: el sesgo que conlleva variabilidad en juicios que deberían ser iguales. El ruido está presente en todas las decisiones individuales y colectivas, y produce errores en innumerables terrenos, desde la medicina hasta la economía, pasando por el derecho, la sanidad, la protección infantil y la contratación. Además, también nos importuna e influye a la hora de tomar muchas de nuestras decisiones cotidianas.",
+  category_id: 5, name: "Ruido. Un fallo en el juicio humano", original_price: 50, discount: 10, price: 40,
+  stock: 3, expiration_date: "",
+  description: "Dos médicos en la misma ciudad pueden dar diagnósticos diferentes a pacientes idénticos; dos jueces
+  pueden dictar sentencias distintas ante delitos similares; nosotros mismos podemos decidir una cosa u otra según sea
+  por la mañana o por la tarde, o según se acerque o no la hora de comer. Estos son ejemplos de ruido: el sesgo que
+  conlleva variabilidad en juicios que deberían ser iguales. El ruido está presente en todas las decisiones individuales
+  y colectivas, y produce errores en innumerables terrenos, desde la medicina hasta la economía, pasando por el derecho,
+  la sanidad, la protección infantil y la contratación. Además, también nos importuna e influye a la hora de tomar
+  muchas de nuestras decisiones cotidianas.",
   user_id: 1
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9788418006364_7pzfvuwymoeebueb.jpg")
@@ -414,14 +429,12 @@ puts "producto = Product 1 - category 5 creada"
 
 puts "creando producto = Product 2 - category 5"
 product101 = Product.new(
-  category_id: 5,
-  name: "La mirada quieta",
-  original_price: 70,
-  discount: 10,
-  price: 60,
-  stock: 1,
+  category_id: 5, name: "La mirada quieta", original_price: 70, discount: 10, price: 60, stock: 1,
   expiration_date: "",
-  description: "Benito Pérez Galdós es un autor esencial en la literatura española contemporánea. En este ensayo, a partir del análisis de sus novelas, de sus obras teatrales y de los Episodios nacionales, Mario Vargas Llosa crea un perfil completo, personal y sugerente del escritor español. Nadie como el Nobel peruano es capaz de leer de manera tan sagaz y con tanta libertad y pasión la obra de un creador.",
+  description: "Benito Pérez Galdós es un autor esencial en la literatura española contemporánea. En este ensayo, a
+  partir del análisis de sus novelas, de sus obras teatrales y de los Episodios nacionales, Mario Vargas Llosa crea un
+  perfil completo, personal y sugerente del escritor español. Nadie como el Nobel peruano es capaz de leer de manera tan
+  sagaz y con tanta libertad y pasión la obra de un creador.",
   user_id: 2
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9789877388862.jpg")
@@ -431,14 +444,10 @@ puts "producto = Product 2 - category 5 creada"
 
 puts "creando producto = Product 3 - category 5"
 product102 = Product.new(
-  category_id: 5,
-  name: "Cómo evitar la próxima pandemia",
-  original_price: 80,
-  discount: 10,
-  price: 70,
-  stock: 3,
-  expiration_date: "",
-  description: "Bill Gates cree que la respuesta es sí, y en este libro explica de un modo claro y convincente qué deberíamos haber aprendido de la COVID-19 y qué podemos hacer cada uno de nosotros para evitar un desastre parecido.",
+  category_id: 5, name: "Cómo evitar la próxima pandemia", original_price: 80, discount: 10, price: 70,
+  stock: 3, expiration_date: "",
+  description: "Bill Gates cree que la respuesta es sí, y en este libro explica de un modo claro y convincente qué
+  deberíamos haber aprendido de la COVID-19 y qué podemos hacer cada uno de nosotros para evitar un desastre parecido.",
   user_id: 1
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786124269264_mzguyymddvid8fkk.jpg")
@@ -448,14 +457,11 @@ puts "producto = Product 3 - category 5 creada"
 
 puts "creando producto = Product 4 - category 5"
 product103 = Product.new(
-  category_id: 5,
-  name: "Yo vengo a ofrecer mi corazón",
-  original_price: 90,
-  discount: 10,
-  price: 80,
-  stock: 5,
+  category_id: 5, name: "Yo vengo a ofrecer mi corazón", original_price: 90, discount: 10, price: 80, stock: 5,
   expiration_date: "",
-  description: "Yo vengo a ofrecer mi corazón es un recorrido por la vida y obra de Susana Baca contada por su propia protagonista. Se trata de las memorias iniciales de los primeros cincuenta años de una artista que ha llevado su voz - y a través de ella, la cultura peruana - a paísesy escenarios donde nunca había sonado un cajón o un landó.",
+  description: "Yo vengo a ofrecer mi corazón es un recorrido por la vida y obra de Susana Baca contada por su propia
+  protagonista. Se trata de las memorias iniciales de los primeros cincuenta años de una artista que ha llevado su voz
+  - y a través de ella, la cultura peruana - a paísesy escenarios donde nunca había sonado un cajón o un landó.",
   user_id: 2
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786124269271.jpg")
@@ -465,14 +471,14 @@ puts "producto = Product 4 - category 5 creada"
 
 puts "creando producto = Product 5 - category 5"
 product104 = Product.new(
-  category_id: 5,
-  name: "¿Ahorrar o gastar?",
-  original_price: 40,
-  discount: 10,
-  price: 30,
-  stock: 2,
+  category_id: 5, name: "¿Ahorrar o gastar?", original_price: 40, discount: 10, price: 30, stock: 2,
   expiration_date: "",
-  description: "El dinero no da la felicidad, pero evita muchos momentos infelices. Por ello, ante el dilema financiero: ¿ahorrar o gastar?, Walter Eyzaguirre sabe que aprender a manejar el dinero no es una opción, sino una necesidad para conseguir tu mayor bienestar. Concebido como un ameno y accesible manual de educación financiera, este libro problematiza los prejuicios sobre el dinero para luego abordar, mediante la estrategia del mindfulness, nociones como el equilibrio económico, el propósito del ahorro, las bondades del presupuesto, el valor del crédito, las ventajas de invertir y la racionalidad de los emprendimientos empresariales.",
+  description: "El dinero no da la felicidad, pero evita muchos momentos infelices. Por ello, ante el dilema
+  financiero: ¿ahorrar o gastar?, Walter Eyzaguirre sabe que aprender a manejar el dinero no es una opción, sino una
+  necesidad para conseguir tu mayor bienestar. Concebido como un ameno y accesible manual de educación financiera,
+  este libro problematiza los prejuicios sobre el dinero para luego abordar, mediante la estrategia del mindfulness,
+  nociones como el equilibrio económico, el propósito del ahorro, las bondades del presupuesto, el valor del crédito,
+  las ventajas de invertir y la racionalidad de los emprendimientos empresariales.",
   user_id: 1
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786124275234_0hapfcxpsrdmzzzn.jpg")
@@ -482,14 +488,15 @@ puts "producto = Product 5 - category 5 creada"
 
 puts "creando producto = Product 6 - category 5"
 product105 = Product.new(
-  category_id: 5,
-  name: "El Tao de Warren Buffett",
-  original_price: 30,
-  discount: 10,
-  price: 20,
-  stock: 7,
+  category_id: 5, name: "El Tao de Warren Buffett", original_price: 30, discount: 10, price: 20, stock: 7,
   expiration_date: "",
-  description: "Dedicación, integridad y sentido común son algunos de los valores que Warren Buffett ha destacado como esenciales en su exitosa carrera como inversor. Reunidos por su círculo cercano en un único libro a través de conversaciones personales, reuniones sociales y entrevistas, los aforismos de Buffett no sólo han instruido a sus discípulos en la dirección empresarial, sino también en la disciplina, la virtud de la paciencia y el desarrollo personal. El tao de Warren Buffett es una guía esencial que inspira a sus lectores, contribuye a agudizar la mente, ayuda a tomar las decisiones acertadas tanto en la vida personal como profesional y ofrece estrategias prácticas que serán de enorme utilidad para todos los inversores, sean grandes o pequeños.",
+  description: "Dedicación, integridad y sentido común son algunos de los valores que Warren Buffett ha destacado como
+  esenciales en su exitosa carrera como inversor. Reunidos por su círculo cercano en un único libro a través de
+  conversaciones personales, reuniones sociales y entrevistas, los aforismos de Buffett no sólo han instruido a sus
+  discípulos en la dirección empresarial, sino también en la disciplina, la virtud de la paciencia y el desarrollo
+  personal. El tao de Warren Buffett es una guía esencial que inspira a sus lectores, contribuye a agudizar la mente,
+  ayuda a tomar las decisiones acertadas tanto en la vida personal como profesional y ofrece estrategias prácticas que
+  serán de enorme utilidad para todos los inversores, sean grandes o pequeños.",
   user_id: 2
 )
 photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9788413440545_ynh9k8wqda3hj3u3.jpg")
@@ -497,17 +504,10 @@ product105.photos.attach(io: photo, filename: "product105.png", content_type: "i
 product105.save
 puts "producto = Product 6 - category 5 creada"
 
-
 puts "creando producto = Product 1 - category 6"
 product106 = Product.new(
-  category_id: 6,
-  name: "Gran Castillo de Fiesta",
-  original_price: 200,
-  discount: 10,
-  price: 180,
-  stock: 2,
-  expiration_date: "",
-  description: "Castillo de muñecas",
+  category_id: 6, name: "Gran Castillo de Fiesta", original_price: 200, discount: 10, price: 180, stock: 2,
+  expiration_date: "", description: "Castillo de muñecas",
   user_id: 1
 )
 photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/486144-800-auto?v=637701791771900000&width=800&height=auto&aspect=true")
@@ -517,14 +517,8 @@ puts "producto = Product 1 - category 6 creado"
 
 puts "creando producto = Product 2 - category 6"
 product120 = Product.new(
-  category_id: 6,
-  name: "Juego de Madera Little Tikes",
-  original_price: 200,
-  discount: 20,
-  price: 180,
-  stock: 4,
-  expiration_date: "",
-  description: "Restaurante Drive Thru 40 Accesorios",
+  category_id: 6, name: "Juego de Madera Little Tikes", original_price: 200, discount: 20, price: 180, stock: 4,
+  expiration_date: "", description: "Restaurante Drive Thru 40 Accesorios",
   user_id: 2
 )
 photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/489012-800-auto?v=637704454383630000&width=800&height=auto&aspect=true")
@@ -534,13 +528,8 @@ puts "producto = Product 2 - category 6 creado"
 
 puts "creando producto = Product 3 - category 6"
 product107 = Product.new(
-  category_id: 6,
-  name: "Figura de Acción Transformers Cyberverse 1 Step Surtido",
-  original_price: 80,
-  discount: 10,
-  price: 70,
-  stock: 2,
-  expiration_date: "",
+  category_id: 6, name: "Figura de Acción Transformers Cyberverse 1 Step Surtido", original_price: 80, discount: 10,
+  price: 70, stock: 2, expiration_date: "",
   description: "Convierte la Figura de Acción para activar su movimiento de ataque distintivo ",
   user_id: 1
 )
@@ -551,14 +540,8 @@ puts "producto = Product 3 - category 6 creado"
 
 puts "creando producto = Product 4 - category 6"
 product108 = Product.new(
-  category_id: 6,
-  name: "Lanzador de Dardos Nerf Elite 2.0 Prospecto QS-4",
-  original_price: 50,
-  discount: 10,
-  price: 40,
-  stock: 6,
-  expiration_date: "",
-  description: "Lanzador de dardos con mira telescópica",
+  category_id: 6, name: "Lanzador de Dardos Nerf Elite 2.0 Prospecto QS-4", original_price: 50, discount: 10,
+  price: 40, stock: 6, expiration_date: "", description: "Lanzador de dardos con mira telescópica",
   user_id: 2
 )
 photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/549222-800-auto?v=637897116105270000&width=800&height=auto&aspect=true")
@@ -569,14 +552,8 @@ puts "producto = Product 4 - category 6 creado"
 puts "creando producto = Product 5 - category 6"
 
 product109 = Product.new(
-  category_id: 6,
-  name: "Muñeco Bebé Aquamerito Aquariana",
-  original_price: 40,
-  discount: 20,
-  price: 20,
-  stock: 1,
-  expiration_date: "",
-  description: "Mete el huevo al agua para ver nacer a tu mascota",
+  category_id: 6, name: "Muñeco Bebé Aquamerito Aquariana", original_price: 40, discount: 20, price: 20,
+  stock: 1, expiration_date: "", description: "Mete el huevo al agua para ver nacer a tu mascota",
   user_id: 1
 )
 photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/478331-800-auto?v=637695203745970000&width=800&height=auto&aspect=true")
@@ -586,21 +563,14 @@ puts "producto = Product 5 - category 6 creado"
 
 puts "creando producto = Product 6 - category 6"
 product110 = Product.create(
-  category_id: 6,
-  name: "Juguete Preescolar Fisher Price Lil Gamer Mis Primeras Palabras",
-  original_price: 50,
-  discount: 10,
-  price: 40,
-  stock: 7,
-  expiration_date: "",
-  description: "Más de 60 canciones, sonidos, tonos y frases",
+  category_id: 6, name: "Juguete Preescolar Fisher Price Lil Gamer Mis Primeras Palabras", original_price: 50,
+  discount: 10, price: 40, stock: 7, expiration_date: "", description: "Más de 60 canciones, sonidos, tonos y frases",
   user_id: 2
 )
 photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/409332-800-auto?v=637485106106700000&width=800&height=auto&aspect=true")
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
 puts "producto = Product 1 - category 6 creado"
-
 
 # ORDENES
 
