@@ -18,27 +18,15 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
-    # precio = @product.original_price # 1000
-    # descuento = @product.discount / 100 # 50 / 100 = 0.50
-    # pre_dsct = precio * descuento # 1000 * 0.50 = 500
-    # @product.price = precio - pre_dsct # 1000 - 500 = 500
     @product.price = (((@product.discount.to_f / 100) * @product.original_price.to_f) - @product.original_price.to_f).abs
-    # raised
     if @product.save
       redirect_to product_path(@product)
       flash[:notice] = "Producto creada con éxito"
     else
       render :new, status: :unprocessable_entity
+      flash[:notice] = "ERROR - Revise los datos a registrar para crear el Producto"
     end
   end
-  # product.price = @original_price / @discount
-  # if @product.save
-  #   redirect_to root_path
-  #   flash[:notice] = "Producto creada con éxito"
-  # else
-  #   render :new, status: :unprocessable_entity
-  #   flash[:notice] = "Error - Revise los datos del producto"
-  # end
 
   def edit
     @category = Category.new
