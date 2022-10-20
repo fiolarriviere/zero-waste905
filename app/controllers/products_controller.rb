@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_products, only: %w[show edit update destroy]
+  # before_action :set_category, only: %w[edit update destroy]
 
   def index
     @products = Product.all
@@ -20,7 +21,8 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     # set_products
     @product = Product.new(products_params)
-    # se calcurá de forma automática pero se mostrará en pantalla sin se modificada
+    # se calcurá de forma automática pero se mostrará
+    # en pantallasin se modificada
     @product.price = @original_price / @discount
     if @product.save
       redirect_to root_path
