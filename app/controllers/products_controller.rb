@@ -11,13 +11,15 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.id = current_user.id
   end
 
   def create
-    @product = Product.new(products_params)
+    # esta linea recien la puse
+    @category = Category.new
     @product.user_id = current_user.id
-    @product.category_id = @category.id
+    @product = Product.new(products_params)
+    # se calcurá de forma automática pero se mostrará en pantalla sin se modificada
+    @product.price = @original_price / @discount
     if @product.save
       redirect_to root_path
       flash[:notice] = "Producto creada con éxito"
@@ -38,11 +40,20 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    if @product.destroy
+      redirect_to products_path
+      flash[:notice] = "Producto eliminado con éxito"
+    else
+      render :new, status: :unprocessable_entity
+      flash[:notice] = "Error - Revise los datos del producto"
+    end
   end
 
   private
+
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   def set_products
     @product = Product.find(params[:id])
@@ -51,7 +62,10 @@ class ProductsController < ApplicationController
   def products_params
     params.require(:product).permit(
       :name, :original_price, :discount, :price, :stock, :expiration_date,
-      :category_id, :user_id, :photos[]
+      :category_id,
+      :user_id,
+      :photos[]
     )
   end
+
 end

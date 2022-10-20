@@ -1,34 +1,71 @@
 .card-product {
   overflow: hidden;
-  height: 600px;
-  background: rgb(255, 255, 255);
+  height: 650px;
+  width: 100%;
+  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
   align-items: center;
-  border: 1cm;
+  h1 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #475be0;
+    line-height: 30px;
+    padding-bottom: 5px;
+  }
+  h2 {
+    color: #82878a;
+    font-size: 14px;
+    max-height: 150px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    line-height: 20px;
+    padding-bottom: 5px;
+  }
+  h3 {
+    font-family: "Montserrat-SemiBold";
+    width: 100%;
+    color: #7eca34;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 1.5rem;
+    letter-spacing: .05em;
+    color: #82878a;
+    text-decoration: line-through;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.8;
+    margin-left: 5px;
+  }
+  h5 {
+    font-family: "Montserrat-SemiBold";
+    font-size: 2rem;
+    letter-spacing: .05em;
+    font-weight: 600;
+    font-style: normal;
+    color: #475be0;
+    padding-bottom: 5px;
+  }
+  p {
+    font-size: 9px;
+    font-weight: 600;
+    color: #92989b;
+    text-align: left;
+    line-height: 1.5;
+  }
 }
 
 .card-product img {
-  height: 500px;
-  width: 500px;
+  height: 650px;
+  width: 100%;
   object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-
-.card-product .card-product-infos {
-  padding: 16px;
+  padding: 25px;
 }

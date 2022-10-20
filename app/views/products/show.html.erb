@@ -1,21 +1,25 @@
-<div class="container mt-3 bg-white">
-  <div class="container">
-    <h3>Zero Waste - <%= @product.category.name %></h3>
+<div class="container">
+  <div class="container pt-5">
     <div class="card-product">
       <% @product.photos.last(1).each do |photo| %>
         <%= cl_image_tag photo.key, crop: :fill %>
       <% end %>
       <div class="card-product-infos">
-        <h1><%= @product.name %></h1><br>
-          <p><%= @product.description %></p><br>
-          <h2 class="card-trip-pricing">S/. <%= @product.original_price %></h2><br>
-          <h2 class="card-trip-pricing">Dsct <%= @product.discount %>%</h2><br>
-          <h2 class="card-trip-pricing">S/. <%= @product.price %></h2><br>
-          <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
-          <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
-          <%= link_to "EDITAR", edit_product_path, class: "btn btn-ghost" %>
-          <%= link_to "ELIMINAR", root_path, class: "btn btn-ghost" %> <br><br>
-          <p>Este producto puede presentar defectos en su presentación, sin embargo su calidad y funcionalidad no se ven afectadas.</p>
+      <h1><%= @product.name %></h1>
+      <h2><%= @product.description %></h2>
+      <h3>Vencimiento: <strong><%= @product.expiration_date %></strong></h3>
+      <h4> S/. <%= @product.original_price %></h4>
+      <h5> S/. <%= @product.price %> </h5>
+      <p class="badge rounded-pill text-bg-success h1"> <%= @product.discount.round(2) %>% </p>
+      <p class="py-3 pb-3"> <span class="badge rounded-pill text-bg-warning">!
+      </span>Este producto puede presentar defectos en su presentación,
+      sin embargo su calidad y funcionalidad no se ven afectadas.</p>
+      <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
+      <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
+      <% if current_user.id == @product.user_id %>
+      <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
+      <%= link_to "Eliminar", products_path, class: "btn btn-ghost" %>
+      <% end %>
       </div>
     </div>
   </div>
