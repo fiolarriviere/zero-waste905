@@ -31,7 +31,7 @@ puts "usuario 2 creado"
 puts "creando usuario 3"
 
 usuario3 = User.new(
-  first_name: "Jhon", last_name: "Smith", phone_number: "49994646", ruc: "466446464404",
+  first_name: "Jhon", last_name: "Smith", phone_number: "49994646", ruc: "",
   dni: "46677648", address: "Av. Flora Tristan 324", city: "Lima", latitude: "",
   longitude: "", email: "js@gmail.com", password: "123456"
 )
@@ -42,7 +42,7 @@ puts "usuario 3 creado"
 
 puts "creando usuario 4"
 usuario4 = User.new(
-  first_name: "Alexandra", last_name: "Jimenez", phone_number: "76556776", ruc: "765567765374",
+  first_name: "Alexandra", last_name: "Jimenez", phone_number: "76556776", ruc: "",
   dni: "46644827", address: "Av el golf de los incas 488", city: "Surco", latitude: "",
   longitude: "", email: "aj@gmail.com", password: "123456"
 )
@@ -52,7 +52,7 @@ usuario4.save
 puts "usuario 4 creado"
 puts "creando usuario 5"
 usuario5 = User.new(
-  first_name: "Maria", last_name: "Romero", phone_number: "46987646", ruc: "4664464000044",
+  first_name: "Maria", last_name: "Romero", phone_number: "46987646", ruc: "",
   dni: "46622648", address: "Calle Geranios 311", city: "Arequipa", latitude: "",
   longitude: "", email: "mrom@gmail.com", password: "1234567"
 )
@@ -62,7 +62,7 @@ usuario5.save
 puts "usuario 5 creado"
 puts "creando usuario 6"
 usuario6 = User.new(
-  first_name: "Adrian", last_name: "Bello", phone_number: "46364646", ruc: "4092388444",
+  first_name: "Adrian", last_name: "Bello", phone_number: "46364646", ruc: "",
   dni: "43434548", address: "Av. El Sol 114", city: "Cusco", latitude: "",
   longitude: "", email: "abello@gmail.com", password: "123456"
 )

@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    # set_products
+    # @product = Product.find(params[:id])
   end
 
   def new
@@ -17,6 +18,7 @@ class ProductsController < ApplicationController
     # esta linea recien la puse
     @category = Category.new
     @product.user_id = current_user.id
+    # set_products
     @product = Product.new(products_params)
     # se calcurá de forma automática pero se mostrará en pantalla sin se modificada
     @product.price = @original_price / @discount
@@ -36,17 +38,18 @@ class ProductsController < ApplicationController
 
   def update
     # @product.update(Product.find(params[:id]))
+    # set_products
+    @product = Product.find(params[:id])
+    @product.update(params[:product])
     redirect_to root_path
   end
 
   def destroy
-    if @product.destroy
-      redirect_to products_path
-      flash[:notice] = "Producto eliminado con éxito"
-    else
-      render :new, status: :unprocessable_entity
-      flash[:notice] = "Error - Revise los datos del producto"
-    end
+    @product = Product.find(params[:id])
+    @product.destroy
+    raise
+    # No need for app/views/restaurants/destroy.html.erb
+    # redirect_to products_path
   end
 
   private
@@ -67,5 +70,4 @@ class ProductsController < ApplicationController
       :photos[]
     )
   end
-
 end

@@ -1,21 +1,18 @@
-<div><h1>registrar producto LINK TEMPORAL PARA PODER NO PODER LA RUTA EN EL NAVEGADOR :P</h1>
-  <%= link_to "Registrar", new_product_path, class: "btn btn-ghost" %>
-  <%= link_to "ver cards", products_path, class: "btn btn-ghost" %>
-  <%= link_to "editar", products_path, class: "btn btn-ghost" %>
-  <%= link_to "eliminar", products_path, class: "btn btn-ghost" %>
-</div>
-
-
 <div class="container py-3 justify-content-center">
 
-  <%= form_with url: "products_path", method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "¿Qué producto buscas?"
-      %>
-      <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-    <% end %>
+      <%# Si user tiene Ruc, puede registrar %>
+      <% if current_user.ruc.present? %>
+        <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
+      <% end %>
+      <%= link_to "ver cards", products_path, class: "btn btn-ghost justify-content-center" %>
+
+      <%# sino solo muestra el buscador %>
+      <%= form_with url: "products_path", method: :get, class: "d-flex w-100 mt-3" do %>
+        <%= text_field_tag :query, params[:query],
+          class: "form-control", placeholder: "¿Qué producto buscas?"
+        %>
+        <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
+      <% end %>
 </div>
 
 <%# BANNER %>

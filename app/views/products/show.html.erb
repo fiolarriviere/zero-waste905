@@ -1,5 +1,16 @@
 <div class="container">
-  <div class="container pt-5">
+  <div class="container pt-3">
+    <div class="container bg-white py-4 pb-4 d-flex justify-content-center">
+      <% if @product.user.ruc.present? %>
+        <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
+      <% end %>
+      <%= form_with url: "products_path", method: :get, class: "d-flex w-100" do %>
+        <%= text_field_tag :query, params[:query],
+          class: "form-control", placeholder: "¿Qué producto buscas?" %>
+        <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
+      <% end %>
+    </div>
+
     <div class="card-product">
       <% @product.photos.last(1).each do |photo| %>
         <%= cl_image_tag photo.key, crop: :fill %>
@@ -18,6 +29,7 @@
       <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
       <% if current_user.id == @product.user_id %>
       <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
+      <%= link_to "Delete", products_path(@product), class: "btn btn-ghost", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       <%= link_to "Eliminar", products_path, class: "btn btn-ghost" %>
       <% end %>
       </div>
