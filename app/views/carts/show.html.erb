@@ -1,20 +1,23 @@
 <h2>Cart show</h2>
 <ul>
   <% @cart.line_items.each do |line_item| %>
-    <li>Item: <%= line_item.product.name %>/ Price: <%= number_to_currency(line_item.product.price) %>/ Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
+  Item
+    <li>Item: <%= line_item.product.name %>/ Price: <%= number_to_currency(line_item.product.price) %>/ Quantity: <%= line_item.quantity %>/ Total Price:
     <ul>
       <li>
-        <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
-        <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %>
+        <%= link_to "Add one", line_item_add_path(line_item)%>
+        <%= link_to "Reduce one", line_item_reduce_path(line_item) %>
       </li>
       <li>
-        <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+
       </li>
     </ul>
-    #
   <% end %>
 </ul>
-<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+<h3>Sub total: </h3>
 <%= link_to "Proceed to checkout", new_order_path %><br>
-
-<%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}
+<%= link_to "Empty cart", cart_path(@cart),method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "Delete",
+  cart_path(@cart),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

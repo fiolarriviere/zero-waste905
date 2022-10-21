@@ -1,10 +1,10 @@
 class CartsController < ApplicationController
   def show
-    @cart = @current_cart
+    @cart = Cart.find(params[:id])
   end
 
   def destroy
-    @cart = @current_cart
+    @cart = Cart.find(params[:id])
     @cart.destroy
     session[:cart_id] = nil
     redirect_to root_path

@@ -12,9 +12,11 @@ class LineItemsController < ApplicationController
       @line_item.cart = current_cart
       @line_item.product = chosen_product
     end
-
-    @line_item.save
+    if @line_item.save
     redirect_to cart_path(current_cart)
+    else
+      render "product/show"
+    end
   end
 
   def destroy
@@ -27,16 +29,18 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.quantity += 1
     @line_item.save
-    redirect_to cart_path(@current_cart)
+    redirect_to cart_path(@line_item.cart_id)
   end
 
   def reduce_quantity
     @line_item = LineItem.find(params[:id])
     if @line_item.quantity > 1
       @line_item.quantity -= 1
+    else
+      flash[:notice] = "No puedes reducir más la cantidad"
     end
     @line_item.save
-    redirect_to cart_path(@current_cart)
+    redirect_to cart_path(@line_item.cart_id)
   end
 
   private

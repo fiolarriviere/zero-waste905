@@ -11,7 +11,11 @@
           <h2 class="card-trip-pricing">S/. <%= @product.original_price %></h2><br>
           <h2 class="card-trip-pricing">Dsct <%= @product.discount %>%</h2><br>
           <h2 class="card-trip-pricing">S/. <%= @product.price %></h2><br>
-          <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
+          <%= form_tag line_items_path do %>
+          <%= hidden_field_tag 'product_id', @product.id %>
+          <%= submit_tag 'Agregar', class: "btn btn-ghost" %>
+          <% end %>
+
           <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
           <%= link_to "EDITAR", edit_product_path, class: "btn btn-ghost" %>
           <%= link_to "ELIMINAR", root_path, class: "btn btn-ghost" %> <br><br>
