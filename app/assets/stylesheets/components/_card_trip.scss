@@ -2,23 +2,24 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 7px;
   h2 {
-    font-size: 12px;
+    font-size: 24px;
     color: #92989b;
     text-decoration: line-through;
   }
   h3 {
     color: #475be9;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 28px;
   }
   h4 {
     color: #82878a;
-    font-size: 12px;
+    font-size: 18px;
   }
   h5 {
     color: #1ffd7c;
-    font-size: 12px;
+    font-size: 20px;
   }
   p {
     color: white;
