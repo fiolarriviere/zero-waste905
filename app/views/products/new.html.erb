@@ -4,7 +4,6 @@
       <h1>Registro de Producto</h1>
       <div class=".form-control">
       <%= simple_form_for (@product) do |f| %>
-        <%#= f.error_notification %>
         <%= f.association :category, label: "Categoria del Producto:",
         prompt: "Elija una categoría", class: "d-inline" %>
 

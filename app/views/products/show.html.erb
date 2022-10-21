@@ -11,7 +11,11 @@
       <% end %>
       <div class="card-product-infos pe-5 w-80">
         <h6>
-          <% if @product.stock.to_i < 15 %> Últimas <%= @product.stock %> Unds. <% end %>
+          <% if @product.stock.to_i < 15 %>
+            Últimas <%= @product.stock %> Unds.
+            <% elsif @product.stock == 0 %>
+            Sin Stock.
+          <% end %>
         </h6>
         <h1><%= @product.name %></h1>
         <h2><%= @product.description %></h2>
@@ -33,7 +37,7 @@
             <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
             <% if current_user.id == @product.user_id %>
             <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
-            <%= link_to "Delete", products_path(@product), class: "btn btn-ghost",
+            <%= link_to "Delete", product_path(@product), class: "btn btn-ghost",
             data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
             <% end %>
           </div>

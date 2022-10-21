@@ -1,17 +1,19 @@
 class Product < ApplicationRecord
-  belongs_to :category, dependent: :destroy
+  belongs_to :category
   belongs_to :user
   has_many :line_items
   has_many_attached :photos
+  before_update :actualiza_descuento
+  before_save :actualiza_descuento
 
   # validar que todos lo campos no esten vacios al crear
-  validates :name, :original_price, :discount, :stock, :photos, presence: true
+  validates :name, :original_price, :discount, :stock, :description, :photos, presence: true
 
   # validacion para :name
-  validates :name, length: { minimum: 10, too_short: "Debe de tener más de 10 caracteres" }
+  validates :name, length: { minimum: 10, message: "Debe de tener más de 10 caracteres" }
 
   # validacion para :original_price
-  validates :original_price, numericality: { only_float: true }
+  validates :original_price, numericality: { only_float: true, message: "Tiene que ser número" }
   validates :original_price, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 9999 }
 
   # validacion para :discount
@@ -23,6 +25,9 @@ class Product < ApplicationRecord
   validates :stock, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 9999 }
 
   # validacion para :description
-  # validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
-  # validates :description, presence: true
+  validates :description, length: { minimum: 10, maximum: 1000, message: "Debe de tener más de 10 caracteres" }
+
+  def actualiza_descuento
+    self.price = (self.original_price - (self.original_price * self.discount) / 100)
+  end
 end
