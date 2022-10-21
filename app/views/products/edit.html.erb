@@ -5,7 +5,7 @@
     <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Ingrese el nombre del producto" %>
     <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Ingrese el nombre del producto" %>
     <%= f.input :price, label: "Precio del Producto:", placeholder: "Original price / discount" %>
-    <%= f.input :price, label: "Stock del Producto:", placeholder: "Ingrese Stock del Producto" %>
+    <%= f.input :stock, label: "Stock del Producto:", placeholder: "Ingrese Stock del Producto" %>
     <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración del Producto:" %>
     <%= f.input :description, label: "Nombre del Producto:", placeholder: "Descripcion acerca del producto a vender" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %> <br>
@@ -16,7 +16,7 @@
 
 <div class="grid-container">
   <div class="grid-item d-flex justify-content-around">
-    <h1>Editar Producto:</h1>
+    <h1>Editar Producto</h1>
       <div class="d-flex flex-column">
         <%= simple_form_for (@product) do |f| %>
           <%= f.input :name, label: "Nombre del Producto:", placeholder: "Ingrese el nombre del producto" %>
