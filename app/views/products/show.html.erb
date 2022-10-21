@@ -10,7 +10,9 @@
         <%= cl_image_tag photo.key, crop: :fill %>
       <% end %>
       <div class="card-product-infos pe-5 w-80">
-        <h6> <% if @product.stock.to_i < 15 %> Últimas <%= @product.stock %> Unds. <% end %> </h6>
+        <h6>
+          <% if @product.stock.to_i < 15 %> Últimas <%= @product.stock %> Unds. <% end %>
+        </h6>
         <h1><%= @product.name %></h1>
         <h2><%= @product.description %></h2>
         <h3>Vencimiento: <strong><%= @product.expiration_date %></strong></h3>
