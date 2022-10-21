@@ -1,18 +1,13 @@
-<div class="container py-3 justify-content-center">
+<div class="container py-3 justify-content-center container-padding">
 
-      <%# Si user tiene Ruc, puede registrar %>
-      <% if current_user.ruc.present? %>
-        <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
-      <% end %>
-      <%= link_to "ver cards", products_path, class: "btn btn-ghost justify-content-center" %>
-
-      <%# sino solo muestra el buscador %>
-      <%= form_with url: "products_path", method: :get, class: "d-flex w-100 mt-3" do %>
-        <%= text_field_tag :query, params[:query],
-          class: "form-control", placeholder: "¿Qué producto buscas?"
-        %>
-        <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-      <% end %>
+  <%= form_with url: "products_path", method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "¿Qué producto buscas?"
+      %>
+      <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
+    <% end %>
 </div>
 
 <%# BANNER %>
@@ -20,15 +15,14 @@
 <div class="banner_home" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
 </div>
 
-
 <%# CATEGORIAS %>
 
-<div class="container pt-3 d-flex">
-  <h4>Nuestras categorías:</h4>
+<div class="container py-5 text-center">
+  <h4 class="fw-bold">CATEGORÍAS</h4>
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-between pb-3">
+    <div class="d-flex justify-content-between pb-5">
 
       <div class="text-center">
         <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312344380_502515855085887_2994598683289423465_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=QOlEP-6s324AX-E-dkU&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT9BiuV0jwH2yOPkjeSNOI8QDE23tX435JnifVlvWk33oA&oe=6353FA3F" alt="" class="icons">
@@ -59,7 +53,13 @@
         <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312322905_502515851752554_733374219258039010_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=Yeq2GFJDMnYAX_9qtyi&tn=FZVWJLB7kJzMYlJS&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT_cH6Ec3CJtr8yojtiImGzgIYegnuSfl7GEkKAfwLLeDA&oe=6353A224" alt="" class="icons">
         <p>Libros</p>
       </div>
+  </div>
+</div>
 
+
+<div class="container">
+    <div class="d-flex justify-content-center pb-5">
+    <%= link_to "VER TODO", products_path, class: "btn btn-ghost" %>
   </div>
 </div>
 
@@ -70,33 +70,48 @@
     <h4>Lo más destacado del mes:</h4>
   </div>
 
-  <% @products.each do |product| %>
-    <%= product.name %>
-  <% end %>
+
+    <div class="product_container">
+      <% @products.last(6).each do |product| %>
+      <div class="card-trip rounded py-3">
+        <% product.photos.last(1).each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fill %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2>S/. <%= product.original_price.round(2) %></h2>
+            <h3>S/. <%= product.price.round(2) %></h3>
+            <h4><%= product.name.truncate(30) %> </h4>
+            <h5>Vencimiento: <%= product.expiration_date %></h5>
+          </div>
+          <p class="badge rounded-pill text-bg-success h1"> <%= product.discount.round(2) %>% </p>
+        </div>
+        <div class="text-center">
+          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+
+
+<div class="container text-center">
+      <h5>¿Quieres vender tus productos con nosotros?</h5>
+        <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
-
-
-<div class="container py-3">
-  <h4>Registrar un producto:</h4>
-    <%= link_to "Registrar", new_product_path, class: "btn btn-ghost" %>
-    <%= link_to "ver cards", products_path, class: "btn btn-ghost" %>
-    <%= link_to "editar", products_path, class: "btn btn-ghost" %>
-    <%= link_to "eliminar", products_path, class: "btn btn-ghost" %>
-</div>
-
-<div class="container py-3 justify-content-center">
       <%# Si user tiene Ruc, puede registrar %>
       <% if current_user.ruc.present? %>
-        <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
+        <%= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
       <% end %>
-      <%= link_to "ver cards", products_path, class: "btn btn-ghost justify-content-center" %>
-      <%# sino solo muestra el buscador %>
-      <%= form_with url: "products_path", method: :get, class: "d-flex w-100 mt-3" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "¿Qué producto buscas?"
-          %>
-          <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-        <% end %>
-</div>
+
+<%# FOOTER %>
+<%#
+<div class="d-flex justify-content-center">
+<div>
+      <h5>¿Quieres vender tus productos con nosotros?</h5>
+        <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
+        <%# </div>
+</div> %>
