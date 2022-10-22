@@ -1,12 +1,13 @@
 .card-product {
   overflow: hidden;
-  height: 650px;
+  height: 500px;
   width: 100%;
   background: white;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  padding-top: 0px;
+
   h1 {
     font-weight: 600;
     font-size: 30px;
@@ -75,13 +76,17 @@
 }
 
 .card-product img {
-  height: 650px;
-  width: 100%;
-  object-fit: cover;
-  padding: 25px;
+  width: 95%;
+  height: 95%;
+  justify-content: center;
+  margin-left: 50px;
+  display: block;
+  max-height: 600px;
+  object-fit: contain;
 }
 
 .card-product-infos {
   width: 90%;
   padding-top: 45px;
+
 }
