@@ -1,14 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_products, only: %w[show edit update destroy]
-  # before_action :set_category, only: %w[edit update destroy]
 
   def index
     @products = Product.all
   end
 
   def show
-    # set_products
-    # @product = Product.find(params[:id])
   end
 
   def new
@@ -18,7 +15,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
-    @product.price = (((@product.discount.to_f / 100) * @product.original_price.to_f) - @product.original_price.to_f).abs
     if @product.save
       redirect_to product_path(@product)
       flash[:notice] = "Producto creada con éxito"
@@ -34,18 +30,17 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # @product.update(Product.find(params[:id]))
-    # set_products
     @product = Product.find(params[:id])
-    @product.update(params[:product])
-    redirect_to root_path
+    @product.update!(products_params)
+    redirect_to product_path(@product)
+    flash[:notice] = "Producto actualizado con éxito"
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    # No need for app/views/restaurants/destroy.html.erb
-    # redirect_to products_path
+    redirect_to products_path, status: :see_other
+    flash[:notice] = "Producto eliminado con éxito"
   end
 
   private
@@ -60,7 +55,7 @@ class ProductsController < ApplicationController
 
   def products_params
     params.require(:product).permit(
-      :name, :original_price, :discount, :price, :stock, :expiration_date,
+      :name, :original_price, :discount, :stock, :expiration_date, :description,
       :category_id,
       :user_id,
       photos: []

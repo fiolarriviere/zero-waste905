@@ -1,18 +1,37 @@
-<div class="grid-container">
+<div class="grid-container py-1">
   <div class="grid-item px-5">
     <div class="d-flex flex-column">
       <h1>Registro de Producto</h1>
       <div class=".form-control">
       <%= simple_form_for (@product) do |f| %>
-        <%= f.association :category, label: "Categoria del Producto:", prompt: "Elija una categoría" %>
-        <%= f.input :name, label: "Nombre del Producto:", placeholder: "Ingrese el nombre del producto" %>
-        <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Ingrese el precio original del producto" %>
-        <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Ingrese el descuento del producto" %>
-        <%= f.input :stock, label: "Stock del Producto:", placeholder: "Ingrese Stock del Producto" %>
-        <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración del Producto:" %>
-        <%= f.input :description, label: "Nombre del Producto:", placeholder: "Descripcion del producto a vender" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit %>
+        <%= f.association :category, label: "Categoria del Producto:",
+        prompt: "Elija una categoría", class: "d-inline" %>
+
+        <%= f.input :name, label: "Nombre del Producto:",
+        placeholder: "Ingrese el nombre del producto",
+        required: true %>
+
+        <%= f.input :original_price, label: "Precio Real del Producto:",
+        placeholder: "Ingrese el precio original del producto", required: true %>
+
+        <%= f.input :discount, label: "Descuento del Producto:",
+        placeholder: "Ingrese el descuento del producto", required: true %>
+
+        <%= f.input :stock, label: "Stock del Producto:",
+        placeholder: "Ingrese Stock del Producto", required: true %>
+
+        <%= f.input :expiration_date, html5: true,
+        label: "Fecha de Expiración del Producto:", required: true %>
+
+        <%= f.input :description, label: "Descripción del Producto:",
+        placeholder: "Descripcion del producto", required: true %>
+
+        <%= f.input :photos, as: :file,
+        input_html: { multiple: true }, required: true %>
+
+        <%= f.submit class: "btn btn-success" %>
+        <%= link_to "Salir", products_path, class: "btn btn-danger" %>
+
         <% end %>
       </div>
   </div>
