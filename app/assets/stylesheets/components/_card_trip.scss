@@ -1,8 +1,8 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  border-radius: 7px;
+  align-content: center;
+  justify-content: center;
   h2 {
     font-size: 24px;
     color: #92989b;
@@ -41,9 +41,12 @@
 }
 
 .card-trip > img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+  width: auto;
+  height: 200px;
+  object-fit: fill;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
 }
 
 .card-trip .card-trip-infos {
