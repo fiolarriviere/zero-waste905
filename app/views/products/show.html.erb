@@ -1,6 +1,6 @@
 <div class="container mt-3 bg-white">
   <div class="container">
-    <h3>Zero Waste - <%= @product.category.name %></h3>
+      <h3>Zero Waste - <%= @product.category.name %></h3>
       <div class="card-product">
         <% @product.photos.last(1).each do |photo| %>
           <%= cl_image_tag photo.key, crop: :fill %>
@@ -13,13 +13,15 @@
             <h2 class="card-trip-pricing">S/. <%= @product.price %></h2><br>
             <%= form_tag line_items_path do %>
             <%= hidden_field_tag 'product_id', @product.id %>
-            <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
+            <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
             <%= submit_tag 'Comprar', class: 'btn btn-ghost' %>
             <% end %>
+            <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
             <%= link_to "EDITAR", edit_product_path, class: "btn btn-ghost" %>
             <%= link_to "ELIMINAR", root_path, class: "btn btn-ghost" %> <br><br>
             <p>Este producto puede presentar defectos en su presentación, sin embargo su calidad y funcionalidad no se ven afectadas.</p>
         </div>
-    </div>
+      </div>
+
   </div>
 </div>
