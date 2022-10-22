@@ -84,8 +84,7 @@
             <h4><%= product.name.truncate(30) %> </h4>
             <h5>Vencimiento: <%= product.expiration_date %></h5>
           </div>
-          <p class="badge rounded-pill text-bg-success h1"> <%= product.discount %>% </p>
-
+          <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
 
         </div>
         <div class="text-center">
