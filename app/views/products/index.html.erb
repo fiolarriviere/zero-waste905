@@ -1,28 +1,28 @@
 <div class="container py-3">
-  <div class="container">
-
+  <div class="container py-5">
     <div class="container bg-white mt-3 py-3 d-flex justify-content-center">
       <%# Si user tiene Ruc, puede registrar %>
       <% if current_user.ruc.present? %>
         <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
       <% end %>
     </div>
-
-
     <div class="product_container pt-5">
       <% @products.each do |product| %>
       <div class="card-trip py-3">
+        <% if product.stock.to_i < 15 %>
+          <p> Últimas <%= product.stock %> Unds. </p>
+        <% end %>
         <% product.photos.last(1).each do |photo| %>
-          <%= cl_image_tag photo.key, crop: :fill %>
+          <%= cl_image_tag photo.key, crop: :pad %>
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <h2>S/. <%= product.original_price.round(2) %></h2>
+            <h2>S/. <%= product.original_price %></h2>
             <h3>S/. <%= product.price.round(2) %></h3>
             <h4><%= product.name.truncate(30) %> </h4>
             <h5>Vencimiento: <%= product.expiration_date %></h5>
           </div>
-          <p class="badge rounded-pill text-bg-success h1"> -<%= product.discount.round(2) %>% </p>
+          <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
         </div>
         <div class="text-center pb-3">
           <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
