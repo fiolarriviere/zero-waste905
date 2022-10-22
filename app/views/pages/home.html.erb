@@ -17,12 +17,12 @@
 
 <%# CATEGORIAS %>
 
-<div class="container py-5 text-center">
+<div class="container py-3 text-center">
   <h4 class="fw-bold">CATEGORÍAS</h4>
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-between pb-5">
+    <div class="d-flex justify-content-between pb-4">
 
       <div class="text-center">
         <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312344380_502515855085887_2994598683289423465_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=QOlEP-6s324AX-E-dkU&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT9BiuV0jwH2yOPkjeSNOI8QDE23tX435JnifVlvWk33oA&oe=6353FA3F" alt="" class="icons">
@@ -58,7 +58,7 @@
 
 
 <div class="container">
-    <div class="d-flex justify-content-center pb-5">
+    <div class="d-flex justify-content-center pb-4">
     <%= link_to "VER TODO", products_path, class: "btn btn-ghost" %>
   </div>
 </div>
@@ -72,7 +72,7 @@
 
 
     <div class="product_container">
-      <% @products.last(6).each do |product| %>
+      <% @products.sample(6).each do |product| %>
       <div class="card-trip rounded py-3">
         <% product.photos.last(1).each do |photo| %>
           <%= cl_image_tag photo.key, crop: :fill %>
@@ -84,7 +84,9 @@
             <h4><%= product.name.truncate(30) %> </h4>
             <h5>Vencimiento: <%= product.expiration_date %></h5>
           </div>
-          <p class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </p>
+          <p class="badge rounded-pill text-bg-success h1"> <%= product.discount %>% </p>
+
+
         </div>
         <div class="text-center">
           <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
