@@ -1,19 +1,18 @@
-<div class="container py-3">
+<div class="container py-5">
   <div class="container py-5">
-    <div class="container bg-white mt-3 py-3 d-flex justify-content-center">
+    <%# <div class="container bg-white d-flex justify-content-center">
       <%# Si user tiene Ruc, puede registrar %>
-      <% if current_user.ruc.present? %>
-        <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
-      <% end %>
-    </div>
-    <div class="product_container pt-5">
+      <%# if current_user.ruc.present? %>
+        <%#=# link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
+      <%# end </div> %>
+    <div class="product_container ">
       <% @products.each do |product| %>
-      <div class="card-trip py-3">
+      <div class="card-trip img py-3">
         <% if product.stock.to_i < 15 %>
           <p> Últimas <%= product.stock %> Unds. </p>
         <% end %>
         <% product.photos.last(1).each do |photo| %>
-          <%= cl_image_tag photo.key, crop: :pad %>
+          <%= cl_image_tag photo.key, :background=>"black", crop: :fill %>
         <% end %>
         <div class="card-trip-infos">
           <div>

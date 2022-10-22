@@ -27,6 +27,8 @@ class Product < ApplicationRecord
   # validacion para :description
   validates :description, length: { minimum: 10, maximum: 1000, message: "Debe de tener más de 10 caracteres" }
 
+  private
+
   def actualiza_descuento
     self.price = (self.original_price - (self.original_price * self.discount) / 100)
   end
