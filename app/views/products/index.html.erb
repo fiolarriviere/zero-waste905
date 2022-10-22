@@ -6,16 +6,8 @@
       <% if current_user.ruc.present? %>
         <%= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
       <% end %>
-      <%# sino solo muestra el buscador %>
-      <%= form_with url: "products_path", method: :get, class: "d-flex w-100" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "¿Qué producto buscas?"
-          %>
-          <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-        <% end %>
     </div>
+
 
     <div class="product_container pt-5">
       <% @products.each do |product| %>
