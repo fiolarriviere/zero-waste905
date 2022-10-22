@@ -1,23 +1,13 @@
-<div class="container py-3 justify-content-center container-padding">
 
-  <%= form_with url: "products_path", method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "¿Qué producto buscas?"
-      %>
-      <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-    <% end %>
-</div>
 
 <%# BANNER %>
 
-<div class="banner_home" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
+<div class="banner_home container-padding" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
 </div>
 
 <%# CATEGORIAS %>
 
-<div class="container py-3 text-center">
+<div class="container py-4 text-center">
   <h4 class="fw-bold">CATEGORÍAS</h4>
 </div>
 
@@ -25,17 +15,17 @@
     <div class="d-flex justify-content-between pb-4">
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312344380_502515855085887_2994598683289423465_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=QOlEP-6s324AX-E-dkU&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT9BiuV0jwH2yOPkjeSNOI8QDE23tX435JnifVlvWk33oA&oe=6353FA3F" alt="" class="icons">
+        <img src="https://scontent.faep7-1.fna.fbcdn.net/v/t39.30808-6/312344380_502515855085887_2994598683289423465_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeE2Yt--zGG9JVhd-nieHZPF2tCdrM8HaIPa0J2szwdog2FMtTT94WC0y6VhiN0mijx3TNW8xiozChm-L-OXsLJz&_nc_ohc=z6OGDzWOg7wAX-WCwTt&_nc_zt=23&_nc_ht=scontent.faep7-1.fna&oh=00_AT9zeBsbFyKORSZz-StExbFt25VY_3ahDu3h0LV2ZgOqBg&oe=6359E8FF" alt="" class="icons">
         <p>Electrónicos</p>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312233322_502515925085880_3167328140129854703_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=9o9clpMoRzYAX9is_nY&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT_65cBL5Lg7jSswORo5I0Cfr1vEGD_yfyRe6FBY3O_pPA&oe=6353B470" alt="" class="icons">
+        <img src="https://scontent.faep7-1.fna.fbcdn.net/v/t39.30808-6/312233322_502515925085880_3167328140129854703_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEtbvuyUfEaldiK6KdIEeO_dJJwjy1WYwh0knCPLVZjCJQHsYE2SGFTVFw9ZArSqI0CfmP9YQza-pUwXIGYp_9r&_nc_ohc=6tbdovaQ_XIAX_TNyp1&_nc_zt=23&_nc_ht=scontent.faep7-1.fna&oh=00_AT8zSu_jzQLfxyPAuDcFlzOKmgAeHhhYPmLsdhHSsEvWtQ&oe=6359A330" alt="" class="icons">
         <p>Maquillaje</p>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312072267_502515945085878_8312493685039400506_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=ib1iJCndBHkAX8RV7O0&tn=FZVWJLB7kJzMYlJS&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT-aTAF5-DvgpM8tgMPsJeofB8cFRzFnwkhWCfRGTxks8A&oe=6353E9AB" alt="" class="icons">
+        <img src="https://scontent.faep7-1.fna.fbcdn.net/v/t39.30808-6/312072267_502515945085878_8312493685039400506_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFiRYlN-3THScnKOEvpfaodaYOhSoILjF1pg6FKgguMXXxS7B3OWgdvkpV4h33PHGhFKizmyGlvBzgaTVuJAPtq&_nc_ohc=diWuvJ0nhxcAX-Tp5Gt&tn=FZVWJLB7kJzMYlJS&_nc_zt=23&_nc_ht=scontent.faep7-1.fna&oh=00_AT-K8qqj1OnSnA9gxI6VvnlLeiJyPT4RO7VH8KvBdYElAA&oe=6359D86B" alt="" class="icons">
         <p>Cuidado personal</p>
       </div>
 
@@ -58,7 +48,7 @@
 
 
 <div class="container">
-    <div class="d-flex justify-content-center pb-4">
+    <div class="d-flex justify-content-center pb-3">
     <%= link_to "VER TODO", products_path, class: "btn btn-ghost" %>
   </div>
 </div>
@@ -72,7 +62,7 @@
 
 
     <div class="product_container">
-      <% @products.sample(6).each do |product| %>
+      <% @products.last(6).each do |product| %>
       <div class="card-trip rounded py-3">
         <% product.photos.last(1).each do |photo| %>
           <%= cl_image_tag photo.key, crop: :fill %>
@@ -84,9 +74,7 @@
             <h4><%= product.name.truncate(30) %> </h4>
             <h5>Vencimiento: <%= product.expiration_date %></h5>
           </div>
-          <p class="badge rounded-pill text-bg-success h1"> <%= product.discount %>% </p>
-
-
+          <p class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </p>
         </div>
         <div class="text-center">
           <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
@@ -100,8 +88,8 @@
   </div>
 
 
-<div class="container text-center">
-      <h5>¿Quieres vender tus productos con nosotros?</h5>
+<div class="container text-center py-4">
+      <h5 class="py-2">¿Quieres vender tus productos con nosotros?</h5>
         <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
       <%# Si user tiene Ruc, puede registrar %>
