@@ -7,7 +7,7 @@
       <%# end </div> %>
     <div class="card-product">
       <% @product.photos.last(1).each do |photo| %>
-        <%= cl_image_tag photo.key, crop: :fill %>
+        <%= cl_image_tag photo.key, crop: :pad %>
       <% end %>
       <div class="card-product-infos pe-5 w-80">
         <h6>
