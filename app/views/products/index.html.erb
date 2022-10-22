@@ -12,7 +12,13 @@
           <p> Últimas <%= product.stock %> Unds. </p>
         <% end %>
         <% product.photos.last(1).each do |photo| %>
-          <%= cl_image_tag photo.key, :background=>"black", crop: :fill %>
+        <%# poner en la foto un link %>
+          <%#= link_to root_path product_path(product) do %>
+            <%#= cl_image_tag photo.key, width: 500, height: 500, crop: :pad %>
+          <%# end %>
+          <%#= link_to product_path(product) do %>
+            <%= cl_image_tag photo.key, crop: :pad %>
+          <%# end %>
         <% end %>
         <div class="card-trip-infos">
           <div>
