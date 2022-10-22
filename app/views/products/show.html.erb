@@ -1,3 +1,4 @@
+
 <div class="container py-5">
   <div class="container py-5">
     <%#  div class="container bg-white py-4 pb-4 d-flex justify-content-center"> %>
@@ -34,6 +35,7 @@
               <p class="badge rounded-pill text-bg-success h1"> -<%= @product.discount %>% </p>
             </div>
           </div>
+
           <p class="py-3 pb-3"> <span class="badge rounded-pill text-bg-warning">!</span>
             Este producto puede presentar defectos en su presentación,
             sin embargo su calidad y funcionalidad no se ven afectadas.</p>
@@ -46,7 +48,9 @@
             data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
             <% end %>
           </div>
-        </div>
+
+
+</div>
     </div>
   </div>
 </div>

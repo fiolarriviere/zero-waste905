@@ -1,4 +1,4 @@
-<div class="container py-4">
+<div class="container py-5 w-50 container-padding">
 
   <h2>Editar perfil <%= resource_name.to_s.humanize %></h2>
 
@@ -20,6 +20,7 @@
       <%= f.input :city,
       required: true,
       input_html: { autocomplete: "city" } %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
       <!-- <%= f.input :email, required: true, autofocus: true, input_html: { disable: true } %>
 

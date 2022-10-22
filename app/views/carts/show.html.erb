@@ -1,2 +1,51 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+
+<html>
+<head>
+	<title>Shopping Cart UI</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+  <body>
+    <div class="super">
+      <div class="CartContainer">
+          <div class="Header">
+            <h3 class="Heading">Shopping Cart</h3>
+          </div>
+          <% @cart.line_items.each do |line_item| %>
+            <div class="Cart-Items">
+                <div class="image-box">
+                 <% line_item.product.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, height: 120, width: 500, crop: :pad %>
+                 <% end %>
+                </div>
+                <div class="about">
+                  <h1 class="title"><%= line_item.product.name %></h1>
+                </div>
+                <div class="counter">
+                  <div class="btn" ><%= link_to "+", line_item_add_path(line_item)%></div>
+                  <div class="count"><%= line_item.quantity %></div>
+                  <div class="btn"><%= link_to "-", line_item_reduce_path(line_item) %></div>
+                </div>
+                <div class="prices">
+                  <div class="amount"><%= number_to_currency(line_item.product.price) %></div>
+                  <%= link_to "Vaciar Carrito",
+                    cart_path(@cart),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </div>
+            </div>
+          <% end %>
+        <hr>
+        <div class="checkout">
+        <div class="total">
+          <div>
+            <div class="Subtotal"><%= number_to_currency(@cart.sub_total) %></div>
+            <div class="items">2 items</div>
+          </div>
+          <div class="total-amount">$6.18</div>
+        </div>
+        <button class="button"><%= link_to "Checkout", new_order_path %></button></div>
+      </div>
+    </div>
+  </body>
+</html>
