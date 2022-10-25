@@ -1,39 +1,41 @@
-<div class="container mt-3 bg-white">
-  <h3>Zero Waste - <%=  %></h3>
-  <div>
-    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    </form>
-  </div>
+<div class="container py-5">
+  <div class="container py-5">
+    <%# <div class="container bg-white d-flex justify-content-center">
+      <%# Si user tiene Ruc, puede registrar %>
+      <%# if current_user.ruc.present? %>
+        <%#=# link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
+      <%# end </div> %>
+    <div class="product_container ">
+      <% @products.each do |product| %>
+      <div class="card-trip img py-3">
+        <% if product.stock.to_i < 15 %>
+          <p> Últimas <%= product.stock %> Unds. </p>
+        <% end %>
+        <% product.photos.last(1).each do |photo| %>
+        <%# poner en la foto un link %>
+          <%#= link_to root_path product_path(product) do %>
+            <%#= cl_image_tag photo.key, width: 500, height: 500, crop: :pad %>
+          <%# end %>
+          <%#= link_to product_path(product) do %>
+            <%= cl_image_tag photo.key, crop: :pad %>
+          <%# end %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2>S/. <%= product.original_price %></h2>
+            <h3>S/. <%= product.price %></h3>
+            <h4><%= product.name.truncate(30) %> </h4>
+            <h5>Vencimiento: <%= product.expiration_date %></h5>
+          </div>
+          <p class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </p>
 
-  <div class="card-trip">
-    <% @products.each do |product| %>
-    <p class="text">Las utlimas <%= product.stock %></p>
-      <% product.photos.last(1).each do |photo| %>
-        <%= cl_image_tag photo.key, crop: :fill %>
+        </div>
+        <div class="text-center pb-3">
+          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+        </div>
+      </div>
       <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= product.name %></h2>
-      </div>
-      <div>
-        <h2 class="card-trip-pricing mt-2">S/. <%= product.original_price.round(2) %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        <h2 class="card-trip-pricing mt-2">Dsct <%= product.discount.round(2) %>%</h2>
-        <h2 class="card-trip-pricing mt-2">S/. <%= product.price.round(2) %></h2>
-      </div>
     </div>
-    <div>
-      <%= link_to "AGREGAR", product_path(product.id), class: "btn btn-ghost"%>
-      <%= link_to "COMPRAR", product_path(product), class: "btn btn-ghost" %>
-      <%= link_to "EDITAR", edit_product_path(product), class: "btn btn-ghost" %>
-      <%= link_to "ELIMINAR", root_path(product.id), class: "btn btn-ghost" %>
-    </div><br>
-    <% end %>
   </div>
 </div>
