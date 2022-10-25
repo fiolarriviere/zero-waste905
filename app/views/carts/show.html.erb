@@ -40,9 +40,9 @@
         <div class="total">
           <div>
             <div class="Subtotal"><%= number_to_currency(@cart.sub_total) %></div>
-            <div class="items">2 items</div>
+            <div class="items"><%= @cart.sum_total %> items</div>
           </div>
-          <div class="total-amount">$6.18</div>
+          <div class="total-amount"></div>
         </div>
         <button class="button"><%= link_to "Checkout", new_order_path %></button></div>
       </div>
