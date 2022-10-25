@@ -22,7 +22,7 @@ class Product < ApplicationRecord
 
   # validacion para :stock
   validates :stock, numericality: { only_integer: true }
-  validates :stock, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 9999 }
+  validates :stock, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 9999 }
 
   # validacion para :description
   validates :description, length: { minimum: 10, maximum: 1000, message: "Debe de tener más de 10 caracteres" }
@@ -30,6 +30,8 @@ class Product < ApplicationRecord
   private
 
   def actualiza_descuento
-    self.price = (self.original_price - (self.original_price * self.discount) / 100)
+    self.price = (
+      self.original_price - (self.original_price * self.discount) / 100
+    )
   end
 end

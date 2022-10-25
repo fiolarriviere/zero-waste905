@@ -17,45 +17,56 @@
 
 <%# CATEGORIAS %>
 
-<div class="container py-5 text-center">
+<div class="container py-3 text-center">
   <h4 class="fw-bold">CATEGORÍAS</h4>
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-between pb-5">
+    <div class="d-flex justify-content-between pb-4">
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312344380_502515855085887_2994598683289423465_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=QOlEP-6s324AX-E-dkU&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT9BiuV0jwH2yOPkjeSNOI8QDE23tX435JnifVlvWk33oA&oe=6353FA3F" alt="" class="icons">
-        <p>Electrónicos</p>
+        <%= link_to products_path(category_id: 3) do %>
+          <img src="images/electro.jpg" alt="Electrónicos" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Electrónicos", products_path(category_id: 3) %>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312233322_502515925085880_3167328140129854703_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=9o9clpMoRzYAX9is_nY&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT_65cBL5Lg7jSswORo5I0Cfr1vEGD_yfyRe6FBY3O_pPA&oe=6353B470" alt="" class="icons">
-        <p>Maquillaje</p>
+        <%= link_to products_path(category_id: 1) do %>
+          <img src="images/electro.jpg" alt="Maquillaje" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Maquillaje", products_path(category_id: 1) %>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312072267_502515945085878_8312493685039400506_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=ib1iJCndBHkAX8RV7O0&tn=FZVWJLB7kJzMYlJS&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT-aTAF5-DvgpM8tgMPsJeofB8cFRzFnwkhWCfRGTxks8A&oe=6353E9AB" alt="" class="icons">
-        <p>Cuidado personal</p>
+        <%= link_to products_path(category_id: 4) do %>
+          <img src="images/electro.jpg" alt="Cuidado personal" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Cuidado personal", products_path(category_id:4) %>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312329325_502515858419220_5944265793013976593_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=ocRS1_9ZZlsAX_73w_J&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT8KIIb043auXy1FT-DQUB3150AMxoGiihKbaiVhvY-NCw&oe=6355018C" alt="" class="icons">
-        <p>Abarrotes</p>
+        <%= link_to products_path(category_id: 2) do %>
+          <img src="images/electro.jpg" alt="Abarrotes" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Abarrotes", products_path(category_id: 2) %>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312341533_502515948419211_2025570545979298243_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=LI0-vj7lChIAX-h2x9V&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT-xiWAsgulkA_-O6agSWoIvFfhR4v6tuVtqcdeyycU6ww&oe=6353DB84" alt="" class="icons">
-        <p>Juguetes</p>
+        <%= link_to products_path(category_id: 6) do %>
+          <img src="images/electro.jpg" alt="Juguetes" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Juguetes", products_path(category_id: 6) %>
       </div>
 
       <div class="text-center">
-        <img src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/312322905_502515851752554_733374219258039010_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=Yeq2GFJDMnYAX_9qtyi&tn=FZVWJLB7kJzMYlJS&_nc_ht=scontent.fmvd1-1.fna&oh=00_AT_cH6Ec3CJtr8yojtiImGzgIYegnuSfl7GEkKAfwLLeDA&oe=6353A224" alt="" class="icons">
-        <p>Libros</p>
+        <%= link_to products_path(category_id: 5) do %>
+          <img src="images/electro.jpg" alt="Libros" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Libros", products_path(category_id: 5) %>
       </div>
   </div>
 </div>
-
 
 <div class="container">
     <div class="d-flex justify-content-center pb-5">
@@ -70,27 +81,29 @@
     <h4>Lo más destacado del mes:</h4>
   </div>
 
-
     <div class="product_container">
       <% @products.last(6).each do |product| %>
-      <div class="card-trip rounded py-3">
-        <% product.photos.last(1).each do |photo| %>
-          <%= cl_image_tag photo.key, crop: :fill %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2>S/. <%= product.original_price %></h2>
-            <h3>S/. <%= product.price %></h3>
-            <h4><%= product.name.truncate(30) %> </h4>
-            <h5>Vencimiento: <%= product.expiration_date %></h5>
+        <%# solo muestra los productos que tienen Stock sino NO los muestra %>
+        <% unless product.stock.zero? %>
+          <div class="card-trip rounded py-3">
+            <% product.photos.last(1).each do |photo| %>
+              <%= cl_image_tag photo.key, crop: :fill %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2>S/. <%= product.original_price.to_f.round(2) %></h2>
+                <h3>S/. <%= product.price.to_f.round(2) %></h3>
+                <h4><%= product.name.truncate(30) %> </h4>
+                <h5>Vencimiento: <%= product.expiration_date %></h5>
+              </div>
+              <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
+            </div>
+            <div class="text-center">
+              <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+              <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+            </div>
           </div>
-          <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
-        </div>
-        <div class="text-center">
-          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
-          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
-        </div>
-      </div>
+          <% end %>
       <% end %>
     </div>
   </div>
@@ -103,9 +116,9 @@
         <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
       <%# Si user tiene Ruc, puede registrar %>
-      <% if current_user.ruc.present? %>
-        <%= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
-      <% end %>
+      <%# if current_user.ruc.present? %>
+        <%#= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
+      <%# end %>
 
 <%# FOOTER %>
 <%#

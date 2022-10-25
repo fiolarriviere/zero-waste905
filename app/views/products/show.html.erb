@@ -1,9 +1,5 @@
 <div class="container py-5">
   <div class="container py-5">
-    <%#  div class="container bg-white py-4 pb-4 d-flex justify-content-center"> %>
-      <%# if current_user.ruc.present? %>
-        <%#= link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
-      <%# end </div> %>
     <div class="card-product">
       <% @product.photos.last(1).each do |photo| %>
         <%= cl_image_tag photo.key, crop: :pad %>
@@ -11,11 +7,7 @@
       <div class="card-product-infos pe-5 w-80">
         <h6>
           <% if @product.stock.to_i < 15 %>
-              <%# if @product.expiration_date - Time.now %>
-                <%#=  %>
-              <%# else %>
-                Últimas <%= @product.stock %> Unds.
-              <%# end %>
+            Últimas <%= @product.stock %> Unds.
           <% elsif @product.stock.to_i > 15  %>
             <%= @product.stock %> Unds. Disponibles.
           <% else %>
@@ -38,12 +30,13 @@
             Este producto puede presentar defectos en su presentación,
             sin embargo su calidad y funcionalidad no se ven afectadas.</p>
           <div class="d-flex justify-content-between">
-            <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
-            <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
             <% if current_user.id == @product.user_id %>
             <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
             <%= link_to "Delete", product_path(@product), class: "btn btn-ghost",
             data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
+            <% else %>
+            <%= link_to "Agregar", "#", class: "btn btn-ghost" %>
+            <%= link_to "Comprar", "#", class: "btn btn-ghost" %>
             <% end %>
           </div>
         </div>
