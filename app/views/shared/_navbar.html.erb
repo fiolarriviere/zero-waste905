@@ -3,7 +3,24 @@
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://i.pinimg.com/564x/f9/01/b0/f901b0879ee0a35b17a32899ef82981a.jpg" %>
     <% end %>
-
+    <ul>
+      <li>
+        <div>
+          <div class="container">
+            <div>
+            <%= form_with url: "products_path", class: "d-flex", method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "¿Qué producto buscas?"
+                %>
+                <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,7 +30,6 @@
         <% if user_signed_in? %>
           <li class="nav-item active"> <%#= AGREGUÉ la ruta del Home (root_path) y eliminé la del MENSAJE  %>
             <%= link_to "Cart", root_path, class: "nav-link" %>
-
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://i.pinimg.com/564x/41/06/3d/41063d42a91f33039a736b9535a95c85.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

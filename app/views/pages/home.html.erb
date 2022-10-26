@@ -1,23 +1,11 @@
-<div class="container py-3 justify-content-center container-padding">
-
-  <%= form_with url: "products_path", method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "¿Qué producto buscas?"
-      %>
-      <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
-    <% end %>
-</div>
-
 <%# BANNER %>
 
-<div class="banner_home" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
+<div class="banner_home container-padding" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
 </div>
 
 <%# CATEGORIAS %>
 
-<div class="container py-3 text-center">
+<div class="container py-4 text-center">
   <h4 class="fw-bold">CATEGORÍAS</h4>
 </div>
 
@@ -25,6 +13,35 @@
     <div class="d-flex justify-content-between pb-4">
 
       <div class="text-center">
+<<<<<<< HEAD
+        <%= image_tag "electronics.png", alt:"Electrónicos", class:"icons"%>
+        <p>Electrónicos</p>
+      </div>
+
+      <div class="text-center">
+        <%= image_tag "makeup.png", alt:"Maquillaje", class:"icons"%>
+        <p>Maquillaje</p>
+      </div>
+
+      <div class="text-center">
+        <%= image_tag "personalcare.png", alt:"Personal care", class:"icons"%>
+        <p>Cuidado personal</p>
+      </div>
+
+      <div class="text-center">
+        <%= image_tag "abarrotes.png", alt:"Abarrotes", class:"icons"%>
+        <p>Abarrotes</p>
+      </div>
+
+      <div class="text-center">
+        <%= image_tag "toys.png", alt:"Juguetes", class:"icons"%>
+        <p>Juguetes</p>
+      </div>
+
+      <div class="text-center">
+        <%= image_tag "books.png", alt:"Libros", class:"icons"%>
+        <p>Libros</p>
+=======
         <%= link_to products_path(category_id: 3) do %>
           <img src="images/electro.jpg" alt="Electrónicos" class="icons mb-3"> <br>
         <% end %>
@@ -64,12 +81,13 @@
           <img src="images/electro.jpg" alt="Libros" class="icons mb-3"> <br>
         <% end %>
         <%= link_to "Libros", products_path(category_id: 5) %>
+>>>>>>> master
       </div>
   </div>
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-center pb-4">
+    <div class="d-flex justify-content-center pb-3">
     <%= link_to "VER TODO", products_path, class: "btn btn-ghost" %>
   </div>
 </div>
@@ -82,6 +100,35 @@
   </div>
 
     <div class="product_container">
+<<<<<<< HEAD
+      <% @products.last(6).each do |product| %>
+      <div class="card-trip rounded py-3">
+
+<% if product.stock.to_i < 15 %>
+          <p> Últimas <%= product.stock %> Unds. </p>
+        <% end %>
+
+
+      <% product.photos.last(1).each do |photo| %>
+          <%= link_to product_path(product) do %>
+          <div class="text-center"> <%= cl_image_tag photo.key, crop: :pad, class: "imagen"%> </div>
+          <% end %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2>S/ <%= product.original_price %></h2>
+            <h3>S/ <%= product.price %></h3>
+            <h4><%= product.name.truncate(30) %> </h4>
+            <h5>Vencimiento: <%= product.expiration_date %></h5>
+          </div>
+          <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
+        </div>
+        <div class="text-center">
+          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+        </div>
+      </div>
+=======
 
       <% @products.last(6).each do |product| %>
         <%# solo muestra los productos que tienen Stock sino NO los muestra %>
@@ -105,6 +152,7 @@
             </div>
           </div>
           <% end %>
+>>>>>>> master
       <% end %>
     </div>
   </div>
@@ -112,11 +160,16 @@
   </div>
 
 
-<div class="container text-center">
-      <h5>¿Quieres vender tus productos con nosotros?</h5>
-        <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
+<div class="container py-3 justify-content-center">
+  <h4>¿Quieres vender tus productos con nosotros?</h4>
+    <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
       <%# Si user tiene Ruc, puede registrar %>
+<<<<<<< HEAD
+      <%# <% if current_user.ruc.present? %>
+        <%# <%= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
+      <%# <% end %>
+=======
       <%# if current_user.ruc.present? %>
         <%#= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
       <%# end %>
@@ -129,3 +182,4 @@
         <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
         <%# </div>
 </div> %>
+>>>>>>> master
