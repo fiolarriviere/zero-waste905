@@ -84,13 +84,12 @@
 }
 
 .imagen {
-  width: auto;
-  height: auto;
-  justify-content: center;
-  margin-left: 50px;
-  display: block;
-  max-height: 600px;
-  object-fit: contain;
+  width: 200px;
+  height: 180px;
+  //margin-left: 50px;
+  // display: block;
+ // max-height: 600px;
+  // object-fit: cover;
 }
 
 .card-product-infos {
