@@ -6,24 +6,21 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def new
     @product = Product.new
-    @product.id = current_user.id
   end
 
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
-    @product.category_id = @category.id
     if @product.save
-      redirect_to root_path
+      redirect_to product_path(@product)
       flash[:notice] = "Producto creada con éxito"
     else
       render :new, status: :unprocessable_entity
-      flash[:notice] = "Error - Revise los datos del producto"
+      flash[:notice] = "ERROR - Revise los datos a registrar para crear el Producto"
     end
   end
 
@@ -33,16 +30,24 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # @product.update(Product.find(params[:id]))
-    redirect_to root_path
+    @product = Product.find(params[:id])
+    @product.update!(products_params)
+    redirect_to product_path(@product)
+    flash[:notice] = "Producto actualizado con éxito"
   end
 
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
-    redirect_to root_path
+    redirect_to products_path, status: :see_other
+    flash[:notice] = "Producto eliminado con éxito"
   end
 
   private
+
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   def set_products
     @product = Product.find(params[:id])
@@ -50,8 +55,8 @@ class ProductsController < ApplicationController
 
   def products_params
     params.require(:product).permit(
-      :name, :original_price, :discount, :price, :stock, :expiration_date,
-      :category_id, :user_id, :photos[]
+      :name, :original_price, :discount, :stock, :expiration_date, :description,
+      :category_id, :user_id, photos: []
     )
   end
 end
