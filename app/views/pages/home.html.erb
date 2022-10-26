@@ -13,6 +13,7 @@
     <div class="d-flex justify-content-between pb-4">
 
       <div class="text-center">
+<<<<<<< HEAD
         <%= image_tag "electronics.png", alt:"Electrónicos", class:"icons"%>
         <p>Electrónicos</p>
       </div>
@@ -40,10 +41,50 @@
       <div class="text-center">
         <%= image_tag "books.png", alt:"Libros", class:"icons"%>
         <p>Libros</p>
+=======
+        <%= link_to products_path(category_id: 3) do %>
+          <img src="images/electro.jpg" alt="Electrónicos" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Electrónicos", products_path(category_id: 3) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to products_path(category_id: 1) do %>
+          <img src="images/electro.jpg" alt="Maquillaje" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Maquillaje", products_path(category_id: 1) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to products_path(category_id: 4) do %>
+          <img src="images/electro.jpg" alt="Cuidado personal" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Cuidado personal", products_path(category_id:4) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to products_path(category_id: 2) do %>
+          <img src="images/electro.jpg" alt="Abarrotes" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Abarrotes", products_path(category_id: 2) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to products_path(category_id: 6) do %>
+          <img src="images/electro.jpg" alt="Juguetes" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Juguetes", products_path(category_id: 6) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to products_path(category_id: 5) do %>
+          <img src="images/electro.jpg" alt="Libros" class="icons mb-3"> <br>
+        <% end %>
+        <%= link_to "Libros", products_path(category_id: 5) %>
+>>>>>>> master
       </div>
   </div>
 </div>
-
 
 <div class="container">
     <div class="d-flex justify-content-center pb-3">
@@ -59,6 +100,7 @@
   </div>
 
     <div class="product_container">
+<<<<<<< HEAD
       <% @products.last(6).each do |product| %>
       <div class="card-trip rounded py-3">
 
@@ -86,6 +128,31 @@
           <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
         </div>
       </div>
+=======
+
+      <% @products.last(6).each do |product| %>
+        <%# solo muestra los productos que tienen Stock sino NO los muestra %>
+        <% unless product.stock.zero? %>
+          <div class="card-trip rounded py-3">
+            <% product.photos.last(1).each do |photo| %>
+              <%= cl_image_tag photo.key, crop: :fill %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2>S/. <%= product.original_price.to_f.round(2) %></h2>
+                <h3>S/. <%= product.price.to_f.round(2) %></h3>
+                <h4><%= product.name.truncate(30) %> </h4>
+                <h5>Vencimiento: <%= product.expiration_date %></h5>
+              </div>
+              <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
+            </div>
+            <div class="text-center">
+              <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+              <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+            </div>
+          </div>
+          <% end %>
+>>>>>>> master
       <% end %>
     </div>
   </div>
@@ -98,6 +165,21 @@
     <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
       <%# Si user tiene Ruc, puede registrar %>
+<<<<<<< HEAD
       <%# <% if current_user.ruc.present? %>
         <%# <%= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
       <%# <% end %>
+=======
+      <%# if current_user.ruc.present? %>
+        <%#= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
+      <%# end %>
+
+<%# FOOTER %>
+<%#
+<div class="d-flex justify-content-center">
+<div>
+      <h5>¿Quieres vender tus productos con nosotros?</h5>
+        <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
+        <%# </div>
+</div> %>
+>>>>>>> master
