@@ -69,7 +69,7 @@
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-center pb-5">
+    <div class="d-flex justify-content-center pb-4">
     <%= link_to "VER TODO", products_path, class: "btn btn-ghost" %>
   </div>
 </div>
@@ -82,6 +82,7 @@
   </div>
 
     <div class="product_container">
+
       <% @products.last(6).each do |product| %>
         <%# solo muestra los productos que tienen Stock sino NO los muestra %>
         <% unless product.stock.zero? %>

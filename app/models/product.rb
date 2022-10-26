@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :line_items
   has_many_attached :photos
+
   before_update :actualiza_descuento
   before_save :actualiza_descuento
 
