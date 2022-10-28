@@ -1,36 +1,36 @@
 <div class="grid-container py-1">
   <div class="grid-item px-5">
     <div class="d-flex flex-column">
-      <h1>Registro de Producto</h1>
+      <h1>Registra tu producto</h1>
       <div class=".form-control">
       <%= simple_form_for (@product) do |f| %>
-        <%= f.association :category, label: "Categoria del Producto:",
+        <%= f.association :category, label: "Categoría:",
         prompt: "Elija una categoría", class: "d-inline" %>
 
         <%= f.input :name, label: "Nombre del Producto:",
         placeholder: "Ingrese el nombre del producto",
         required: true %>
 
-        <%= f.input :original_price, label: "Precio Real del Producto:",
+        <%= f.input :original_price, label: "Precio original del producto:",
         placeholder: "Ingrese el precio original del producto", required: true %>
 
-        <%= f.input :discount, label: "Descuento del Producto:",
-        placeholder: "Ingrese el descuento del producto", required: true %>
+        <%= f.input :discount, label: "Descuento del producto:",
+        placeholder: "Ingrese el porcentaje de descuento del producto", required: true %>
 
-        <%= f.input :stock, label: "Stock del Producto:",
-        placeholder: "Ingrese Stock del Producto", required: true %>
+        <%= f.input :stock, label: "Stock del producto:",
+        placeholder: "Ingrese la cantidad de stock del producto", required: true %>
 
         <%= f.input :expiration_date, html5: true,
-        label: "Fecha de Expiración del Producto:", required: true %>
+        label: "Fecha de expiración del Producto:", required: true %>
 
         <%= f.input :description, label: "Descripción del Producto:",
-        placeholder: "Descripcion del producto", required: true %>
+        placeholder: "Detalle el producto", required: true %>
 
         <%= f.input :photos, as: :file,
         input_html: { multiple: true }, required: true %>
 
-        <%= f.submit class: "btn btn-success" %>
-        <%= link_to "Salir", products_path, class: "btn btn-danger" %>
+        <%= f.submit class: "btn btn-ghost" %>
+        <%= link_to "Salir", products_path, class: "btn btn-ghost" %>
 
         <% end %>
       </div>
