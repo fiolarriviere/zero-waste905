@@ -29,13 +29,13 @@
                 <%= link_to "Delete", product_path(product), class: "btn btn-ghost", data:
                 {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
               <% else %>
-              <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
-              <%= form_tag line_items_path do %>
-              <%= hidden_field_tag 'product_id', @product.id %>
-              <%#= hidden_field_tag 'current_cart_id', @current_cart.id %>
-              <%= submit_tag 'Agregar', class: 'btn btn-ghost' %>
-              <% end %>
-              <%= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
+                <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+                <%= form_tag line_items_path do %>
+                  <%= hidden_field_tag 'product_id', @product.id %>
+                  <%#= hidden_field_tag 'current_cart_id', @current_cart.id %>
+                  <%= submit_tag 'Agregar', class: 'btn btn-ghost' %>
+                <% end %>
+                <%= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
               <% end %>
             </div>
           </div>
