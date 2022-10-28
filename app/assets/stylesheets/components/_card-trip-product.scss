@@ -1,0 +1,64 @@
+.card-trip-product {
+  overflow: hidden;
+  background: white;
+  align-content: center;
+  justify-content: center;
+  width: 400px;
+  height: 450px;
+  h2 {
+    font-size: 20px;
+    color: #92989b;
+    text-decoration: line-through;
+  }
+  h3 {
+    color: #245d6b;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  h4 {
+    color: #82878a;
+    font-size: 14px;
+  }
+  h5 {
+    color: #276891;
+    font-size: 18px;
+  }
+  h6 {
+    background: #2a9d8f;
+    color: white;
+    font-size: 20px;
+  }
+  p {
+    background: #2a9d8f;
+    color: white;
+    width: fit-content;
+    text-align: center;
+    position: absolute;
+    border-radius: 1px 11px 11px 1px;
+    padding: 5px 10px;
+    letter-spacing: .32px;
+    font-size: 10px;
+    z-index: 1;
+  }
+}
+
+.imagen-index {
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contenedor-new{
+  width: 650px;
+  justify-content: space-around;
+  box-shadow: #43ee49 ;
+}
