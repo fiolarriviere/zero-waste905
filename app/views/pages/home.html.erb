@@ -67,8 +67,8 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-              <h2>S/. <%= product.original_price.to_f.round(2) %></h2>
-              <h3>S/. <%= product.price.to_f.round(2) %></h3>
+              <h2>S/ <%= product.original_price.to_f.round(2) %></h2>
+              <h3>S/ <%= product.price.to_f.round(2) %></h3>
             <h4><%= product.name.truncate(30) %> </h4>
             <h5>Vencimiento: <%= product.expiration_date %></h5>
           </div>
@@ -85,6 +85,9 @@
   </div>
 
   </div>
+
+<%# CARDS - LO MÁS VENDIDO %>
+
 
 
 <div class="container py-4 text-center">
