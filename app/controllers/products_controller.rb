@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
+    @product.expiration_date = "" if @product.category != 2 && @product.category != 4
     if @product.save
       redirect_to product_path(@product)
       flash[:notice] = "Producto creada con éxito"
@@ -42,9 +43,14 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to products_path, status: :see_other
-    flash[:notice] = "Producto eliminado con éxito"
+    if @product.line_items.any?
+      redirect_to product_path(@product)
+      flash[:notice] = "Eliminar primero del carrito "
+    else
+      @product.destroy
+      redirect_to products_path, status: :see_other
+      flash[:notice] = "Producto eliminado con éxito"
+    end
   end
 
   private
