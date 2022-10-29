@@ -6,7 +6,7 @@
   box-shadow: 2px 2px 2px 2px  #abdbe3;
   border-radius: 15px 50px 30px 5px;
   h2 {
-    font-size: 20px;
+    font-size: 18px;
     color: #92989b;
     text-decoration: line-through;
   }
@@ -14,6 +14,7 @@
     color: #245d6b;
     font-weight: bold;
     font-size: 22px;
+    font-weight: bolder;
   }
   h4 {
     color: #82878a;
@@ -21,13 +22,13 @@
   }
   h5 {
     color: #276891;
-    font-size: 20px;
-
+    font-size: 14px;
+    font-weight: bolder;
   }
   h6 {
-    background: #c22c90;
+    background: #2a9d8f;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     text-align: justify;
   }
   p {
@@ -43,7 +44,6 @@
     z-index: 1;
   }
 }
-
 .card-trip > img {
   width: auto;
   height: 200px;
@@ -52,7 +52,6 @@
   justify-content: center;
   margin-left: 100px;
 }
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
