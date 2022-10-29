@@ -1,12 +1,18 @@
-puts "borrando"
+puts "------------------------------------------------------------------------------------------------"
+puts "Ejecutando borrado de tablas"
 Order.destroy_all
 LineItem.destroy_all
 Product.destroy_all
 Category.destroy_all
 User.destroy_all
-puts "creando usuario 1"
+puts "Datos borrados perfectamente"
+puts "------------------------------------------------------------------------------------------------"
+
 require "open-uri"
 
+puts "------------------------------------------------------------------------------------------------"
+puts "USUARIOS"
+puts "------------------------------------------------------------------------------------------------"
 puts "creando usuario 1"
 usuario1 = User.new(
   first_name: "Ana", last_name: "Perez", phone_number: "989898898", ruc: "989898898000",
@@ -70,47 +76,39 @@ photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario6.photo.attach(io: photo, filename: "usuario6.png", content_type: "image/png")
 usuario6.save
 puts "usuario 6 creado"
+puts "------------------------------------------------------------------------------------------------"
 
-# CATEGORIAS
+puts "CATEGORIAS"
 
+puts "------------------------------------------------------------------------------------------------"
 puts "creando categoria 1"
-Category.create!(
-  name: "Maquillaje"
-)
+Category.create!(name: "Maquillaje")
 puts "Category 1 creada"
 
 puts "creando categoria 2"
-Category.create!(
-  name: "Abarrotes"
-)
+Category.create!(name: "Abarrotes")
 puts "Category 2 creada"
 
 puts "creando categoria 3"
-Category.create!(
-  name: "Electrónicos"
-)
+Category.create!(name: "Electrónicos")
 puts "Category 3 creada"
 
 puts "creando categoria 4"
-Category.create!(
-  name: "Cuidado personal"
-)
+Category.create!(name: "Cuidado personal")
 puts "Category 4 creada"
 
 puts "creando categoria 5"
-Category.create!(
-  name: "Libreria"
-)
+Category.create!(name: "Libreria")
 puts "Category 5 creada"
 
 puts "creando categoria 6"
-Category.create!(
-  name: "Juguetes"
-)
+Category.create!(name: "Juguetes")
 puts "Category 6 creada"
+puts "------------------------------------------------------------------------------------------------"
 
+puts "PRODUCTS"
 # ERYCK
-
+puts "------------------------------------------------------------------------------------------------"
 puts "creando Producto 1 categoria 1"
 product1 = Product.new(
   category_id: 1, name: "Polvo compacto Asepxia FPS 15 Canela Mate", original_price: 31.90,
@@ -217,13 +215,12 @@ product1.save
 puts "producto 3,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Infusión Mc Colins En Línea-Paquete x 20 unid", original_price: 8.50, discount: 50,
-  price: 4.25, stock: 14, expiration_date: "2023/03/16",
-  description: "Con cola de caballo y diente de León, hierbas finamente seleccionadas. Estas hierbas han sido consumidas
-  para ayudar a que las personas se sientan más livianas.",
+  category_id: 2, name: "Mote Salado Go Toto - 100gr", original_price: 5.50, discount: 25,
+  price: 4.13, stock: 200, expiration_date: "2023/03/16",
+  description: "Mote Salado Go Toto.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/191351-1000-1000/https---imgproductos.jpg?v=637982538829200000")
+photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/193101-1000-1000/https---imgproductos.jpg?v=637995027004200000")
 product1.photos.attach(io: photo, filename: "product10.png", content_type: "image/png")
 product1.save
 puts "producto 4,cat Abarrotes creado"
@@ -241,16 +238,15 @@ product1.save
 puts "producto 5,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Panetón Chochotón D'Onofrio-500gr", original_price: 21.5, discount: 25,
-  price: 16.15, stock: 12, expiration_date: "2022/23/12", description: "pan chocolate",user_id: 2
+  category_id: 2, name: "Mango en Almíbar Compass - 425gr", original_price: 7.50, discount: 27,
+  price: 5.50, stock: 30, expiration_date: "2023/23/12", description: "Mango en Almíbar Compass", user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/193148-1000-1000/https---imgproductos.jpg?v=637995888832700000")
+photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/211840-1000-1000/https---imgproductos.jpg?v=638020080375830000")
 product1.photos.attach(io: photo, filename: "product12.png", content_type: "image/png")
 product1.save
 puts "producto 6,cat Abarrotes creado"
-
-#JEAN
-
+puts "------------------------------------------------------------------------------------------------"
+# JEAN
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Product 13 - category Electrónicos"
 product13 = Product.new(
@@ -295,7 +291,7 @@ product16 = Product.new(
   category_id: 3, name: "Parrilla Practika Etna II", original_price: 199.90, discount: 40,
   price: 119.90, stock: 1, expiration_date: "2022/11/29",
   description: "Parrilla de 2000W con 6 niveles de temperatura, asas frías al tacto, apagado automático y bandeja
-   recolectora de grasa. Garantía de 1 año.",
+  recolectora de grasa. Garantía de 1 año.",
   user_id: 1
 )
 photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/188204-1000-1000/https---imgproductos.jpg?v=637968645091700000")
@@ -409,6 +405,7 @@ puts "--------------------------------------------------------------------------
 
 # FIORE
 
+puts "------------------------------------------------------------------------------------------------"
 puts "creando producto = Product 1 - category 5"
 product100 = Product.new(
   category_id: 5, name: "Ruido. Un fallo en el juicio humano", original_price: 50, discount: 10, price: 40,
@@ -571,8 +568,9 @@ photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/409332-800-auto?v
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
 puts "producto = Product 1 - category 6 creado"
+puts "------------------------------------------------------------------------------------------------"
 
-# ORDENES
+puts "ORDENES"
 
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Order 1"
@@ -625,20 +623,26 @@ puts "Order 6 creada"
 
 puts "creando Order 7"
 orden1 = Order.create!(
-  first_name: "Demian", last_name: "Santos", dni: "98574839", address: "Av Argentina 3549",
+  first_name: "Demian", last_name: "Santos", dni: "76545678", address: "Av Argentina 3549",
   city: "Callao", email: "Santos_demian@gmail.com", delivery_date: "2022/09/13",
   delivery_type: "Envío a casa", payment: "Mastercard"
 )
 puts "Order 7 creada"
 puts "------------------------------------------------------------------------------------------------"
 
+puts "LINE-ITEMS - Se cae en esta parte"
+
 puts "------------------------------------------------------------------------------------------------"
 puts "Line-Item 1"
-LineItem.create!(product_id: product108.id, order_id: orden1.id, quantity: 2, price: 46.8)
+LineItem.create!(product_id: product110.id, order_id: orden1.id, quantity: 1, price: 40.00)
 puts "Line-Item 1 creada"
 puts "Line-Item 2"
-LineItem.create!(product_id: product109.id, order_id: orden1.id, quantity: 10, price: 320)
+LineItem.create!(product_id: product109.id, order_id: orden1.id, quantity: 2, price: 40.00)
 puts "Line-Item 2 creada"
 puts "Line-Item 3"
-LineItem.create!(product_id: product110.id, order_id: orden1.id, quantity: 1, price: 17.1)
+LineItem.create!(product_id: product108.id, order_id: orden1.id, quantity: 1, price: 40.00)
 puts "Line-Item 3 creada"
+
+puts "------------------------------------------------------------------------------------------------"
+puts "Seed ejecutado correctamente"
+puts "------------------------------------------------------------------------------------------------"

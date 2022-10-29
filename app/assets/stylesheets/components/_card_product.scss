@@ -8,13 +8,15 @@
   grid-gap: 30px;
   align-items: center;
   padding-bottom: 30px;
+
   h1 {
     font-weight: 600;
     font-size: 30px;
-    color: #475be0;
+    color: #245d6b;
     line-height: 30px;
     padding-bottom: 5px;
   }
+
   h2 {
     color: #82878a;
     font-size: 20px;
@@ -27,17 +29,19 @@
     padding-bottom: 5px;
     text-align: justify;
   }
+
   h3 {
-    font-family: "Montserrat-SemiBold";
+    // font-family: "Montserrat-SemiBold";
     width: 100%;
-    color: #7eca34;
+    color: #40916c;
     text-align: left;
     margin-top: 20px;
     font-weight: 500;
     font-size: 24px;
   }
+
   h4 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: .05em;
     color: #82878a;
     text-decoration: line-through;
@@ -46,26 +50,29 @@
     line-height: 1.8;
     margin-left: 5px;
   }
+
   h5 {
-    font-family: "Montserrat-SemiBold";
+    // font-family: "Montserrat-SemiBold";
     font-size: 2rem;
     letter-spacing: .05em;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
-    color: #475be0;
+    color: #276891;
     padding-bottom: 5px;
   }
+
   p {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 300;
     color: #92989b;
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1;
     padding-right: 1rem;
   }
+
   h6 {
     border-radius: 1px 23px 23px 1px;
-    background: #2a9d8f;
+    background: #276891;
     color: #fff;
     margin-bottom: 30px;
     padding: 7px 15px;
@@ -76,14 +83,13 @@
   }
 }
 
-.card-product img {
-  width: 80%;
-  height: 80%;
-  justify-content: center;
-  margin-left: 50px;
-  display: block;
-  max-height: 600px;
-  object-fit: contain;
+.imagen {
+  width: 200px;
+  height: 180px;
+  //margin-left: 50px;
+  // display: block;
+ // max-height: 600px;
+  // object-fit: cover;
 }
 
 .card-product-infos {
