@@ -3,6 +3,7 @@
     <div class="product_container py-3">
       <% @products.each do |product| %>
         <div>
+
           <% unless product.stock.zero? %>
             <div class="card-trip-product py-3">
               <% if product.stock.to_i < 15 %>
@@ -43,6 +44,7 @@
               </div>
             </div>
           <% end %>
+
         </div>
       <% end %>
     </div>

@@ -1,16 +1,36 @@
 <%# BANNER %>
 
-<div class="banner_home container-padding" style="background-image: url(https://www.wigan.gov.uk/Images/Council/The-Deal/Go-Green/Go-Green-banner.png);">
+
+<div id="carouselExampleInterval" class="carousel slide container-padding" data-bs-ride="carousel">
+  <div class="carousel-inner carousel-height">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <%= image_tag "enviogratiselectro.png", alt:"Electrónicos", class:"d-block w-100"%>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <%= image_tag "lunesabarrotes.png", alt:"Electrónicos", class:"d-block w-100"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "libros.png", alt:"Electrónicos", class:"d-block w-100"%>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <%# CATEGORIAS %>
 
-<div class="container text-center py-4">
+<div class="container py-4">
   <h4>CATEGORÍAS</h4>
 </div>
 
 <div class="container">
-    <div class="d-flex justify-content-between pb-4">
+    <div class="d-flex justify-content-between pb-3">
 
       <div class="text-center py-2">
         <%= image_tag "electronics.png", alt:"Electrónicos", class:"icons"%>
@@ -43,10 +63,14 @@
       </div>
     </div>
 
+<div class="container pb-4 text-center">
+    <%= link_to "VER TODOS", products_path, class: "btn btn-ghost" %>
+</div>
+
 <%# CARDS - LO MÁS VENDIDO %>
 
 <div class="container">
-  <div class="pb-4 text-center">
+  <div class="py-4">
     <h4>LO MÁS DESTACADO</h4>
   </div>
 
@@ -65,7 +89,7 @@
           <div class="text-center"> <%= cl_image_tag photo.key, crop: :pad, class: "imagen"%> </div>
           <% end %>
         <% end %>
-        <div class="card-trip-infos">
+        <div class="card-trip-infos mx-3">
           <div>
               <h2>S/ <%= product.original_price.to_f.round(2) %></h2>
               <h3>S/ <%= product.price.to_f.round(2) %></h3>
@@ -78,11 +102,11 @@
             <% end %>
 
           </div>
-          <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
+          <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
         </div>
         <div class="text-center">
           <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
-          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+          <%# <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
         </div>
       </div>
 
@@ -97,7 +121,7 @@
 
 
 <div class="container py-4 text-center">
-  <h4>¿Quieres vender tus productos con nosotros?</h4>
+  <h4 class="py-4">¿Quieres vender tus productos con nosotros?</h4>
     <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
       <%# Si user tiene Ruc, puede registrar %>
