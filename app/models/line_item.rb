@@ -10,22 +10,4 @@ class LineItem < ApplicationRecord
   def total_items
    self.quantity
   end
-
-  def add_quantity
-    @line_item = LineItem.find(params[:id])
-    @line_item.quantity += 1
-    @line_item.save
-    redirect_to cart_path(@line_item.cart_id)
-  end
-
-  def reduce_quantity
-    @line_item = LineItem.find(params[:id])
-    if @line_item.quantity > 1
-      @line_item.quantity -= 1
-    else
-      flash[:notice] = "No puedes reducir más la cantidad"
-    end
-    @line_item.save
-    redirect_to cart_path(@line_item.cart_id)
-  end
 end

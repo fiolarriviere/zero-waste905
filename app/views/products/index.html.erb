@@ -1,38 +1,40 @@
 <div class="container py-5">
   <div class="container py-5">
+    <%# <div class="container bg-white d-flex justify-content-center">
+      <%# Si user tiene Ruc, puede registrar %>
+      <%# if current_user.ruc.present? %>
+        <%#=# link_to "Nuevo Registro", new_product_path, class: "btn btn-ghost" %>
+      <%# end </div> %>
     <div class="product_container ">
       <% @products.each do |product| %>
-
-        <% unless product.stock.zero? %>
-          <div class="card-trip img py-3">
-            <% if product.stock.to_i < 15 %>
-              <p>Últimas <%= product.stock %> Unds.</p>
-            <% end %>
-            <% product.photos.last(1).each do |photo| %>
-              <%= link_to product_path(product) do %>
-                <%= cl_image_tag photo.key, crop: :pad, class: "imagen" %>
-              <% end %>
-            <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2>S/. <%= product.original_price.to_f.round(2) %></h2>
-                <h3>S/. <%= product.price.to_f.round(2) %></h3>
-                <h4><%= product.name.truncate(30) %> </h4>
-                <h5>Vencimiento: <%= product.expiration_date %></h5>
-              </div>
-              <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
-            </div>
-            <div class="text-center pb-3">
-              <%= form_tag line_items_path do %>
-              <%= hidden_field_tag 'product_id', @product.id %>
-              <%#= hidden_field_tag 'current_cart_id', @current_cart.id %>
-              <%= submit_tag 'Agregar', class: 'btn btn-ghost' %>
-              <% end %>
-              <%= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
-              <% end %>
-            </div>
-          </div>
+      <div class="card-trip img py-3">
+        <% if product.stock.to_i < 15 %>
+          <p> Últimas <%= product.stock %> Unds. </p>
         <% end %>
+        <% product.photos.last(1).each do |photo| %>
+        <%# poner en la foto un link %>
+          <%#= link_to root_path product_path(product) do %>
+            <%#= cl_image_tag photo.key, width: 500, height: 500, crop: :pad %>
+          <%# end %>
+          <%#= link_to product_path(product) do %>
+            <%= cl_image_tag photo.key, crop: :pad %>
+          <%# end %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2>S/. <%= product.original_price %></h2>
+            <h3>S/. <%= product.price %></h3>
+            <h4><%= product.name.truncate(30) %> </h4>
+            <h5>Vencimiento: <%= product.expiration_date %></h5>
+          </div>
+          <p class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </p>
+
+        </div>
+        <div class="text-center pb-3">
+          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+          <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>

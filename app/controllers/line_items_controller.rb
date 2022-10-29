@@ -19,7 +19,7 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @current_cart.add_product(product)
     if @line_item.save
-      #redirect_to cart_path(current_cart), notice: "Tu producto se ha agregado correctamente"
+      redirect_to cart_path(current_cart), notice: "Tu producto se ha agregado correctamente"
     else
       render "product/show"
     end
@@ -29,6 +29,24 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
     redirect_to cart_path(@current_cart)
+  end
+
+  def add_quantity
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity += 1
+    @line_item.save
+    redirect_to cart_path(@line_item.cart_id)
+  end
+
+  def reduce_quantity
+    @line_item = LineItem.find(params[:id])
+    if @line_item.quantity > 1
+      @line_item.quantity -= 1
+    else
+      flash[:notice] = "No puedes reducir más la cantidad"
+    end
+    @line_item.save
+    redirect_to cart_path(@line_item.cart_id)
   end
 
   private
