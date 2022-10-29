@@ -23,8 +23,8 @@
         <h3>Vencimiento: <strong><%= @product.expiration_date %></strong></h3>
           <div class="d-flex justify-content-between align-items-end">
             <div>
-              <h4> S/. <%= @product.original_price.to_f.round(2) %></h4>
-              <h5> S/. <%= @product.price.to_f.round(2) %> </h5>
+              <h4> S/ <%= @product.original_price.to_f.round(2) %></h4>
+              <h5> S/ <%= @product.price.to_f.round(2) %> </h5>
             </div>
             <div>
               <p class="badge rounded-pill text-bg-success h1"> -<%= @product.discount %>% </p>
@@ -42,9 +42,17 @@
             <%= submit_tag 'Comprar', class: 'btn btn-ghost' %>
             <% end %>
             <% if current_user.id == @product.user_id %>
-            <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
-            <%= link_to "Delete", product_path(@product), class: "btn btn-ghost",
-            data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
+              <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
+              <%= link_to "Delete", product_path(@product), class: "btn btn-ghost",
+              data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
+              <% else %>
+              <%= form_tag line_items_path do %>
+                <%= hidden_field_tag 'product_id', @product.id %>
+                <%#= hidden_field_tag 'current_cart_id', @current_cart.id %>
+                <%= submit_tag 'Agregar', class: 'btn btn-ghost' %>
+              <% end %>
+              <%= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
+
             <% end %>
           </div>
   </div>

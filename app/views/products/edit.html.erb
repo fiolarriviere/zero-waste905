@@ -1,18 +1,18 @@
-<div class="container">
-  <div class="container bg-info mt-5">
-    <div class="d-flex justify-content-around py-1 bg-dark">
-      <div class="contenedor-new bg-light">
+<div class="container py-5">
+  <div class="container py-5">
+    <div class="d-flex justify-content-around py-5">
+      <div class="contenedor-new">
       <h1 class="text-center pt-3 pb-3"><strong> Editar Producto </strong></h1>
         <%= simple_form_for (@product) do |f| %>
           <div class="d-flex flex-row align-items-around">
-            <div class="d-flex justify-content-start align-items-start mx-3">
-              <%= f.association :category, label: "Categoria del Producto:", prompt: "Elija una categoría" %>
+            <div class="d-grid justify-content-start align-items-start mx-3">
+              <%= f.association :category, label: "Categoria del Producto:", prompt: "Categoría del Producto" %>
             </div>
-            <div class="d-flex justify-content-end align-items-start mx-5 ">
+            <div class="d-grid justify-content-end align-items-start mx-5 ">
               <%= f.input :name, label: "Nombre del Producto:", placeholder: "Nombre del producto", required: true %>
             </div>
           </div>
-          <div class="d-flex align-items-around bg-warning">
+          <div class="d-flex align-items-around">
             <div class="d-flex justify-content-start align-items-start mx-3">
               <%= f.input :original_price, label: "Precio Real del Producto:", placeholder: "Precio original del producto", required: true %>
             </div>
@@ -20,7 +20,7 @@
               <%= f.input :discount, label: "Descuento del Producto:", placeholder: "Descuento del producto", required: true %>
             </div>
           </div>
-          <div class="d-flex align-items-around bg-warning">
+          <div class="d-flex align-items-around">
             <div class="d-flex justify-content-start align-items-start mx-3">
               <%= f.input :stock, label: "Stock del Producto:", placeholder: "Stock del Producto", required: true %>
             </div>
@@ -37,8 +37,8 @@
             input_html: { multiple: true }, required: true %>
           </div>
           <div class="d-flex justify-content-around pt-3 pb-3">
-            <%= f.submit "Actualizar", class: "btn btn-success" %>
-            <%= link_to "Salir", products_path, class: "btn btn-danger" %>
+            <%= f.submit "Actualizar", class: "btn btn-ghost" %>
+            <%= link_to "Salir", products_path, class: "btn btn-ghost" %>
           </div>
         <% end %>
       </div>

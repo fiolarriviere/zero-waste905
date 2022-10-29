@@ -71,11 +71,11 @@
               <h3>S/ <%= product.price.to_f.round(2) %></h3>
             <h4><%= product.name.truncate(30) %> </h4>
 
-              <% if product.expiration_date.present? %>
-                            <h5>Vencimiento: <%= product.expiration_date %></h5>
-                          <% else %>
-                            <h5><br></h5>
-                          <% end %>
+            <% if product.expiration_date.present? %>
+              <h5>Vencimiento: <%= product.expiration_date %></h5>
+            <% else %>
+              <h5><br></h5>
+            <% end %>
 
           </div>
           <h6 class="badge rounded-pill text-bg-success h1"> -<%= product.discount %>% </h6>
