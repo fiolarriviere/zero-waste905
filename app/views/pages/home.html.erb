@@ -52,7 +52,7 @@
 
     <div class="product_container">
 
-      <% @products.last(6).each do |product| %>
+      <% @products.sample(6).each do |product| %>
       <div class="card-trip rounded py-3">
 
 <% if product.stock.to_i < 15 %>

@@ -17,7 +17,6 @@ class Product < ApplicationRecord
   validates :original_price, numericality: { only_float: true, message: "Tiene que ser número" }
   validates :original_price, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 9999 }
   # validates :original_price, format: { with: /[0-9]*/, message: "solo numeros" }
-  # /^([0-9])*$/
 
   # validacion para :discount
   validates :discount, numericality: { only_integer: true }
