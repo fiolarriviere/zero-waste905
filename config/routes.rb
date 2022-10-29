@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'carts/:id'=> "carts#show", as: "cart"
+  get 'carts/:id/add' => "carts#add_product", as: "cart_add"
+  get 'carts/:id/reduce' => "carts#reduce_quantity", as: "cart_reduce"
   resources :carts, only: :destroy
 
   get 'line_items/:id/add' => "line_items#add_quantity", as: "line_item_add"
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :new, :create]
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root to: "pages#home"
+  resources :pages, only:[:index, :create]
 
 
   resources :products
