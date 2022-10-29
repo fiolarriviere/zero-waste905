@@ -28,7 +28,7 @@
             </div>
             <div class="d-flex justify-content-start align-items-start mx-5">
               <%# if @product.category.id == 2 || @product.category.id == 4 %>
-                <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración:", required: true %>
+                <%= f.input :expiration_date, html5: true, label: "Fecha de Expiración:" %>
               <%# else %>
                 <%#= f.input :expiration_date = nill %>
               <%# end %>
