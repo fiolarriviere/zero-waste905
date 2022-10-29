@@ -1,6 +1,6 @@
 <div class="container py-5">
   <div class="container py-5">
-    <div class="product_container ">
+    <div class="product_container py-3">
       <% @products.each do |product| %>
         <% unless product.stock.zero? %>
           <div class="card-trip-product py-3">
@@ -19,6 +19,8 @@
                 <h4><%= product.name.truncate(40) %> </h4>
                   <% if product.expiration_date.present? %>
                     <h5>Vencimiento: <%= product.expiration_date %></h5>
+                  <% else %>
+                    <h5><br></h5>
                   <% end %>
               </div>
               <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
@@ -32,7 +34,7 @@
                 <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
                 <%= form_tag line_items_path do %>
                   <%= hidden_field_tag 'product_id', @product.id %>
-                  <%#= hidden_field_tag 'current_cart_id', @current_cart.id %>
+                  <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
                   <%= submit_tag 'Agregar', class: 'btn btn-ghost' %>
                 <% end %>
                 <%= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
