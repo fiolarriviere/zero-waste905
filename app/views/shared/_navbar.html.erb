@@ -30,7 +30,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active"> <%#= AGREGUÉ la ruta del Home (root_path) y eliminé la del MENSAJE  %>
-            <%= link_to "Cart", root_path, class: "nav-link" %><%= @current_cart.sum_total %>
+            <%= link_to "Cart", cart_path(@current_cart), class: "nav-link" %><%= @current_cart.sum_total %>
+            <span class="material-symbols-outlined">shopping_cart
+            </span>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://i.pinimg.com/564x/41/06/3d/41063d42a91f33039a736b9535a95c85.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

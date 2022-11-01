@@ -4,7 +4,7 @@
 <div id="carouselExampleInterval" class="carousel slide container-padding" data-bs-ride="carousel">
   <div class="carousel-inner carousel-height">
     <div class="carousel-item active" data-bs-interval="10000">
-      <%= image_tag "enviogratiselectro.png", alt:"Electrónicos", class:"d-block w-100"%>
+      <%#= image_tag "enviogratiselectro.png", alt:"Electrónicos", class:"d-block w-100"%>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
       <%= image_tag "lunesabarrotes.png", alt:"Electrónicos", class:"d-block w-100"%>
@@ -105,7 +105,11 @@
           <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
         </div>
         <div class="text-center">
-          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
+                <%= form_tag line_items_path do %>
+                <%= hidden_field_tag 'product_id', product.id %>
+                <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
+                <%= submit_tag 'Agregar', class: "btn btn-ghost" %>
+              <% end %>
           <%# <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
         </div>
       </div>
