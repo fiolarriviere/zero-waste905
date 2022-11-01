@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
 </head>
   <body>
-    <div class="super">
+    <div class="super py-5 mt-3">
       <div class="CartContainer">
           <div class="Header">
             <h3 class="Heading">Shopping Cart</h3>
@@ -19,10 +19,11 @@
           </div>
           <% @cart.line_items.each do |line_item| %>
             <div class="Cart-Items">
-                <div class="image-box">
-                 <% line_item.product.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, height: 120, width: 500, crop: :pad %>
-                 <% end %>
+                <div >
+                 <%# line_item.product.photos.each do |photo| %>
+                  <%#= cl_image_tag photo.key, height: 120, width: 500, crop: :pad  %>
+                  <%= cl_image_tag line_item.product.photos.last.key, crop: :fill %>
+                 <%#end %>
                 </div>
                 <div class="about">
                   <h1 class="title"><%= line_item.product.name %></h1>
@@ -35,8 +36,8 @@
                 <div class="prices">
                   <div class="amount"><%= number_to_currency(line_item.product.price) %></div>
                   <%= link_to "Remover elemento",
-                    line_items_path(@line_item),
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                    line_item_erase_path(line_item),
+                    data: {turbo_method: :delete, turbo_confirm: "Deseas elimninar este item?"}
                   %>
                 </div>
             </div>

@@ -51,9 +51,12 @@
 	align-items: center;
 }
 
-.image-box{
-	width: 15%;
-	text-align: center;
+//.Cart-Items .image-box{
+	//width: 10px;
+	//text-align: center;
+//}
+
+.image-dox{
   img{
     height: 120px;
     width: 120px;
@@ -164,4 +167,30 @@ hr{
 	font-family: 'Open Sans';
 	font-weight: 600;
 	color: #202020;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.cart{
+  position:relative;
+  padding-right: 70px;
+}
+
+#cart_menu_num {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  background: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(36, 31, 31);
+  padding: 2px;
 }
