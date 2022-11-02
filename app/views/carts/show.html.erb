@@ -22,7 +22,7 @@
                 <div >
                  <%# line_item.product.photos.each do |photo| %>
                   <%#= cl_image_tag photo.key, height: 120, width: 500, crop: :pad  %>
-                  <%= cl_image_tag line_item.product.photos.last.key, crop: :fill %>
+                  <%= cl_image_tag line_item.product.photos.last.key, width:300, height:120, crop: :fill %>
                  <%#end %>
                 </div>
                 <div class="about">
