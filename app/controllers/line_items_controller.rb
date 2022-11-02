@@ -19,7 +19,7 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @current_cart.add_product(product)
     if @line_item.save
-      redirect_to cart_path(current_cart), notice: "Tu producto se ha agregado correctamente"
+      redirect_to request.referrer, notice: "Producto Agregado al Carrito"
     else
       render "product/show"
     end
