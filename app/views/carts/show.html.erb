@@ -29,9 +29,9 @@
                   <h1 class="title"><%= line_item.product.name %></h1>
                 </div>
                 <div class="counter">
-                  <div class="btn" ><%= link_to "+", line_item_add_path(line_item)%></div>
-                  <div class="count"><%= line_item.quantity %></div>
                   <div class="btn"><%= link_to "-", line_item_reduce_path(line_item) %></div>
+                  <div class="count"><%= line_item.quantity %></div>
+                  <div class="btn" ><%= link_to "+", line_item_add_path(line_item)%></div>
                 </div>
                 <div class="prices">
                   <div class="amount"><%= number_to_currency(line_item.product.price) %></div>
