@@ -1,14 +1,16 @@
-<%# BANNER
+<%# BANNER %>
+
+
 <div id="carouselExampleInterval" class="carousel slide container-padding" data-bs-ride="carousel">
   <div class="carousel-inner carousel-height">
     <div class="carousel-item active" data-bs-interval="10000">
-      <%#= image_tag "enviogratiselectro.png", alt:"Electrónicos", class:"d-block w-100"%>
+      <%= image_tag "dsctoabarrotes.png", alt:"descuento en abarrotes", class:"d-block w-100"%>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <%= image_tag "lunesabarrotes.png", alt:"Electrónicos", class:"d-block w-100"
+      <%= image_tag "gratiselectro.png", alt:"delivery gratis electro", class:"d-block w-100"%>
     </div>
     <div class="carousel-item">
-      <%= image_tag "libros.png", alt:"Electrónicos", class:"d-block w-100"
+      <%= image_tag "librossel.png", alt:"2x1 libros", class:"d-block w-100"%>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -19,53 +21,81 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div> %>
+</div>
 
 <%# CATEGORIAS %>
+
 <div class="container py-4">
   <h4>CATEGORÍAS</h4>
 </div>
+
 <div class="container">
-    <div class="d-flex justify-content-between pb-3">
-      <div class="text-center py-2">
-        <%= image_tag "electronics.png", alt:"Electrónicos", class:"icons"%>
-        <p>Electrónicos</p>
+    <div class="row pb-3">
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 3) do %>
+          <%= image_tag "electronics.png", alt:"Electrónicos", class:"icons"%>
+          <p>Electrónicos</p>
+        <% end %>
       </div>
-      <div class="text-center py-2">
-        <%= image_tag "makeup.png", alt:"Maquillaje", class:"icons"%>
-        <p>Maquillaje</p>
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 1) do %>
+          <%= image_tag "makeup.png", alt:"Maquillaje", class:"icons"%>
+          <p>Maquillaje</p>
+        <% end %>
       </div>
-      <div class="text-center py-2">
-        <%= image_tag "personalcare.png", alt:"Personal care", class:"icons"%>
-        <p>Cuidado personal</p>
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 4) do %>
+          <%= image_tag "personalcare.png", alt:"Personal care", class:"icons"%>
+          <p>Cuidado personal</p>
+        <% end %>
       </div>
-      <div class="text-center py-2">
-        <%= image_tag "abarrotes.png", alt:"Abarrotes", class:"icons"%>
-        <p>Abarrotes</p>
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 2) do %>
+          <%= image_tag "abarrotes.png", alt:"Abarrotes", class:"icons"%>
+          <p>Abarrotes</p>
+        <% end %>
       </div>
-      <div class="text-center py-2">
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 6) do %>
         <%= image_tag "toys.png", alt:"Juguetes", class:"icons"%>
         <p>Juguetes</p>
+        <% end %>
       </div>
-      <div class="text-center py-2">
-        <%= image_tag "books.png", alt:"Libros", class:"icons"%>
+
+      <div class="text-center py-2 col-4 col-lg-2 category-cards">
+        <%= link_to products_path(category_id: 5) do %>
+      <%= image_tag "books.png", alt:"Libros", class:"icons"%>
         <p>Libros</p>
+        <% end %>
       </div>
     </div>
+
 <div class="container pb-4 text-center">
     <%= link_to "VER TODOS", products_path, class: "btn btn-ghost" %>
 </div>
+
 <%# CARDS - LO MÁS VENDIDO %>
+
 <div class="container">
   <div class="py-4">
     <h4>LO MÁS DESTACADO</h4>
   </div>
+
     <div class="product_container">
+
       <% @products.sample(6).each do |product| %>
       <div class="card-trip rounded py-3">
+
 <% if product.stock.to_i < 15 %>
           <p> Últimas <%= product.stock %> Unds. </p>
         <% end %>
+
+
       <% product.photos.last(1).each do |photo| %>
           <%= link_to product_path(product) do %>
           <div class="text-center"> <%= cl_image_tag photo.key, crop: :pad, class: "imagen"%> </div>
@@ -76,28 +106,32 @@
               <h2>S/ <%= product.original_price.to_f.round(2) %></h2>
               <h3>S/ <%= product.price.to_f.round(2) %></h3>
             <h4><%= product.name.truncate(40) %> </h4>
+
             <% if product.expiration_date.present? %>
               <h5>Vencimiento: <%= product.expiration_date %></h5>
             <% else %>
               <h5><br></h5>
             <% end %>
+
           </div>
           <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
         </div>
         <div class="text-center">
-                <%= form_tag line_items_path do %>
-                <%= hidden_field_tag 'product_id', product.id %>
-                <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
-                <%= submit_tag 'Agregar', class: "btn btn-ghost" %>
-              <% end %>
+          <%= link_to "Agregar", product_path(product), class: "btn btn-ghost" %>
           <%# <%= link_to "Comprar", product_path(product), class: "btn btn-ghost" %>
         </div>
       </div>
+
       <% end %>
     </div>
   </div>
+
   </div>
-<%# CARDS - LO MÁS VENDIDO %>
+
+
+
+<%# CARDS - VENDER %>
+
 <div class="container py-4 text-center">
   <h4 class="py-4">¿Quieres vender tus productos con nosotros?</h4>
     <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
