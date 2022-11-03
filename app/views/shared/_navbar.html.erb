@@ -4,11 +4,10 @@
       <%= image_tag "https://i.pinimg.com/564x/f9/01/b0/f901b0879ee0a35b17a32899ef82981a.jpg" %>
     <% end %>
 
-
     <div class="mx-5">
       <div class="container py-3">
         <div>
-        <%= form_with url: "products_path", class: "d-flex", method: :get do %>
+        <%= form_with url: products_path, class: "d-flex", method: :get do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -16,7 +15,6 @@
             %>
             <%= submit_tag "Buscar", class: "btn btn-outline-success" %>
           <% end %>
-
         </div>
       </div>
     </div>
@@ -45,7 +43,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-             <%= link_to "Ingresa", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Ingresa", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
