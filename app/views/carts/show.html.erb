@@ -22,7 +22,7 @@
                 <div >
                  <%# line_item.product.photos.each do |photo| %>
                   <%#= cl_image_tag photo.key, height: 120, width: 500, crop: :pad  %>
-                  <%= cl_image_tag line_item.product.photos.last.key, width:300, height:120, crop: :fill %>
+                  <%= cl_image_tag line_item.product.photos.last.key, crop: :fill, class: "image-box" %>
                  <%#end %>
                 </div>
                 <div class="about">
@@ -42,7 +42,7 @@
                 </div>
             </div>
           <% end %>
-        <hr>
+<hr>
         <div class="checkout">
         <div class="total">
           <div>
@@ -51,7 +51,10 @@
           </div>
           <div class="total-amount"></div>
         </div>
-        <button class="button"><%= link_to "Checkout", new_order_path %></button></div>
+        <div class="py-3">
+          <button class="btn btn-ghost"><%= link_to "Comprar", new_order_path %></button>
+        </div>
+        </div>
       </div>
     </div>
   </body>
