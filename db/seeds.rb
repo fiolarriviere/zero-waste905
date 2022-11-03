@@ -248,7 +248,7 @@ photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/http
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
 puts "producto 1,cat Abarrotes creado"
-puts "------------------------------------------------------------------------------------------------"
+puts "------------------------------------------------------------------------------------------------
 # JEAN
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Product 13 - category Electrónicos"

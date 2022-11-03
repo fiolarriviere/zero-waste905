@@ -7,6 +7,15 @@ class Product < ApplicationRecord
   before_update :actualiza_descuento
   before_save :actualiza_descuento
 
+    # SE AGREGO PARA EL SEARCH DEL NAVBAR
+
+  include PgSearch::Model
+  pg_search_scope :search_products,
+    against: [ :name, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   # validar que todos lo campos no esten vacios al crear
   validates :name, :original_price, :discount, :stock, :description, :photos, presence: true
 

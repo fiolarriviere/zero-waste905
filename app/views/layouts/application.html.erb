@@ -19,7 +19,11 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
       <%= yield %>
-    <%= render "shared/footer" %>
+      <% if params[:controller] == "pages" %>
+        <%= render "shared/footerh" %>
+        <% else %>
+        <%= render "shared/footer" %>
+      <% end %>
     <%# <%= render "shared/footer" if params["action"] == "home" %>
 
   </body>
