@@ -13,7 +13,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.ruc.empty?
+      redirect_to edit_user_registration_path(current_user.id)
+      flash[:notice] = "Debe tener 'RUC' en los datos para vender"
+    else
+      @product = Product.new
+    end
   end
 
   def create
@@ -30,8 +35,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @category = Category.new
-    @product = Product.find(params[:id])
+    if current_user.ruc.empty?
+      redirect_to edit_user_registration_path(current_user.id)
+      flash[:notice] = "Debe vendedor para esa acción"
+    else
+      @category = Category.new
+      @product = Product.find(params[:id])
+    end
   end
 
   def update
