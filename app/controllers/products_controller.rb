@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_products, only: %w[show edit update destroy]
 
   def index
-    if params[:category_id].present?
-      @products = Product.where(category_id: params[:category_id])
+    # if params[:category_id].present?
+    #   @products = Product.where(category_id: params[:category_id])
+    # else
+    #   @products = Product.all
+    # end
+    if params[:query].present?
+      @products = Product.search_products(params[:query])
     else
       @products = Product.all
     end
@@ -13,7 +18,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.ruc.empty?
+      redirect_to edit_user_registration_path(current_user.id)
+      flash[:notice] = "Debe tener 'RUC' en los datos para vender"
+    else
+      @product = Product.new
+    end
   end
 
   def create
@@ -30,8 +40,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @category = Category.new
-    @product = Product.find(params[:id])
+    if current_user.ruc.empty?
+      redirect_to edit_user_registration_path(current_user.id)
+      flash[:notice] = "Debe vendedor para esa acción"
+    else
+      @category = Category.new
+      @product = Product.find(params[:id])
+    end
   end
 
   def update
