@@ -108,6 +108,7 @@ puts "--------------------------------------------------------------------------
 
 puts "PRODUCTS"
 # ERYCK
+# ERYCK
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Producto 1 categoria 1"
 product1 = Product.new(
@@ -183,6 +184,7 @@ product1.photos.attach(io: photo, filename: "product6.png", content_type: "image
 product1.save
 puts "producto 6,Maquillaje creado"
 
+
 product1 = Product.new(
   category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
   price: 5.70, stock: 43, expiration_date: "2022/12/09",
@@ -248,7 +250,9 @@ photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/http
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
 puts "producto 1,cat Abarrotes creado"
+
 puts "------------------------------------------------------------------------------------------------
+
 # JEAN
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Product 13 - category Electrónicos"
