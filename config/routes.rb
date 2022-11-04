@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   delete 'line_items/:id' => "line_items#destroy", as: "line_item_erase"
 
   resources :orders, only: [:index, :show, :new, :create]
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth_callbacks" }
   root to: "pages#home"
   resources :pages, only:[:index, :create]
 
