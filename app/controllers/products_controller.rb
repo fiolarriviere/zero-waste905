@@ -2,13 +2,10 @@ class ProductsController < ApplicationController
   before_action :set_products, only: %w[show edit update destroy]
 
   def index
-    # if params[:category_id].present?
-    #   @products = Product.where(category_id: params[:category_id])
-    # else
-    #   @products = Product.all
-    # end
     if params[:query].present?
       @products = Product.search_products(params[:query])
+    elsif params[:category_id].present?
+      @products = Product.where(category_id: params[:category_id])
     else
       @products = Product.all
     end
