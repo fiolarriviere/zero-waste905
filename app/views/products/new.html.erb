@@ -6,7 +6,7 @@
 
         <%= simple_form_for (@product) do |f| %>
           <div class="row">
-            <%= current_user.ruc.empty? %>
+            <% current_user.ruc.empty? %>
             <div class="col-12 col-lg-6 ">
               <%= f.association :category, label: "Categoria del Producto:", prompt: "Categoría del Producto" %>
             </div>

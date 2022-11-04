@@ -4,6 +4,9 @@ class ProductsController < ApplicationController
   def index
     if params[:query].present?
       @products = Product.search_products(params[:query])
+      # elsif params[:query].empty?
+      # redirect_to root_path
+      # flash[:notice] = "no se encontro datos"
     elsif params[:category_id].present?
       @products = Product.where(category_id: params[:category_id])
     else
