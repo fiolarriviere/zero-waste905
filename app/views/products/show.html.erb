@@ -1,6 +1,6 @@
 <div class="container py-5 mt-3">
   <div class="container py-5">
-    <div class="card-product-show ">
+    <div class="card-product-show">
       <% @product.photos.last(1).each do |photo| %>
         <%= cl_image_tag photo.key, crop: :pad, class: "imagen-show mt-4"%>
       <% end %>
@@ -48,4 +48,4 @@
             <% end %>
           </div>
   </div>
-</div>
+</div><br>
