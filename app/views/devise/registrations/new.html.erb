@@ -1,27 +1,86 @@
-<div class="container container-padding py-5">
-<h2>Regístrate</h2>
+<a href="#" class="nav-toggle">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+</a>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Ok", class:"btn btn-outline-success" %>
-  </div>
-<% end %>
+<img src="https://picsum.photos/1200/1200?image=46" class="page-background">
+<img src="https://picsum.photos/1200/1200?image=46&blur" class="page-background blurred">
 
-<%= render "devise/shared/links" %>
+
+<div class="slides" data-slides-role="slides">
+    <section class="slide" data-slides-role="slide">
+
+    </section>
+
+    <section class="slide" data-slides-role="slide">
+
+    </section>
+
+    <section class="slide" data-slides-role="slide">
+
+    </section>
+
+    <section class="slide" data-slides-role="slide">
+        <div class="slide-slide" data-slides-role="slide-horizonzal">
+
+        </div>
+
+        <div class="slide-slide" data-slides-role="slide-horizonzal">
+
+        </div>
+
+        <div class="slide-slide" data-slides-role="slide-horizonzal">
+
+        </div>
+    </section>
+
+    <section class="slide" data-slides-role="slide">
+
+    </section>
+
+    <section
+        class="slide slide--scroll lazyload"
+        data-slides-role="slide"
+        data-bgset="https://picsum.photos/1200/800?image=46 1200w 800h"
+        data-sizes="auto">
+        <div class="slide-content">
+
+
+    <div class="container container-padding py-5">
+    <h1 class="my-4">Bienvenido a <strong>Zero Waste</strong></h2>
+    <h2>Regístrate:</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs mt-3">
+        <%= f.input :email,label: "Correo Electrónico",
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password, label: "Contraseña",
+                    required: true,
+                    hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation, label: "Confirmar contraseña",
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Crear cuenta", class:"btn btn-light" %>
+      </div>
+    <% end %>
+
+
+    <%= render "devise/shared/links" %>
+
+    </div>
+
+        </div>
+    </section>
+
+    <section class="slide" data-slides-role="slide">
+
+    </section>
 </div>
