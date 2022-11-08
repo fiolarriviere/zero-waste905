@@ -163,19 +163,19 @@ product1 = Product.new(
   description: "Base de Maquillaje Youthful Wear Spotless SPF 15 Physicians Formula Medium.",
   user_id: 1
 )
-photo = URI.open("https://m.media-amazon.com/images/I/71JhcE62J-L._SL1500_.jpg")
+photo = URI.open("https://1.bp.blogspot.com/-jWd10usMmLI/WT0cXh7GJnI/AAAAAAAAEYM/AuVaghPRH4wIC8InKiJxp87ZNvWYgX_ZACLcB/s1600/corector%2Byouthful%2Bwear%2Bphysicians%2Bformula.jpg")
 product1.photos.attach(io: photo, filename: "product5.png", content_type: "image/png")
 product1.save
 puts "producto 5,Maquillaje creado"
 
 puts "creando Producto 2 categoria 1"
 product1 = Product.new(
-  category_id: 1, name: "Base de Maquillaje Youthful Wear", original_price: 59.90, discount: 40, price: 35.94,
+  category_id: 1, name: "Base de Maquillaje Youthful Wear", original_price: 59.90, discount: 10, price: 35.94,
   stock: 5,
   description: "Base de Maquillaje Youthful Wear Spotless SPF 15 Physicians Formula Medium.",
   user_id: 2
 )
-photo = URI.open("https://m.media-amazon.com/images/I/71JhcE62J-L._SL1500_.jpg")
+photo = URI.open("https://3.bp.blogspot.com/-Ohq3LHrQXuw/WT0cYZK1YhI/AAAAAAAAEYk/A0065ReoLcI_-ZKOjEm1dX_XYgTxaqv3QCLcB/s1600/spotless%2Bphysicians%2Bformula.jpg")
 product1.photos.attach(io: photo, filename: "product5.png", content_type: "image/png")
 product1.save
 puts "producto 6,Maquillaje creado"
@@ -208,7 +208,7 @@ product1.save
 puts "producto 2,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon", original_price: 12, discount: 53,
+  category_id: 2, name: "Bombones Bon o Bon", original_price: 12, discount: 53,
   price: 5.70, stock: 14, expiration_date: "2022/12/09",
   description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
   user_id: 1
@@ -258,12 +258,12 @@ puts "--------------------------------------------------------------------------
 puts "creando Categoria - Electrónicos"
 puts "creando Product 13 - category Electrónicos"
 product13 = Product.new(
-  category_id: 3, name: "Hisense Smart Tv Uhd 65", original_price: 2499.00, discount: 28, price: 1799.00, stock: 8,
+  category_id: 3, name: "Vidaa Smart Tv Uhd 65", original_price: 2499.00, discount: 28, price: 1799.00, stock: 8,
   description: "Cuenta con Dolby Vision HDR y HDR10; modo de juego automático de baja latencia; Asistente de Google;
   Chromecast incorporado; control remoto de voz; DTS virtual: XDolby Vision HDR y HDR10. Garantía de 1 año.",
   user_id: 1
 )
-photo = URI.open("https://m.media-amazon.com/images/I/61DQCQUJtoL._AC_SL1500_.jpg")
+photo = URI.open("https://assets.hisense-usa.com/assets/GalleryImages/Product/283/7d98b75d7d/A6_Front_Left__ScaleMaxHeightWzc1MF0.jpg")
 product13.photos.attach(io: photo, filename: "product13.png", content_type: "image/png")
 product13.save
 puts "Product - category 3 creada"
@@ -277,7 +277,7 @@ product14 = Product.new(
   smart como asistentes de voz, celulares, tablets y laptops. Garantía de 1 año.",
   user_id: 1
 )
-photo = URI.open("https://m.media-amazon.com/images/I/71LJJrKbezL._AC_SL1500_.jpg")
+photo = URI.open("https://pc-tecnologia.com/867-large_default/televisor-samsung-smart-55-pulgadas-serie-6.jpg")
 product14.photos.attach(io: photo, filename: "product14.png", content_type: "image/png")
 product14.save
 puts "Product 2 - category 3 creada"
@@ -524,7 +524,7 @@ product120 = Product.new(
   description: "Restaurante Drive Thru 40 Accesorios",
   user_id: 2
 )
-photo = URI.open("https://m.media-amazon.com/images/I/718tn6kBaLL._AC_SL1500_.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/71LNXHFAloL._AC_SL1500_.jpg")
 product120.photos.attach(io: photo, filename: "product120.png", content_type: "image/png")
 product120.save
 puts "producto = Product 2 - category 6 creado"
@@ -536,7 +536,7 @@ product107 = Product.new(
   description: "Convierte la Figura de Acción para activar su movimiento de ataque distintivo",
   user_id: 1
 )
-photo = URI.open("https://m.media-amazon.com/images/I/71hL0Ei4cML._AC_SL1500_.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/51wmfthHntL._SL500_.jpg")
 product107.photos.attach(io: photo, filename: "product107.png", content_type: "image/png")
 product107.save
 puts "producto = Product 3 - category 6 creado"
@@ -547,7 +547,7 @@ product108 = Product.new(
   price: 40.00, stock: 6, description: "Lanzador de dardos con mira telescópica",
   user_id: 2
 )
-photo = URI.open("https://m.media-amazon.com/images/I/71wpgb6olsL._AC_SL1500_.jpg")
+photo = URI.open("https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/872x872/productos/i/n/e/nerf-lanzador-elite-20-prospecto-qs4-59674-default-1.jpg")
 product108.photos.attach(io: photo, filename: "product108.png", content_type: "image/png")
 product108.save
 puts "producto = Product 4 - category 6 creado"
@@ -570,7 +570,7 @@ product110 = Product.create(
   stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
   user_id: 2
 )
-photo = URI.open("https://m.media-amazon.com/images/I/61GO9oooGfL._AC_SL1500_.jpg")
+photo = URI.open("https://home.ripley.com.pe/Attachment/WOP_5/2032211046421/2032211046421-1.jpg")
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
 puts "producto = Product 1 - category 6 creado"
@@ -636,7 +636,7 @@ orden1 = Order.create!(
 puts "Order 7 creada"
 puts "------------------------------------------------------------------------------------------------"
 
-puts "LINE-ITEMS - Se cae en esta parte"
+puts "LINE-ITEMS"
 
 puts "------------------------------------------------------------------------------------------------"
 puts "Line-Item 1"

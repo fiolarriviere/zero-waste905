@@ -28,9 +28,9 @@
                 <h6 class="badge rounded-pill h1"> -<%= product.discount %>% </h6>
               </div>
               <div class="text-center pb-3">
-                <% if current_user.id == product.user_id %>
+                <% if user_signed_in? && current_user.id == product.user_id %>
                   <%= link_to "Editar", edit_product_path(product), class: "btn btn-ghost" %>
-                  <%= link_to "Delete", product_path(product), class: "btn btn-ghost", data:
+                  <%= link_to "Eliminar", product_path(product), class: "btn btn-ghost", data:
                   {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
                 <% else %>
                 <%= form_tag line_items_path do %>
