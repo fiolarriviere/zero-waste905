@@ -1,6 +1,6 @@
 <div class="container py-5 mt-3">
   <div class="container py-5">
-    <div class="card-product-show ">
+    <div class="card-product-show">
       <% @product.photos.last(1).each do |photo| %>
         <%= cl_image_tag photo.key, crop: :pad, class: "imagen-show mt-4"%>
       <% end %>
@@ -34,9 +34,9 @@
             Este producto puede presentar defectos en su presentación,
             sin embargo su calidad y funcionalidad no se ven afectadas.</p>
           <div class="text-center">
-            <% if current_user.id == @product.user_id %>
+            <% if user_signed_in? && current_user.id == @product.user_id %>
               <%= link_to "Editar", edit_product_path(@product), class: "btn btn-ghost" %>
-              <%= link_to "Delete", product_path(@product), class: "btn btn-ghost",
+              <%= link_to "Eliminar", product_path(@product), class: "btn btn-ghost",
               data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
             <% else %>
               <%= form_tag line_items_path do %>
@@ -48,4 +48,4 @@
             <% end %>
           </div>
   </div>
-</div>
+</div><br>

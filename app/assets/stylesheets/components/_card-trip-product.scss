@@ -45,12 +45,13 @@
   }
 }
 .imagen-index {
-  width: 200px;
+  width: auto;
   height: 200px;
   object-fit: fill;
   align-items: center;
   justify-content: center;
-  margin-left: 100px;
+  margin-left: 80px;
+  margin-top: 5px;
 }
 .card-trip-infos {
   padding: 16px;

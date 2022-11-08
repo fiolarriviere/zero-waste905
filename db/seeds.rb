@@ -108,316 +108,315 @@ puts "--------------------------------------------------------------------------
 
 puts "PRODUCTS"
 # ERYCK
-# ERYCK
 puts "------------------------------------------------------------------------------------------------"
+puts "creando Categoria - Maquillaje"
 puts "creando Producto 1 categoria 1"
 product1 = Product.new(
-  category_id: 1, name: "Bálsamo Labial Lipsmack", original_price: 11.90, discount: 30, price: 8.33, stock: 75,
-  expiration_date: "2023/07/31",
-  description: "Bálsamo labial enriquecido con vitamina E, manteca de karité y extractos naturales.",
+  category_id: 1, name: "Covergirl Base de Maquillaje", original_price: 46.90, discount: 20, price: 37.52, stock: 75,
+  description: "Covergirl Base de Maquillaje TruBlend Matte Made Liquid Makeup Classic Ivory L41.",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210263-1000-1000/https---imgproductos.jpg?v=638010261051670000")
+photo = URI.open("https://m.media-amazon.com/images/I/71ozvy1dX9L._SL1500_.jpg")
 product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
 product1.save
 puts "producto 1,Maquillaje creado"
-puts "creando Producto 2 categoria 1"
 
-product1 = Product.new(
-  category_id: 1, name: "Bálsamo Labial Lipsmack", original_price: 11.90, discount: 30, price: 8.33, stock: 75,
-  expiration_date: "2023/07/31",
-  description: "Bálsamo labial enriquecido con vitamina E, manteca de karité y extractos naturales.",
-  user_id: 1
-)
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210263-1000-1000/https---imgproductos.jpg?v=638010261051670000")
-product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
-product1.save
-puts "producto 1,Maquillaje creado"
 puts "creando Producto 2 categoria 1"
-
 product1 = Product.new(
-  category_id: 1, name: "Bálsamo Labial Lipsmack", original_price: 11.90, discount: 30, price: 8.33, stock: 75,
-  expiration_date: "2023/07/31",
-  description: "Bálsamo labial enriquecido con vitamina E, manteca de karité y extractos naturales.",
-  user_id: 1
-)
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210263-1000-1000/https---imgproductos.jpg?v=638010261051670000")
-product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
-product1.save
-puts "producto 1,Maquillaje creado"
-puts "creando Producto 2 categoria 1"
-
-product1 = Product.new(
-  category_id: 1, name: "Brocha para Maquillaje Revlon Pro Blush", original_price: 60.00, discount: 50, price: 30.00,
-  stock: 15, expiration_date: "2022/12/19",
-  description: "Brocha para la aplicación de rubor con cerdas ExpertFX™ de pelo natural, ultra suave y de alta calidad.
-  Brinda una aplicación del color con precisión en los pómulos. Mango Diamond Grip™ ergonómico para una mayor precision
-  al maquillar.",
+  category_id: 1, name: "Prebase de Maquillaje Master", original_price: 49.90, discount: 15, price: 42.42, stock: 15,
+  description: "Prebase de Maquillaje Master Prime by Facestudio Maybelline Blur + Smooth.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209572-1000-1000/https---imgproductos.jpg?v=638006043984600000")
+photo = URI.open("https://m.media-amazon.com/images/I/71Wyp0mvvhL._SL1500_.jpg")
+product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
+product1.save
+puts "producto 2,Maquillaje creado"
+
+puts "creando Producto 2 categoria 1"
+product1 = Product.new(
+  category_id: 1, name: "Base de Maquillaje Wear Abc Cushion", original_price: 59.90, discount: 40, price: 35.94,
+  stock: 20,
+  description: "Base de Maquillaje Wear Abc Cushion Foundation SPF 50 Physicians Formula Light.",
+  user_id: 1
+)
+photo = URI.open("https://m.media-amazon.com/images/I/81PlMuN-+gL._SL1500_.jpg")
+product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
+product1.save
+puts "producto 3,Maquillaje creado"
+
+puts "creando Producto 2 categoria 1"
+product1 = Product.new(
+  category_id: 1, name: "Base de Maquillaje The Healthy ", original_price: 62.90, discount: 40, price: 37.74,
+  stock: 15,
+  description: "Base de Maquillaje The Healthy Foundation SPF 20 Physicians Formula Medium Neutral 4.",
+  user_id: 2
+)
+photo = URI.open("https://m.media-amazon.com/images/I/61ueTQlpC2L._SL1500_.jpg")
 product1.photos.attach(io: photo, filename: "product4.png", content_type: "image/png")
 product1.save
 puts "producto 4,Maquillaje creado"
 
+puts "creando Producto 2 categoria 1"
 product1 = Product.new(
-  category_id: 1, name: "Polvo compacto Asepxia FPS 15 Canela Mate", original_price: 31.90, discount: 27, price: 23.40,
-  stock: 15, expiration_date: "2022/12/07", description: "Maquillaje polvo compacto Anti-imperfecciones en tono canela
-  que ayuda a cubrir granitos y espinillas. Cuenta con una textura micronizada que absorbe el exceso de grasa y
-  elimina el brillo en el rostro",
+  category_id: 1, name: "Base de Maquillaje Youthful Wear", original_price: 59.90, discount: 40, price: 35.94,
+  stock: 15,
+  description: "Base de Maquillaje Youthful Wear Spotless SPF 15 Physicians Formula Medium.",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/212412-1000-1000/https---imgproductos.jpg?v=638026128776730000")
+photo = URI.open("https://1.bp.blogspot.com/-jWd10usMmLI/WT0cXh7GJnI/AAAAAAAAEYM/AuVaghPRH4wIC8InKiJxp87ZNvWYgX_ZACLcB/s1600/corector%2Byouthful%2Bwear%2Bphysicians%2Bformula.jpg")
 product1.photos.attach(io: photo, filename: "product5.png", content_type: "image/png")
 product1.save
 puts "producto 5,Maquillaje creado"
 
+puts "creando Producto 2 categoria 1"
 product1 = Product.new(
-  category_id: 1, name: "Labial Elizabeth Arden Beautiful Color Bold Liquid",
-  original_price: 79, discount: 50, price: 39.60, stock: 5, expiration_date: "2023/01/02",
-  description: "El color de labios cremoso y de alto impacto combina la cobertura y la intensidad del lápiz
-  labial con el acabado de un brillo.",
-  user_id: 1
+  category_id: 1, name: "Base de Maquillaje Youthful Wear", original_price: 59.90, discount: 10, price: 35.94,
+  stock: 5,
+  description: "Base de Maquillaje Youthful Wear Spotless SPF 15 Physicians Formula Medium.",
+  user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209724-1000-1000/https---imgproductos.jpg?v=638006047073770000")
-product1.photos.attach(io: photo, filename: "product6.png", content_type: "image/png")
+photo = URI.open("https://3.bp.blogspot.com/-Ohq3LHrQXuw/WT0cYZK1YhI/AAAAAAAAEYk/A0065ReoLcI_-ZKOjEm1dX_XYgTxaqv3QCLcB/s1600/spotless%2Bphysicians%2Bformula.jpg")
+product1.photos.attach(io: photo, filename: "product5.png", content_type: "image/png")
 product1.save
 puts "producto 6,Maquillaje creado"
 
+puts "------------------------------------------------------------------------------------------------"
 
+puts "creando Categoria - Abarrotes"
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
-  price: 5.70, stock: 43, expiration_date: "2022/12/09",
-  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
-  user_id: 1
+  category_id: 2, name: "Aceite Vegetal Primor", original_price: 12.19, discount: 6, price: 11.50, stock: 75,
+  expiration_date: "2023/10/31",
+  description: "El aceite vegetal está hecho de una variedad de fuentes vegetales como la soja, la canola,
+  el maíz y la palma. El proceso comienza extrayendo el aceite de la materia prima. Esto se hace presionando
+  o triturando la verdura.",
+  user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
-product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
+photo = URI.open("https://tofuu.getjusto.com/orioneat-prod-resized/4ZKpSncGCsBMaoSg9-1200-1200.jpeg")
+product1.photos.attach(io: photo, filename: "product1.png", content_type: "image/png")
 product1.save
 puts "producto 1,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
-  price: 5.70, stock: 43, expiration_date: "2022/12/09",
-  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
-  user_id: 1
+  category_id: 2, name: "Mayonesa AlaCena 850gr", original_price: 20.70, discount: 28,
+  price: 14.90, stock: 43, expiration_date: "2023/06/09",
+  description: "Mayonesa de 850gr, salsa de mesa, con un toque de limón.",
+  user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
+photo = URI.open("https://plazavea.vteximg.com.br/arquivos/ids/19529889-1000-1000/20314552.jpg")
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
-puts "producto 1,cat Abarrotes creado"
+puts "producto 2,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
+  category_id: 2, name: "Bombones Bon o Bon", original_price: 12, discount: 53,
   price: 5.70, stock: 14, expiration_date: "2022/12/09",
   description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
+photo = URI.open("https://swissbrothers.com/2002-large_default/bombones-de-chocolate-con-leche-bon-o-bon-270g.jpg")
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
-puts "producto 1,cat Abarrotes creado"
+puts "producto 3,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
-  price: 5.70, stock: 10, expiration_date: "2022/12/09",
-  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
+  category_id: 2, name: "Turrón San José", original_price: 33.90, discount: 15, price: 28.82, stock: 10,
+  expiration_date: "2023/03/09",
+  description: "Harina de trigo, Hierro, Tiamina, Riboflavina, Niacina, ácido fólico, Azúcar, Grasa vegetal,
+  Sal, Anís, Ajonjolí, Espesante (sin 440), Higo, Gelatina, Antioxidante (sin 334), Regulador de acidez (sin 330),
+  Colorante (sin 102), Colorante (sin 110), Colorante (sin 129), Colorante (sin 133), Saborizantes, Trigo, Tartrazina",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
+photo = URI.open("https://tofuu.getjusto.com/orioneat-prod-resized/mF2Gwb6254uKqb4Jk-1200-1200.jpeg")
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
-puts "producto 1,cat Abarrotes creado"
+puts "producto 4,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
-  price: 5.70, stock: 100, expiration_date: "2022/12/09",
-  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
+  category_id: 2, name: "Trozos de Atún en lata", original_price: 5.40, discount: 20, price: 4.32, stock: 100,
+  expiration_date: "2023/06/15",
+  description: "Trozos de Atún Real en Aceite de Girasol Lata 170gr.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
+photo = URI.open("https://minimarketmajaz.com/wp-content/uploads/2021/05/933408.jpg")
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
-puts "producto 1,cat Abarrotes creado"
+puts "producto 5,cat Abarrotes creado"
 
 product1 = Product.new(
-  category_id: 2, name: "Bombones Chocolate Bon o Bon, Caja Prisma x 75gr", original_price: 12, discount: 53,
-  price: 5.70, stock: 70, expiration_date: "2022/12/09",
-  description: "Bombones con chocolate de leche y oblea rellenos con crema de maní/cacahuate.",
+  category_id: 2, name: "Galletas Morochas", original_price: 4.90, discount: 12, price: 4.20, stock: 70,
+  expiration_date: "2023/07/12",
+  description: "Galletas Morochas 30g Pack 6un.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210863-280-280/https---imgproductos.jpg?v=638012717710830000")
+photo = URI.open("https://www.maryoriperu.com/wp-content/uploads/2019/04/Galleta-Morocha-x-8-pqt.jpg")
 product1.photos.attach(io: photo, filename: "product7.png", content_type: "image/png")
 product1.save
-puts "producto 1,cat Abarrotes creado"
-
-puts "------------------------------------------------------------------------------------------------
-
+puts "producto 6,cat Abarrotes creado"
+puts "------------------------------------------------------------------------------------------------"
 # JEAN
 puts "------------------------------------------------------------------------------------------------"
+puts "creando Categoria - Electrónicos"
 puts "creando Product 13 - category Electrónicos"
 product13 = Product.new(
-  category_id: 3, name: "Plancha Cyzone All In", original_price: 140, discount: 50,
-  price: 70, stock: 10, expiration_date: "2022/11/15",
-  description: "Plancha versátil, ya que tiene 3 funcionalidades para lograr 3 distintos peinados y miles de looks. Cuenta con un acabado metalizado y placas calentadoras de aluminio.​ cambia las placas para tener distintos peinados: look liso, waffle o con ondas.",
+  category_id: 3, name: "Vidaa Smart Tv Uhd 65", original_price: 2499.00, discount: 28, price: 1799.00, stock: 8,
+  description: "Cuenta con Dolby Vision HDR y HDR10; modo de juego automático de baja latencia; Asistente de Google;
+  Chromecast incorporado; control remoto de voz; DTS virtual: XDolby Vision HDR y HDR10. Garantía de 1 año.",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210206-1000-1000/https---imgproductos.jpg?v=638010093389100000")
+photo = URI.open("https://assets.hisense-usa.com/assets/GalleryImages/Product/283/7d98b75d7d/A6_Front_Left__ScaleMaxHeightWzc1MF0.jpg")
 product13.photos.attach(io: photo, filename: "product13.png", content_type: "image/png")
 product13.save
 puts "Product - category 3 creada"
 
 puts "creando Product 14 - category Electrónicos"
 product14 = Product.new(
-  category_id: 3, name: "Freidora Tradicional DeLonghi", original_price: 699,
-  discount: 40, price: 419.40, stock: 5, expiration_date: "2022/12/20",
-  description: "Freidora de 1800W con capacidad de 2.4L. Tiene 5 niveles de temperatura, tapa extraíble para fácil
-  limpieza e interior de teflón antiadherente. Garantía de 1 año.",
+  category_id: 3, name: "Televisor Samsung Smart TV 55", original_price: 2699.00, discount: 44, price: 1499.00,
+  stock: 2,
+  description: "El Televisor Samsung P1 LM55M6 4K UHD de 55 pulgadas es uno de los televisores que mejor han destacado
+  en el último año por su gran relación calidad-precio así como las singulares integraciones que tiene con dispositivos
+  smart como asistentes de voz, celulares, tablets y laptops. Garantía de 1 año.",
   user_id: 1
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210206-1000-1000/https---imgproductos.jpg?v=638010093389100000")
+photo = URI.open("https://pc-tecnologia.com/867-large_default/televisor-samsung-smart-55-pulgadas-serie-6.jpg")
 product14.photos.attach(io: photo, filename: "product14.png", content_type: "image/png")
 product14.save
 puts "Product 2 - category 3 creada"
 
 puts "creando Product 15 - category Electrónicos"
 product15 = Product.new(
-  category_id: 3, name: "Calentador a Gas FDV paso continuo - 5.5L", original_price: 649,
-  discount: 38, price: 402.40, stock: 2, expiration_date: "2022/12/01",
-  description: "No requiere tubo de evacuación y cuenta con deflector incorporado. Botón de encendido eléctrico
-  (pilas no incluidas). No incluye mangueras de abasto. No incluye kit de instalación. Garantía de 1 año.",
-  user_id: 1
+  category_id: 3, name: "Acer Notebook 14 Swift 3", original_price: 3959, discount: 38, price: 402.40,
+  stock: 3,
+  description: "Acer Notebook 14 Swift 3 SF314 59 59TX Intel Core i5. Garantía de 1 año.",
+  user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/190875-1000-1000/https---imgproductos.jpg?v=637982527357970000")
+photo = URI.open("https://m.media-amazon.com/images/I/71dHWxX7C0L._AC_SL1500_.jpg")
 product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
 product15.save
 puts "Product - category 3 creada"
 
-puts "creando Product 4 - category Electrónicos"
+puts "creando Product 16 - category Electrónicos"
 product16 = Product.new(
-  category_id: 3, name: "Parrilla Practika Etna II", original_price: 199.90, discount: 40,
-  price: 119.90, stock: 1, expiration_date: "2022/11/29",
-  description: "Parrilla de 2000W con 6 niveles de temperatura, asas frías al tacto, apagado automático y bandeja
-  recolectora de grasa. Garantía de 1 año.",
-  user_id: 1
+  category_id: 3, name: "Smartphone Samsung Galaxy A22", original_price: 949.00, discount: 26, price: 699.00, stock: 1,
+  description: "Smartphone Samsung Galaxy A22 64GB 4G Negro, Procesador Octa Core de 2GHz/1.8GHz,
+  Sistema operativo: Android 11. Garantía de 1 año.",
+  user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/188204-1000-1000/https---imgproductos.jpg?v=637968645091700000")
+photo = URI.open("https://m.media-amazon.com/images/I/81TAnVrrXjL._AC_SL1500_.jpg")
 product16.photos.attach(io: photo, filename: "product16.png", content_type: "image/png")
 product16.save
 puts "Product - category 3 creada"
 
-puts "creando Product 15 - category Electrónicos"
+puts "creando Product 17 - category Electrónicos"
 product15 = Product.new(
-  category_id: 3, name: "Calentador a Gas FDV paso continuo - 5.5L", original_price: 649,
-  discount: 38, price: 402.40, stock: 2, expiration_date: "2022/12/01",
-  description: "No requiere tubo de evacuación y cuenta con deflector incorporado. Botón de encendido eléctrico
-  (pilas no incluidas). No incluye mangueras de abasto. No incluye kit de instalación. Garantía de 1 año.",
-  user_id: 1
-)
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/190875-1000-1000/https---imgproductos.jpg?v=637982527357970000")
-product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
-product15.save
-puts "Product - category 3 creada"
-
-puts "creando Product 15 - category Electrónicos"
-product15 = Product.new(
-  category_id: 3, name: "Calentador a Gas FDV paso continuo - 5.5L", original_price: 649,
-  discount: 38, price: 402.40, stock: 2, expiration_date: "2022/12/01",
-  description: "No requiere tubo de evacuación y cuenta con deflector incorporado. Botón de encendido eléctrico
-  (pilas no incluidas). No incluye mangueras de abasto. No incluye kit de instalación. Garantía de 1 año.",
-  user_id: 1
-)
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/190875-1000-1000/https---imgproductos.jpg?v=637982527357970000")
-product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
-product15.save
-puts "Product - category 3 creada"
-puts "------------------------------------------------------------------------------------------------"
-
-puts "------------------------------------------------------------------------------------------------"
-puts "creando Product 1 - Cuidado Personal"
-product19 = Product.new(
-  category_id: 4, name: "Toallitas Desmaquilladoras Nivea Roses", original_price: 25.90, discount: 75,
-  price: 6.60, stock: 23, expiration_date: "2022/12/20",
-  description: "Retiran suave y fácilmente el maquillaje a prueba de agua sin frotar ni enjuagar. Limpieza profunda para
-  la piel e hidratación prolongada hasta por 8 horas.",
+  category_id: 3, name: "Huawei FreeBuds 3i", original_price: 349.00, discount: 43, price: 199.00, stock: 2,
+  description: "Huawei FreeBuds 3i Blanco, Diseño True Wireless, Tiempo de carga: 115 minutos. Garantía de 1 año.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/210892-1000-1000/https---imgproductos.jpg?v=638012718291530000")
+photo = URI.open("https://m.media-amazon.com/images/I/41E8kMzP9pL._AC_SL1500_.jpg")
+product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
+product15.save
+puts "Product - category 3 creada"
+
+puts "creando Product 18 - category Electrónicos"
+product15 = Product.new(
+  category_id: 3, name: "Parlante Portátil Lenreu ", original_price: 229.00, discount: 44, price: 129.00, stock: 2,
+  description: "Parlante Portátil Lenreu KSPPRM05 25W, Parlantes: 8'', Batería recargable de 2400mAh x 2.
+  Garantía de 1 año.",
+  user_id: 1
+)
+photo = URI.open("https://m.media-amazon.com/images/I/81eBm834zEL._AC_SL1500_.jpg")
+product15.photos.attach(io: photo, filename: "product15.png", content_type: "image/png")
+product15.save
+puts "Product - category 3 creada"
+puts "------------------------------------------------------------------------------------------------"
+
+puts "creando Categoria - Cuidado Personal"
+puts "creando Product 19 - Cuidado Personal"
+product19 = Product.new(
+  category_id: 4, name: "Toallitas removedoras de maquillaje", original_price: 24.90, discount: 35, price: 16.10,
+  stock: 10, expiration_date: "2023/02/22",
+  description: "Suave, toallitas ultra suaves que te ofrecen una limpieza y eliminación de maquillaje
+  al alcance de tu mano.",
+  user_id: 2
+)
+photo = URI.open("https://m.media-amazon.com/images/I/71Td07yjoUL._SL1500_.jpg")
 product19.photos.attach(io: photo, filename: "product19.png", content_type: "image/png")
 product19.save
 puts "Product 1 - category 4 creada"
 
 puts "creando Product 20 - Cuidado Personal"
 product20 = Product.new(
-  category_id: 4, name: "Pastillas dentífricas Just Bite Sabor Menta Ecologics", original_price: 17.90,
-  discount: 8, price: 16.5, stock: 25, expiration_date: "2023/02/22",
-  description: "Muerde una pastilla (Cada pastilla es la dosis ideal para el cepillado), Moja tu cepillo, Cepilla y
-  disfruta! Repite tres veces al día, todos los días",
+  category_id: 4, name: "Hello Antiplaca & Whitening", original_price: 17.90, discount: 8, price: 16.50, stock: 25,
+  expiration_date: "2023/02/22",
+  description: "Contiene dos latas sin plástico, reutilizables y reciclables de 60 pastillas de pasta de dientes
+  blanqueadoras y antiplaca (120 tabletas en total).",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
+photo = URI.open("https://m.media-amazon.com/images/I/81fR-fMA5bL._SL1500_.jpg")
 product20.photos.attach(io: photo, filename: "product20.png", content_type: "image/png")
 product20.save
 puts "Product - category 4 creada"
 
 puts "creando Product 21 - Cuidado Personal"
 product21 = Product.new(
-  category_id: 4, name: "Loción Ponds Biohydratante Dual - 200ml", original_price: 24.90,
-  discount: 35, price: 16.10, stock: 10, expiration_date: "2022/12/12",
-  description: "Elimina los residuos de maquillaje a prueba de agua y las impurezas de tu rostro y ojos, dejando tu piel
-  hidratada y sin sensación grasosa.",
+  category_id: 4, name: "Rembrandt Intense Pasta dientes blanqueadora", original_price: 24.90, discount: 35, price: 16.10,
+  stock: 10, expiration_date: "2023/02/22",
+  description: "Hechos de salud: sin ftalatos, sulfate-free, paraben-free, FLUORIDE-FREE,
+  Salud preocupación: dientes blanqueamiento.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
+photo = URI.open("https://m.media-amazon.com/images/I/71dhhAVsERL._SL1500_.jpg")
 product21.photos.attach(io: photo, filename: "product21.png", content_type: "image/png")
 product21.save
 puts "Product - category 4 creada"
 
 puts "creando Product 22 - Cuidado Personal"
 product22 = Product.new(
-  category_id: 4, name: "Limpieza Facial Pond's Fruitty Fre Aloe - 200ml", original_price: 28.90,
-  discount: 30, price: 20.20, stock: 44, expiration_date: "2022/12/28",
-  description: "Limpieza Facial Pond's Fruitty Fre Aloe - 200ml",
+  category_id: 4, name: "Colgate Optic White Advanced", original_price: 28.90, discount: 30, price: 20.20, stock: 44,
+  expiration_date: "2023/06/22",
+  description: "Obtén una sonrisa audaz y segura con esta pasta de dientes de peróxido de hidrógeno que contiene
+  la fórmula patentada de peróxido de hidrógeno al 2% de Colgate.",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
+photo = URI.open("https://m.media-amazon.com/images/I/61wC2hPTNVL._SL1000_.jpg")
 product22.photos.attach(io: photo, filename: "product22.png", content_type: "image/png")
 product22.save
 puts "Product - category 4 creada"
 
 puts "creando Product 23 - Cuidado Personal"
 product23 = Product.new(
-  category_id: 4, name: "Crema Facial Ponds Humectante Nutritiva - 50g", original_price: 12.9,
-  discount: 22, price: 10, stock: 30, expiration_date: "2023/04/12",
-  description: "Crema Facial Ponds Humectante Nutritiva - 50g",
+  category_id: 4, name: "Lápiz de blanqueamiento dental blanco óptico", original_price: 12.9, discount: 22, price: 10,
+  stock: 30, expiration_date: "2023/07/12",
+  description: "Colgate Lápiz de blanqueamiento dental blanco óptico, quitamanchas de dientes para blanquear
+  los dientes, 35 tratamientos nocturnos, 0.08 onzas líquidas",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/209803-1000-1000/https---imgproductos.jpg?v=638006048038700000")
+photo = URI.open("https://m.media-amazon.com/images/I/71H2qSWwxqL._SL1500_.jpg")
 product23.photos.attach(io: photo, filename: "product23.png", content_type: "image/png")
 product23.save
 puts "Product - category 4 creada"
 
 puts "creando Product 24 - Cuidado Personal"
 product24 = Product.new(
-  category_id: 4, name: "Protector Solar Nivea Protect & Bronze - 200ml", original_price: 39.90, discount: 40,
-  price: 23.94, stock: 20, expiration_date: "2023/06/17",
-  description: "Su fórmula ultraligera y no grasa contiene un sistema de filtros UVA/UVB altamente eficaz que protege
-  la piel inmediatamente tras su aplicación. Resistente al agua.",
+  category_id: 4, name: "Kit de blanqueamiento dental con bandeja", original_price: 39.90, discount: 40,
+  price: 23.94, stock: 20, expiration_date: "2023/08/17",
+  description: "La caja del kit de blanqueamiento dental Pdoo incluye 10 bolígrafos de gel blanqueador de dientes +
+  bandeja de boquilla con potentes luces LED + guía de sombra de dientes + manual de usuario (idioma español
+  no garantizado).",
   user_id: 2
 )
-photo = URI.open("https://sugope.vteximg.com.br/arquivos/ids/191165-1000-1000/https---imgproductos.jpg?v=637982535425270000")
+photo = URI.open("https://m.media-amazon.com/images/I/71hFexvyeGL._AC_SL1500_.jpg")
 product24.photos.attach(io: photo, filename: "product24.png", content_type: "image/png")
 product24.save
 puts "Product - category 4 creada"
 puts "------------------------------------------------------------------------------------------------"
-
 # FIORE
-
 puts "------------------------------------------------------------------------------------------------"
+puts "creando Categoria - Libro"
 puts "creando producto = Product 1 - category 5"
 product100 = Product.new(
-  category_id: 5, name: "Ruido. Un fallo en el juicio humano", original_price: 50, discount: 10, price: 40,
-  stock: 3, expiration_date: "",
+  category_id: 5, name: "Ruido. Un fallo en el juicio humano", original_price: 50.00, discount: 10, price: 40.00,
+  stock: 3,
   description: "Dos médicos en la misma ciudad pueden dar diagnósticos diferentes a pacientes idénticos; dos jueces
   pueden dictar sentencias distintas ante delitos similares; nosotros mismos podemos decidir una cosa u otra según sea
   por la mañana o por la tarde, o según se acerque o no la hora de comer. Estos son ejemplos de ruido: el sesgo que
@@ -427,43 +426,41 @@ product100 = Product.new(
   muchas de nuestras decisiones cotidianas.",
   user_id: 1
 )
-photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9788418006364_7pzfvuwymoeebueb.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/51tl3Ro96gL.jpg")
 product100.photos.attach(io: photo, filename: "product100.png", content_type: "image/png")
 product100.save
 puts "producto = Product 1 - category 5 creada"
 
 puts "creando producto = Product 2 - category 5"
 product101 = Product.new(
-  category_id: 5, name: "La mirada quieta", original_price: 70, discount: 10, price: 60, stock: 1,
-  expiration_date: "",
+  category_id: 5, name: "La mirada quieta", original_price: 70.00, discount: 10, price: 60.00, stock: 1,
   description: "Benito Pérez Galdós es un autor esencial en la literatura española contemporánea. En este ensayo, a
   partir del análisis de sus novelas, de sus obras teatrales y de los Episodios nacionales, Mario Vargas Llosa crea un
   perfil completo, personal y sugerente del escritor español. Nadie como el Nobel peruano es capaz de leer de manera tan
   sagaz y con tanta libertad y pasión la obra de un creador.",
   user_id: 2
 )
-photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9789877388862.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/51UroNogwZL.jpg")
 product101.photos.attach(io: photo, filename: "product101.png", content_type: "image/png")
 product101.save
 puts "producto = Product 2 - category 5 creada"
 
 puts "creando producto = Product 3 - category 5"
 product102 = Product.new(
-  category_id: 5, name: "Cómo evitar la próxima pandemia", original_price: 80, discount: 10, price: 70,
-  stock: 3, expiration_date: "",
+  category_id: 5, name: "Cómo evitar la próxima pandemia", original_price: 80.00, discount: 10, price: 70.00,
+  stock: 3,
   description: "Bill Gates cree que la respuesta es sí, y en este libro explica de un modo claro y convincente qué
   deberíamos haber aprendido de la COVID-19 y qué podemos hacer cada uno de nosotros para evitar un desastre parecido.",
   user_id: 1
 )
-photo = URI.open("https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786124269264_mzguyymddvid8fkk.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/41oAInTnV0L.jpg")
 product102.photos.attach(io: photo, filename: "product102.png", content_type: "image/png")
 product102.save
 puts "producto = Product 3 - category 5 creada"
 
 puts "creando producto = Product 4 - category 5"
 product103 = Product.new(
-  category_id: 5, name: "Yo vengo a ofrecer mi corazón", original_price: 90, discount: 10, price: 80, stock: 5,
-  expiration_date: "",
+  category_id: 5, name: "Yo vengo a ofrecer mi corazón", original_price: 90.00, discount: 10, price: 80.00, stock: 5,
   description: "Yo vengo a ofrecer mi corazón es un recorrido por la vida y obra de Susana Baca contada por su propia
   protagonista. Se trata de las memorias iniciales de los primeros cincuenta años de una artista que ha llevado su voz
   - y a través de ella, la cultura peruana - a paísesy escenarios donde nunca había sonado un cajón o un landó.",
@@ -476,8 +473,7 @@ puts "producto = Product 4 - category 5 creada"
 
 puts "creando producto = Product 5 - category 5"
 product104 = Product.new(
-  category_id: 5, name: "¿Ahorrar o gastar?", original_price: 40, discount: 10, price: 30, stock: 2,
-  expiration_date: "",
+  category_id: 5, name: "¿Ahorrar o gastar?", original_price: 40.00, discount: 10, price: 30.00, stock: 2,
   description: "El dinero no da la felicidad, pero evita muchos momentos infelices. Por ello, ante el dilema
   financiero: ¿ahorrar o gastar?, Walter Eyzaguirre sabe que aprender a manejar el dinero no es una opción, sino una
   necesidad para conseguir tu mayor bienestar. Concebido como un ameno y accesible manual de educación financiera,
@@ -493,8 +489,7 @@ puts "producto = Product 5 - category 5 creada"
 
 puts "creando producto = Product 6 - category 5"
 product105 = Product.new(
-  category_id: 5, name: "El Tao de Warren Buffett", original_price: 30, discount: 10, price: 20, stock: 7,
-  expiration_date: "",
+  category_id: 5, name: "El Tao de Warren Buffett", original_price: 30.00, discount: 10, price: 20.00, stock: 7,
   description: "Dedicación, integridad y sentido común son algunos de los valores que Warren Buffett ha destacado como
   esenciales en su exitosa carrera como inversor. Reunidos por su círculo cercano en un único libro a través de
   conversaciones personales, reuniones sociales y entrevistas, los aforismos de Buffett no sólo han instruido a sus
@@ -509,47 +504,50 @@ product105.photos.attach(io: photo, filename: "product105.png", content_type: "i
 product105.save
 puts "producto = Product 6 - category 5 creada"
 
+puts "------------------------------------------------------------------------------------------------"
+
+puts "creando Categoria - Juguete"
 puts "creando producto = Product 1 - category 6"
 product106 = Product.new(
-  category_id: 6, name: "Gran Castillo de Fiesta", original_price: 200, discount: 10, price: 180, stock: 2,
-  expiration_date: "", description: "Castillo de muñecas",
+  category_id: 6, name: "Gran Castillo de Fiesta", original_price: 200.00, discount: 10, price: 180.00, stock: 2,
+  description: "Castillo de muñecas",
   user_id: 1
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/486144-800-auto?v=637701791771900000&width=800&height=auto&aspect=true")
+photo = URI.open("https://m.media-amazon.com/images/I/81ocKl-gV+L._AC_SL1500_.jpg")
 product106.photos.attach(io: photo, filename: "product106.png", content_type: "image/png")
 product106.save
 puts "producto = Product 1 - category 6 creado"
 
 puts "creando producto = Product 2 - category 6"
 product120 = Product.new(
-  category_id: 6, name: "Juego de Madera Little Tikes", original_price: 200, discount: 20, price: 180, stock: 4,
-  expiration_date: "", description: "Restaurante Drive Thru 40 Accesorios",
+  category_id: 6, name: "Juego de Madera Little Tikes", original_price: 200.00, discount: 20, price: 180.00, stock: 4,
+  description: "Restaurante Drive Thru 40 Accesorios",
   user_id: 2
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/489012-800-auto?v=637704454383630000&width=800&height=auto&aspect=true")
+photo = URI.open("https://m.media-amazon.com/images/I/71LNXHFAloL._AC_SL1500_.jpg")
 product120.photos.attach(io: photo, filename: "product120.png", content_type: "image/png")
 product120.save
 puts "producto = Product 2 - category 6 creado"
 
 puts "creando producto = Product 3 - category 6"
 product107 = Product.new(
-  category_id: 6, name: "Figura de Acción Transformers Cyberverse 1 Step Surtido", original_price: 80, discount: 10,
-  price: 70, stock: 2, expiration_date: "",
-  description: "Convierte la Figura de Acción para activar su movimiento de ataque distintivo ",
+  category_id: 6, name: "Figura de Acción Transformers Cyberverse", original_price: 80.00, discount: 10,
+  price: 70.00, stock: 2,
+  description: "Convierte la Figura de Acción para activar su movimiento de ataque distintivo",
   user_id: 1
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/564871-800-auto?v=637938933009670000&width=800&height=auto&aspect=true")
+photo = URI.open("https://m.media-amazon.com/images/I/51wmfthHntL._SL500_.jpg")
 product107.photos.attach(io: photo, filename: "product107.png", content_type: "image/png")
 product107.save
 puts "producto = Product 3 - category 6 creado"
 
 puts "creando producto = Product 4 - category 6"
 product108 = Product.new(
-  category_id: 6, name: "Lanzador de Dardos Nerf Elite 2.0 Prospecto QS-4", original_price: 50, discount: 10,
-  price: 40, stock: 6, expiration_date: "", description: "Lanzador de dardos con mira telescópica",
+  category_id: 6, name: "Lanzador de Dardos Nerf Elite 2.0", original_price: 50.00, discount: 10,
+  price: 40.00, stock: 6, description: "Lanzador de dardos con mira telescópica",
   user_id: 2
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/549222-800-auto?v=637897116105270000&width=800&height=auto&aspect=true")
+photo = URI.open("https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/872x872/productos/i/n/e/nerf-lanzador-elite-20-prospecto-qs4-59674-default-1.jpg")
 product108.photos.attach(io: photo, filename: "product108.png", content_type: "image/png")
 product108.save
 puts "producto = Product 4 - category 6 creado"
@@ -557,22 +555,22 @@ puts "producto = Product 4 - category 6 creado"
 puts "creando producto = Product 5 - category 6"
 
 product109 = Product.new(
-  category_id: 6, name: "Muñeco Bebé Aquamerito Aquariana", original_price: 40, discount: 20, price: 20,
-  stock: 1, expiration_date: "", description: "Mete el huevo al agua para ver nacer a tu mascota",
+  category_id: 6, name: "Muñeco Bebé Aquamerito Aquariana", original_price: 40.00, discount: 20, price: 20.00,
+  stock: 1, description: "Mete el huevo al agua para ver nacer a tu mascota",
   user_id: 1
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/478331-800-auto?v=637695203745970000&width=800&height=auto&aspect=true")
+photo = URI.open("https://m.media-amazon.com/images/I/61AzrYk97fL._AC_SL1000_.jpg")
 product109.photos.attach(io: photo, filename: "product109.png", content_type: "image/png")
 product109.save
 puts "producto = Product 5 - category 6 creado"
 
 puts "creando producto = Product 6 - category 6"
 product110 = Product.create(
-  category_id: 6, name: "Juguete Preescolar Fisher Price Lil Gamer Mis Primeras Palabras", original_price: 50,
-  discount: 10, price: 40, stock: 7, expiration_date: "", description: "Más de 60 canciones, sonidos, tonos y frases",
+  category_id: 6, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 10, price: 40.00,
+  stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
   user_id: 2
 )
-photo = URI.open("https://wongfood.vtexassets.com/arquivos/ids/409332-800-auto?v=637485106106700000&width=800&height=auto&aspect=true")
+photo = URI.open("https://home.ripley.com.pe/Attachment/WOP_5/2032211046421/2032211046421-1.jpg")
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
 puts "producto = Product 1 - category 6 creado"
@@ -638,7 +636,7 @@ orden1 = Order.create!(
 puts "Order 7 creada"
 puts "------------------------------------------------------------------------------------------------"
 
-puts "LINE-ITEMS - Se cae en esta parte"
+puts "LINE-ITEMS"
 
 puts "------------------------------------------------------------------------------------------------"
 puts "Line-Item 1"
