@@ -2,21 +2,21 @@
 
 <div id="carouselExampleInterval" class="carousel slide container-padding" data-bs-ride="carousel">
   <div class="carousel-inner carousel-height">
+    <%= link_to products_path(category_id: 2) do %>
     <div class="carousel-item active" data-bs-interval="10000">
-        <%= link_to products_path(category_id: 2) do %>
-          <%= image_tag "dsctoabarrotes.png", alt:"descuento en abarrotes", class:"d-block w-100"%>
-        <% end %>
+          <%= image_tag "dsctoabarrotes.png", alt:"descuento en abarrotes", class:"d-block w-100 link-a"%>
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <% end %>
         <%= link_to products_path(category_id: 3) do %>
-          <%= image_tag "gratiselectro.png", alt:"delivery gratis electro", class:"d-block w-100"%>
-        <% end %>
+    <div class="carousel-item" data-bs-interval="2000">
+          <%= image_tag "gratiselectro.png", alt:"delivery gratis electro", class:"d-block w-100 link-a"%>
     </div>
-    <div class="carousel-item">
+        <% end %>
         <%= link_to products_path(category_id: 5) do %>
-          <%= image_tag "librossel.png", alt:"2x1 libros", class:"d-block w-100"%>
-        <% end %>
+    <div class="carousel-item">
+          <%= image_tag "librossel.png", alt:"2x1 libros", class:"d-block w-100 link-a"%>
     </div>
+        <% end %>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
