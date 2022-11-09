@@ -15,8 +15,8 @@
                   <% end %>
                   <div class="card-trip-infos mx-3">
                     <div>
-                      <h2>S/ <%= product.original_price.to_f.round(2) %></h2>
-                      <h3>S/ <%= product.price.to_f.round(2) %></h3>
+                      <h2> <%= number_to_currency(product.original_price) %></h2>
+                      <h3> <%= number_to_currency(product.price) %></h3>
                       <h4><%= product.name.truncate(40) %> </h4>
                         <% if product.expiration_date.present? %>
                           <h5>Vencimiento: <%= product.expiration_date %></h5>
