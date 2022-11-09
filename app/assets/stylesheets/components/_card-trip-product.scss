@@ -76,3 +76,20 @@
   display: block;
   position: relative;
 }
+.container-pro-new {
+  background-color: white;
+  width: auto;
+  justify-content: space-around;
+  box-shadow: 2px 2px 2px 2px #71b2db;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+}
+.imagen-pro-new{
+  padding-left: 50px;
+  padding-bottom: 10px;
+  padding-top: 100px;
+  height: 100%;
+  width: 95%;
+  background-size: cover;
+}
