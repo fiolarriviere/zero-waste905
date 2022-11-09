@@ -8,19 +8,25 @@
     <div class="form-inputs">
       <%# <%= f.input :email, required: true, autofocus: true %>
 
-      <%= f.input :first_name,
+      <%= f.input :first_name, label: "Nombres",
       required: true,
       input_html: { autocomplete: "first_name" } %>
-      <%= f.input :last_name,
+      <%= f.input :last_name, label: "Apellidos",
       required: true,
       input_html: { autocomplete: "last_name" } %>
-      <%= f.input :phone_number,
+      <%= f.input :phone_number, label: "Número telefónico",
       required: true,
       input_html: { autocomplete: "phone_number" } %>
-      <%= f.input :city,
+      <%= f.input :city, label: "Ciudad",
       required: true,
       input_html: { autocomplete: "city" } %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, label: "Foto de perfil", as: :file %>
+
+      <%= f.input :business_name, label: "Nombre comercial",
+      input_html: { autocomplete: "business_name" } %>
+
+      <%= f.input :ruc, label: "RUC",
+      input_html: { autocomplete: "ruc" } %>
 
       <!-- <%= f.input :email, required: true, autofocus: true, input_html: { disable: true } %>
 
@@ -30,14 +36,14 @@
 
       <input type="text" id="lname" name="lname" disabled> -->
 
-      <%= f.input :password,
+      <%= f.input :password, label: "Nueva contraseña",
                   hint: "Deja el espacio en blanco si no deseas cambiarla",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
+      <%= f.input :password_confirmation, label: "Confirmar nueva contraseña",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
+      <%= f.input :current_password, label: "Contraseña actual",
                   hint: "Necesitamos tu contraseña actual para confirmar los cambios",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>

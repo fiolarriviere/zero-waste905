@@ -88,7 +88,7 @@
 
 <div class="container">
   <div class="py-4">
-    <h4>LO MÁS DESTACADO</h4>
+    <h4>Lo más destacado</h4>
   </div>
 
     <div class="product_container">
@@ -143,12 +143,12 @@
 
 <div class="container">
   <div class="py-5">
-    <h4>LOS MEJORES DESCUENTOS</h4>
+    <h4>Los mejores descuentos</h4>
   </div>
 
     <div class="product_container">
 
-      <% @products.sample(6).each do |product| %>
+      <% @products.sample(3).each do |product| %>
       <div class="card-trip rounded py-3">
 
 <% if product.stock.to_i < 15 %>
@@ -202,16 +202,12 @@
   <h4 class="py-4">¿Quieres vender tus productos con nosotros?</h4>
     <%= link_to "¡Sí!", new_product_path, class: "btn btn-ghost" %>
 </div>
-      <%# Si user tiene Ruc, puede registrar %>
-      <%# <% if current_user.ruc.present? %>
-        <%# <%= link_to "Registro", new_product_path, class: "btn btn-ghost justify-content-center" %>
-      <%# <% end %>
 
 
       <%# PIE DE PAGINA (?) %>
 
-<div class=" help">
-  <div class="text-center row ">
+<div class="help">
+  <div class="text-center row pt-5">
 
       <div class="col-lg-3">
         Soporte
