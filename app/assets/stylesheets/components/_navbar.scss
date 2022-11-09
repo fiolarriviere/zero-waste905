@@ -31,3 +31,12 @@
   padding-right: 2px;
   translate: middle;
 }
+
+// (Agregué) sobre-escribí una clase
+.container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  width: 97%;
+}

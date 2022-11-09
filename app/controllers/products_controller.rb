@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
       redirect_to edit_user_registration_path(current_user.id)
       flash[:notice] = "Debe tener 'RUC' en los datos para vender"
     else
-    @product = Product.new
+      @product = Product.new
     end
   end
 
