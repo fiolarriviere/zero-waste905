@@ -4,19 +4,10 @@
       <div class="row">
         <div class="col-12 mx-3">
           <div class="row">
-            <div class="col-4">
-              <h1 class="Shopping-Cart text-center"> Shopping Cart </h1> <%#= render "shared/cartsidebar" %>
+            <div class="col-12">
+              <h1 class="Shopping-Cart text-center"> <strong> Carrito de Compra </strong></h1> <%#= render "shared/cartsidebar" %>
             </div>
-            <div class="col-4 ">
-              <div>
-              </div>
-            </div>
-            <div class="col-4">
-              <h1 class="Vaciar-carrito">
-                <%= link_to "Vaciar Carrito", cart_path(@cart),
-                data: { turbo_method: :delete, turbo_confirm: "Estas seguro de vaciar el carrito?" } %>
-              </h1>
-            </div>
+          </div>
           </div>
           <div class="row">
             <% @cart.line_items.each do |line_item| %>
@@ -34,7 +25,7 @@
                   <%= number_to_currency(line_item.product.price) %>
                 </div><br>
                 <%= link_to "Remover elemento", line_item_erase_path(line_item),
-                data: { turbo_method: :delete, turbo_confirm: "Deseas elimninar este item?" } %>
+                data: { turbo_method: :delete, turbo_confirm: "¿Deseas eliminar este item?" } %>
               </div>
               <div class="">
               </div><br>
@@ -51,7 +42,14 @@
                 <%= @cart.sum_total %> items
               </div> <br>
               <div class="d-flex justify-content-left">
+<% if @cart.sub_total > 0 %>
                 <%= link_to "Comprar", new_order_path, class: "btn btn-ghost w-100 " %>
+<% else %>
+
+<% end %>
+
+                <%= link_to "Eliminar", cart_path(@cart), class: "btn btn-ghost w-100 ",
+                data: { turbo_method: :delete, turbo_confirm: "Estas seguro de vaciar el carrito?" } %>
               </div>
             </div>
           </div><br>
