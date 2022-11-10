@@ -2,10 +2,8 @@
 
 </a>
 
-
-<img src="https://picsum.photos/1200/1200?image=46" class="page-background">
-<img src="https://picsum.photos/1200/1200?image=46&blur" class="page-background blurred">
-
+<img src="https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" class="page-background">
+<%# <img src="https://picsum.photos/1200/1200?image=46&blur" class="page-background blurred"> %>
 
 <div class="slides" data-slides-role="slides">
     <section class="slide" data-slides-role="slide">
@@ -41,46 +39,54 @@
     <section
         class="slide slide--scroll lazyload"
         data-slides-role="slide"
-        data-bgset="https://picsum.photos/1200/800?image=46 1200w 800h"
+        data-bgset="https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
         data-sizes="auto">
         <div class="slide-content">
+
 
 
     <div class="container container-padding py-5">
     <h1 class="my-4">Bienvenido a <strong>Zero Waste</strong></h2>
     <h2>Regístrate:</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-      <%= f.error_notification %>
+      <div class="row">
+        <div class="col-6">
 
-      <div class="form-inputs mt-3">
-        <%= f.input :email,label: "Correo Electrónico",
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password, label: "Contraseña",
-                    required: true,
-                    hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation, label: "Confirmar contraseña",
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+          <%= f.error_notification %>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Crear cuenta", class:"btn btn-light" %>
-      </div>
-    <% end %>
+          <div class="form-inputs mt-3">
+            <%= f.input :email,label: "Correo Electrónico",
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password, label: "Contraseña",
+                        required: true,
+                        hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, label: "Confirmar contraseña",
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Crear cuenta", class:"btn btn-light" %>
+          </div>
+        <% end %>
 
 
-    <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links" %>
+
 
     </div>
+</div>
 
         </div>
-    </section>
 
-    <section class="slide" data-slides-role="slide">
+            </div>
+        </section>
 
-    </section>
-</div>
+        <section class="slide" data-slides-role="slide">
+
+        </section>
+    </div>
