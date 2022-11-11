@@ -17,7 +17,7 @@ puts "creando usuario 1"
 usuario1 = User.new(
   first_name: "Ana", last_name: "Perez", phone_number: "989898898", ruc: "989898898000",
   dni: "98989880", address: "Av. Larco 1711", city: "Trujillo", latitude: "",
-  longitude: "", email: "hola@gmail.com", password: "123456", business_name: "sugo"
+  longitude: "", email: "AnaPerez@pstore.com", password: "123456", business_name: "Perez Store"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario1.photo.attach(io: photo, filename: "usuario1.png", content_type: "image/png")
@@ -28,7 +28,7 @@ puts "creando usuario 2"
 usuario2 = User.new(
   first_name: "Juan", last_name: "Díaz", phone_number: "46644646", ruc: "466446464444",
   dni: "46644648", address: "Av. El Golf 244", city: "Trujillo", latitude: "",
-  longitude: "", email: "jd@gmail.com", password: "123456", business_name: "wong"
+  longitude: "", email: "jdiaz@diazcorp.com", password: "123456", business_name: "Diaz Corp SA"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario2.photo.attach(io: photo, filename: "usuario2.png", content_type: "image/png")
@@ -39,7 +39,7 @@ puts "creando usuario 3"
 usuario3 = User.new(
   first_name: "Jhon", last_name: "Smith", phone_number: "49994646", ruc: "",
   dni: "46677648", address: "Av. Flora Tristan 324", city: "Lima", latitude: "",
-  longitude: "", email: "js@gmail.com", password: "123456"
+  longitude: "", email: "jhons@gmail.com", password: "123456"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario3.photo.attach(io: photo, filename: "usuario3.png", content_type: "image/png")
@@ -50,7 +50,7 @@ puts "creando usuario 4"
 usuario4 = User.new(
   first_name: "Alexandra", last_name: "Jimenez", phone_number: "76556776", ruc: "",
   dni: "46644827", address: "Av el golf de los incas 488", city: "Surco", latitude: "",
-  longitude: "", email: "aj@gmail.com", password: "123456"
+  longitude: "", email: "alexaji@gmail.com", password: "123456"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario4.photo.attach(io: photo, filename: "usuario4.png", content_type: "image/png")
@@ -60,7 +60,7 @@ puts "creando usuario 5"
 usuario5 = User.new(
   first_name: "Maria", last_name: "Romero", phone_number: "46987646", ruc: "",
   dni: "46622648", address: "Calle Geranios 311", city: "Arequipa", latitude: "",
-  longitude: "", email: "mrom@gmail.com", password: "1234567"
+  longitude: "", email: "mromero2@gmail.com", password: "1234567"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario5.photo.attach(io: photo, filename: "usuario5.png", content_type: "image/png")
@@ -70,7 +70,7 @@ puts "creando usuario 6"
 usuario6 = User.new(
   first_name: "Adrian", last_name: "Bello", phone_number: "46364646", ruc: "",
   dni: "43434548", address: "Av. El Sol 114", city: "Cusco", latitude: "",
-  longitude: "", email: "abello@gmail.com", password: "123456"
+  longitude: "", email: "abellisimo@gmail.com", password: "123456"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario6.photo.attach(io: photo, filename: "usuario6.png", content_type: "image/png")
@@ -253,6 +253,7 @@ product1.photos.attach(io: photo, filename: "product7.png", content_type: "image
 product1.save
 puts "producto 6,cat Abarrotes creado"
 puts "------------------------------------------------------------------------------------------------"
+
 # JEAN
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Categoria - Electrónicos"
@@ -410,6 +411,7 @@ product24.photos.attach(io: photo, filename: "product24.png", content_type: "ima
 product24.save
 puts "Product - category 4 creada"
 puts "------------------------------------------------------------------------------------------------"
+
 # FIORE
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Categoria - Libro"
