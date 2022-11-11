@@ -4,20 +4,11 @@
       <div class="row">
         <div class="col-12 mx-3">
           <div class="row">
-            <div class="col-4">
-              <h1 class="Shopping-Cart text-center"> Shopping Cart </h1> <%#= render "shared/cartsidebar" %>
-            </div>
-            <div class="col-4 ">
-              <div>
-              </div>
-            </div>
-            <div class="col-4">
-              <h1 class="Vaciar-carrito">
-                <%= link_to "Vaciar Carrito", cart_path(@cart),
-                data: { turbo_method: :delete, turbo_confirm: "Estas seguro de vaciar el carrito?" } %>
-              </h1>
+            <div class="col-12">
+              <h1 class="Shopping-Cart text-center"> <strong> Carrito de Compra </strong></h1> <%#= render "shared/cartsidebar" %>
             </div>
           </div>
+
           <div class="total-amount"></div>
         </div>
         <div class="py-3">
@@ -27,6 +18,52 @@
           <button class="btn btn-ghost"><%= link_to "Comprar", products_path %></button>
          <% end %>
         </div>
+
+          </div>
+          <div class="row">
+            <% @cart.line_items.each do |line_item| %>
+              <div class="col-12 col-lg-3">
+                <%= cl_image_tag line_item.product.photos.last.key, crop: :fill, class: "image-box" %>
+              </div>
+              <div class="col-12 col-lg-6">
+                <h3 class="text-left pt-5"> <%= line_item.product.name %> </h3>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="d-flex flex-box justify-content-between pt-4">
+                  <%= link_to "-", line_item_reduce_path(line_item) %>
+                  <%= line_item.quantity %>
+                  <%= link_to "+", line_item_add_path(line_item) %>
+                  <%= number_to_currency(line_item.product.price) %>
+                </div><br>
+                <%= link_to "Remover elemento", line_item_erase_path(line_item),
+                data: { turbo_method: :delete, turbo_confirm: "¿Deseas eliminar este item?" } %>
+              </div>
+              <div class="">
+              </div><br>
+            <% end %>
+          </div><hr>
+          <div class="row">
+            <div class="col-9">
+            </div>
+            <div class="col-3">
+              <div class="d-flex justify-content-center">
+                <%= number_to_currency(@cart.sub_total) %>
+              </div>
+              <div class="d-flex justify-content-center">
+                <%= @cart.sum_total %> items
+              </div> <br>
+              <div class="d-flex justify-content-left">
+              <% if @current_cart.sum_total > 0  %>
+                <button class="btn btn-ghost"><%= link_to "Comprar", new_order_path %></button>
+              <% else %>
+                <button class="btn btn-ghost"><%= link_to "Comprar", products_path %></button>
+              <% end %>
+                <%= link_to "Eliminar", cart_path(@cart), class: "btn btn-ghost w-100 ",
+                data: { turbo_method: :delete, turbo_confirm: "Estas seguro de vaciar el carrito?" } %>
+              </div>
+            </div>
+          </div><br>
+
         </div>
       </div>
     </div>
