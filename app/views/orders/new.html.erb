@@ -1,18 +1,7 @@
 <div class="container-order-main py-5">
   <div class="container py-5">
     <div class="d-flex justify-content-around p-5">
-      <div class="contenedor-new-order p-5">
-      <h1 class="text-center pt-2 pb-2"><strong> IDENTIFICACION </strong></h1>
-      <h4>
-       <%= current_user.first_name  %> <%= current_user.last_name  %>
-      </h4>
-      <br>
-      <h4>
-      <%= current_user.address %>
-      </h4>
-        <%=  %>
-      </div>
-
+     
       <div class="contenedor-new-order p-5 mx-3">
         <h1 class="text-center pt-2 pb-2"><strong> MEDIO DE PAGO </strong></h1>
           <div class="row py-5">
@@ -155,6 +144,18 @@
         <h1 class="text-center pt-2 pb-2"><strong> RESUMEN DE LA COMPRA </strong></h1>
           <div class="row py-5">
             <div class="col-12 col-lg-8 ">
+
+
+      <h1 class="text-center pt-2 pb-2"><strong> IDENTIFICACION </strong></h1>
+      <h4>
+       <%= current_user.first_name  %> <%= current_user.last_name  %>
+      </h4>
+      <br>
+      <h4>
+      <%= current_user.address %>
+      </h4>
+
+
 
 <div>
   <div class="text-justify  py-3">
