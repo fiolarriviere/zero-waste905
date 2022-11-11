@@ -553,7 +553,6 @@ product108.save
 puts "producto = Product 4 - category 6 creado"
 
 puts "creando producto = Product 5 - category 6"
-
 product109 = Product.new(
   category_id: catjugue.id, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 10, price: 40.00,
   stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
@@ -565,15 +564,16 @@ product109.save
 puts "producto = Product 5 - category 6 creado"
 
 puts "creando producto = Product 6 - category 6"
-product110 = Product.create(
-  category_id: catjugue.id, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 10,
-  price: 40.00, stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
+product110 = Product.new(
+  category_id: catjugue.id, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 70, price: 15.00,
+  stock: 2, description: "Más de 60 canciones, sonidos, tonos y frases",
   user_id: usuario2.id
 )
 photo = URI.open("https://m.media-amazon.com/images/I/61AzrYk97fL._AC_SL1000_.jpg")
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
-puts "producto = Product 1 - category 6 creado"
+puts "producto = Product 6 - category 6 creado"
+
 puts "------------------------------------------------------------------------------------------------"
 puts "ORDENES"
 
@@ -585,7 +585,6 @@ Order.create!(
   delivery_type: "Envío a casa", payment: "MasterCard"
 )
 puts "Order 1 creada"
-
 
 puts "creando Order 2"
 Order.create!(
