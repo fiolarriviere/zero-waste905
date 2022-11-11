@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_products, only: %w[show edit update destroy]
-  skip_before_action :authenticate_user!, execpt: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
