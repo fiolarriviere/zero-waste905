@@ -6,9 +6,9 @@
       <% end %>
       <div class="card-product-infos-pro pe-5 w-80">
         <div class="label-stock">
-          <% if @product.stock.to_i < 15 %>
+          <% if @product.stock >=1 || @product.stock  < 15 %>
                 Últimas <%= @product.stock %> Unds.
-          <% elsif @product.stock.to_i > 15  %>
+          <% elsif @product.stock > 15  %>
             <%= @product.stock %> Unds. Disponibles.
           <% else %>
             Sin Stock.
@@ -39,10 +39,14 @@
               <%= link_to "Eliminar", product_path(@product), class: "btn btn-ghost",
               data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar el producto?"} %>
             <% else %>
-              <%= form_tag line_items_path do %>
-                <%= hidden_field_tag 'product_id', @product.id %>
-                <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
-                <%= submit_tag 'Agregar', class: "btn btn-ghost" %>
+              <% if @product.stock.to_i > 0 %>
+                <%= form_tag line_items_path do %>
+                  <%= hidden_field_tag 'product_id', @product.id %>
+                  <%= hidden_field_tag 'current_cart_id', @current_cart.id %>
+                  <%= submit_tag 'Agregar', class: "btn btn-ghost" %>
+                <% end %>
+              <% else %>
+                <%= link_to "Ver otros productos", root_path, class: "btn btn-ghost" %>
               <% end %>
               <%#= link_to "Comprar", cart_path(@current_cart), class: "btn btn-ghost" %>
             <% end %>
