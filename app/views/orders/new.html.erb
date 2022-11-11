@@ -3,22 +3,22 @@
     <div class="d-flex justify-content-around p-5">
 
       <div class="contenedor-new-order p-5 mx-3">
-        <h1 class="text-center pt-2 pb-2"><strong> MEDIO DE PAGO </strong></h1>
-          <div class="row py-5">
+        <h1 class="text-center pt-1 pb-4"><strong> MEDIO DE PAGO </strong></h1>
+          <div class="row">
 
             <div>
               <section>
+
   <div class="row">
     <div class="col-12 col-lg-12">
-      <div class="card mb-4">
-        <div class="card-header py-3">
-          <h5 class="mb-0">Detalle de la cuenta</h5>
+      <div class="card mb-1">
+        <div class="card-header py-2 pb-2"> <h5 class="mb-0">Detalle de la cuenta</h5>
         </div>
         <div class="card-body">
           <form>
             <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col-12 col-lg-12">
+            <div class="row mb-1">
+              <div class="col-12 col-lg-6">
                 <div class="form-outline">
                   <input type="text" id="form6Example1" class="form-control" />
                   <label class="form-label" for="form6Example1">First name</label>
@@ -32,21 +32,16 @@
               </div>
             </div>
             <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example3" class="form-control" />
-              <label class="form-label" for="form6Example3">Company name</label>
-            </div>
-            <!-- Text input -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-1">
               <input type="text" id="form6Example4" class="form-control" />
               <label class="form-label" for="form6Example4">Address</label>
             </div>
             <!-- Email input -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-1">
               <input type="email" id="form6Example5" class="form-control" />
               <label class="form-label" for="form6Example5">Email</label>
             </div>
-
+            <!-- Chkbox input -->
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="checkoutForm1" />
               <label class="form-check-label" for="checkoutForm1">
@@ -54,39 +49,33 @@
               </label>
             </div>
 
-            <div class="form-check mb-4">
+            <div class="form-check mb-1">
               <input class="form-check-input" type="checkbox" value="" id="checkoutForm2" checked />
               <label class="form-check-label" for="checkoutForm2">
                 Guardar información
               </label>
             </div>
-
-            <hr class="my-4" />
-
-            <h5 class="mb-4">Payment</h5>
-
+            <hr class="my-1" />
+            <h5 class="mb-1"></h5>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3" checked />
               <label class="form-check-label" for="checkoutForm3">
                 Credit card
               </label>
             </div>
-
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
               <label class="form-check-label" for="checkoutForm4">
                 Debit card
               </label>
             </div>
-
-            <div class="form-check mb-4">
+            <div class="form-check mb-1">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm5" />
               <label class="form-check-label" for="checkoutForm5">
                 Paypal
               </label>
             </div>
-
-            <div class="row mb-4">
+            <div class="row mb-1">
               <div class="col">
                 <div class="form-outline">
                   <input type="text" id="formNameOnCard" class="form-control" />
@@ -119,8 +108,8 @@
             </div>
 
         <%= simple_form_for (@order) do |f| %>
-          <div class="row py-5">
-          <div class="d-flex justify-content-around pt-2 pb-3">
+          <div class="row py-1">
+          <div class="d-flex justify-content-around pt-1 pb-2">
             <%= f.submit "Enviar", class: "btn btn-ghost" %>
           </div>
 
@@ -148,7 +137,7 @@
 
       <h1 class="text-center pt-2 pb-2"><strong> IDENTIFICACION </strong></h1>
       <h4>
-       <%= current_user.first_name  %> <%= current_user.last_name  %>
+        <%= current_user.first_name  %> <%= current_user.last_name  %>
       </h4>
       <br>
       <h4>
