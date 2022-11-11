@@ -17,7 +17,7 @@ puts "creando usuario 1"
 usuario1 = User.new(
   first_name: "Ana", last_name: "Perez", phone_number: "989898898", ruc: "989898898000",
   dni: "98989880", address: "Av. Larco 1711", city: "Trujillo", latitude: "",
-  longitude: "", email: "AnaPerez@pstore.com", password: "123456", business_name: "Perez Store"
+  longitude: "", email: "anaperez@gmail.com", password: "123456", business_name: "Perez Store"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario1.photo.attach(io: photo, filename: "usuario1.png", content_type: "image/png")
@@ -28,7 +28,7 @@ puts "creando usuario 2"
 usuario2 = User.new(
   first_name: "Juan", last_name: "Díaz", phone_number: "46644646", ruc: "466446464444",
   dni: "46644648", address: "Av. El Golf 244", city: "Trujillo", latitude: "",
-  longitude: "", email: "jdiaz@diazcorp.com", password: "123456", business_name: "Diaz Corp SA"
+  longitude: "", email: "jdiaz@gmail.com", password: "123456", business_name: "Diaz Corp SA"
 )
 photo = URI.open("https://cdn-icons-png.flaticon.com/512/1/1247.png")
 usuario2.photo.attach(io: photo, filename: "usuario2.png", content_type: "image/png")
