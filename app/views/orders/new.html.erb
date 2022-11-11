@@ -14,17 +14,14 @@
                   <% if current_user.first_name.nil? && current_user.last_name.nil? %>
                     <h5 class="pt-2 pb-2"> <strong> Nombre:</strong> Falta actualizar datos  </h5>
                   <% else %>
-                    <h5 class="pt-2 pb-2"> <strong>Nombre:</strong></h5>
                     <h5 class="text-uppercase px-5"><%= current_user.first_name  %> <%= current_user.last_name  %> </h5>
                   <% end %>
                   <% if current_user.address.nil? %>
                     <h5 class="pt-2 pb-2"> <strong>Direccion:</strong> Falta actualizar datos </h5>
                   <% else %>
-                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong></h5>
-                    <h5 class="text-uppercase px-5"> <%= current_user.address %> </h5>
+                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong><%= current_user.address %> </h5>
                   <% end %>
-                  <h5 class="pt-2 pb-2"> <strong>Email: </strong> </h5>
-                  <h5 class="text-uppercase px-5"> <%= current_user.email %> </h5> <br>
+                  <h5 class="pt-2 pb-2"> <strong>Email: </strong><%= current_user.email %> </h5><br>
                   <hr class="w-90">
                   <div>
                     <div class="py-3">
@@ -48,7 +45,7 @@
 
     <div class="col-10 justify-content-around mx-5 ">
 
-                <div class="linea-border"> <%# Medio de Pago %>
+                <div> <%# Medio de Pago %>
                   <h2 class="text-center pt-1 pb-4"><strong> MEDIO DE PAGO </strong></h2>
                   <section>
                     <div class="row">
