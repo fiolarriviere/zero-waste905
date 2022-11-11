@@ -586,6 +586,7 @@ Order.create!(
 )
 puts "Order 1 creada"
 
+
 puts "creando Order 2"
 Order.create!(
   first_name: "Andres", last_name: "Fonseca", dni: "23452345", address: "Av Proceres 1045",
