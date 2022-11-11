@@ -253,6 +253,7 @@ product1.photos.attach(io: photo, filename: "product7.png", content_type: "image
 product1.save
 puts "producto 6,cat Abarrotes creado"
 puts "------------------------------------------------------------------------------------------------"
+
 # JEAN
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Categoria - Electrónicos"
@@ -410,6 +411,7 @@ product24.photos.attach(io: photo, filename: "product24.png", content_type: "ima
 product24.save
 puts "Product - category 4 creada"
 puts "------------------------------------------------------------------------------------------------"
+
 # FIORE
 puts "------------------------------------------------------------------------------------------------"
 puts "creando Categoria - Libro"
