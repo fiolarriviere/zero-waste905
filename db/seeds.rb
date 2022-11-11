@@ -566,11 +566,11 @@ puts "producto = Product 5 - category 6 creado"
 
 puts "creando producto = Product 6 - category 6"
 product110 = Product.create(
-  category_id: catjugue.id, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 10, price: 40.00,
-  stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
+  category_id: catjugue.id, name: "Juguete Preescolar Fisher Price Lil", original_price: 50.00, discount: 10,
+  price: 40.00, stock: 7, description: "Más de 60 canciones, sonidos, tonos y frases",
   user_id: usuario2.id
 )
-photo = URI.open("https://home.ripley.com.pe/Attachment/WOP_5/2032211046421/2032211046421-1.jpg")
+photo = URI.open("https://m.media-amazon.com/images/I/61AzrYk97fL._AC_SL1000_.jpg")
 product110.photos.attach(io: photo, filename: "product110.png", content_type: "image/png")
 product110.save
 puts "producto = Product 1 - category 6 creado"
