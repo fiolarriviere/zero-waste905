@@ -138,12 +138,12 @@
               </div>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">
-              Continuar compra
-            </button>
+        <%= simple_form_for (@order) do |f| %>
+          <div class="d-flex justify-content-around pt-2 pb-3">
+            <%= f.submit "Enviar", class: "btn btn-ghost" %>
+        <% end %>
           </form>
         </div>
-      </div>
     </div>
 
 
@@ -176,7 +176,6 @@
             </div>
           </div>
         <div class="d-flex justify-content-around pt-2 pb-3">
-        <%= link_to "Finalizar Compra", orders_path %>
         </div>
       </div>
 
