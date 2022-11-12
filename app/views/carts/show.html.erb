@@ -31,7 +31,7 @@
               <div class="">
               </div><br>
             <% end %>
-          </div><hr>
+          </div>
           <div class="row">
             <div class="col-9">
             </div>
@@ -49,13 +49,11 @@
                 <%= link_to "Comprar", products_path, class: "btn btn-ghost w-100 " %>
               <% end %>
 
-                <%= link_to "Eliminar", cart_path(@cart), class: "btn btn-ghost w-100 ",
+                <%#= link_to "Eliminar", cart_path(@cart), class: "btn btn-ghost w-100 ",
                 data: { turbo_method: :delete, turbo_confirm: "Estas seguro de vaciar el carrito?" } %>
               </div>
             </div>
-          </div><br>
+          </div>
         </div>
       </div>
     </div>
-  </body>
-</html>

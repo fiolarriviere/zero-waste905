@@ -1,55 +1,62 @@
 <div class="contenedor-order-main py-5">
-  <div class="d-flex justify-content-around py-5">
-    <div class="contenedor-new-order py-5">
-      <div class="row ">
+  <div class="container py-4">
+    <div class="d-flex justify-content-around py-5">
+      <div class="bg-white py-5">
+        <div class="row ">
 
-<div class="col-7">
+<div class="col-6">
 
-    <div class="col-10 mx-5">
+<div class="contenedor-new-ord py-5 mx-3">
 
-                <div class="mx-4"> <%# Resumen Compra %>
-                  <h2 class="text-center pt-2 pb-2"><strong> RESUMEN DE LA COMPRA </strong></h2><br>
-                  <h3 class="pt-2 pb-2"> Datos del comprador: </h3>
+    <div class="col-12 mx-3">
+
+                <div class="mx-3"> <%# Resumen Compra %>
+                  <h2 class="text-center pt-2 pb-2"><strong> Datos compra </strong></h2><br>
+                  <h5 class="pt-2 pb-2"> <strong>Nombre:</strong> </h5>
                   <% if current_user.first_name.nil? && current_user.last_name.nil? %>
                     <h5 class="pt-2 pb-2"> <strong>Nombre:</strong> </h5>
-                    <h5 class="px-5 pt-2 pb-2"> <%= link_to "Falta actualizar datos", "/users/edit" %>  </h5>
+                    <h5 class="px-3 pt-2 pb-2"> - <%= link_to "Falta actualizar datos", "/users/edit" %>  </h5>
                   <% else %>
-                    <h5 class="text-uppercase px-5"><%= current_user.first_name.upcase  %> <%= current_user.last_name.upcase %> </h5>
+                    <h5 class="text-uppercase px-3"> - <%= current_user.first_name.upcase  %> <%= current_user.last_name.upcase %> </h5>
                   <% end %>
                   <% if current_user.address.nil? %>
                     <h5 class="pt-2 pb-2"> <strong>Direccion:</strong> </h5>
-                    <h5 class="px-5 pt-2 pb-2"> <%= link_to "Falta actualizar datos", "/users/edit" %> </h5>
+                    <h5 class="px-3 pt-2 pb-2"> - <%= link_to "Falta actualizar datos", "/users/edit" %> </h5>
                   <% else %>
-                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong><%= current_user.address %> </h5>
+                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong> </h5>
+                    <h5 class="px-3 pt-2 pb-2"> - <%= current_user.address.upcase %> , <%= current_user.city.upcase %> </h5>
                   <% end %>
-                  <h5 class="pt-2 pb-2"> <strong>Email: </strong><%= current_user.email %> </h5><br>
-                  <hr class="w-90">
+                    <h5 class="pt-2 pb-2"> <strong>Email: </strong> </h5>
+                    <h5 class="px-3 pt-2 pb-2"> - <%= current_user.email.upcase %> </h5><br>
                   <div>
-                    <div class="py-3">
-                      <h4 class="text-end "> Subtotal
+                    <div class="py-2">
+                      <h3 class="text-end"> Subtotal
                         <%= number_to_currency(@current_cart.sub_total) %>
-                      </h4>
+                      </h3>
                     </div>
-                    <div class="py-4">
-                      <h4 class="text-end">Envio $ 10.00</h4>
+                    <div class="py-2">
+                      <h3 class="text-end">Envio $ 10.00</h3>
                     </div>
-                    <hr class="w-90">
-                    <div class="py-4">
+                    <div class="py-2">
                       <h3 class="text-end"> Total	<%= number_to_currency(@current_cart.sub_total + 10.00) %></h3> <br>
                     </div>
                   </div>
                 </div>
 
+        </div>
+
     </div>
 
 </div>
 
-<div class="col-5">
+<div class="col-6">
 
-    <div class="col-10 justify-content-around mx-5 ">
+<div class="contenedor-new-ord py-5 mx-3">
+
+    <div class="col-10 justify-content-around mx-5">
 
                 <div> <%# Medio de Pago %>
-                  <h2 class="text-center pt-1 pb-4"><strong> MEDIO DE PAGO </strong></h2>
+                  <h2 class="text-center pt-1 pb-4"><strong> Pago con tarjeta</strong></h2>
                   <section>
                     <div class="row">
                               <div class="col-12 col-lg-12">
@@ -63,34 +70,32 @@
                                         <div class="col-12 col-lg-6">
                                           <div class="form-outline py-2">
                                             <input type="text" id="form6Example1" class="form-control" />
-                                            <label class="form-label" for="form6Example1">First name</label>
+                                            <label class="form-label" for="form6Example1">Nombre</label>
                                           </div>
                                         </div>
                                         <div class="col">
                                           <div class="form-outline py-2">
                                             <input type="text" id="form6Example2" class="form-control" />
-                                            <label class="form-label" for="form6Example2">Last name</label>
+                                            <label class="form-label" for="form6Example2">Apellido</label>
                                           </div>
                                         </div>
                                       </div>
                                       <!-- Email input -->
                                       <div class="form-outline mb-1">
                                         <input type="email" id="form6Example5" class="form-control" />
-                                        <label class="form-label" for="form6Example5">Email</label>
+                                        <label class="form-label" for="form6Example5">Correo Electrónico</label>
                                       </div>
-                                      <hr class="my-1" />
-                                      <h5 class="mb-3 pt-3"></h5>
                                       <div class="row mb-1">
                                         <div class="col">
                                           <div class="form-outline">
                                             <input type="text" id="formNameOnCard" class="form-control" />
-                                            <label class="form-label" for="formNameOnCard">Name on card</label>
+                                            <label class="form-label" for="formNameOnCard">Nombre del titular TC</label>
                                           </div>
                                         </div>
                                         <div class="col">
                                           <div class="form-outline">
                                             <input type="text" id="formCardNumber" class="form-control" />
-                                            <label class="form-label" for="formCardNumber">Credit card number</label>
+                                            <label class="form-label" for="formCardNumber">Numero tarjeta</label>
                                           </div>
                                         </div>
                                       </div>
@@ -124,12 +129,12 @@
                 </div>
 
     </div>
-
+  </div>
 </div>
 
 </div> <%# col 12 general %>
 
-
+        </div>
       </div> <%# row MAIN %>
     </div> <%# container MAIN %>
   </div> <%# container MAIN %>

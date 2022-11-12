@@ -70,7 +70,15 @@
   background-color: white;
   // width: 650px;
   justify-content: space-around;
-  box-shadow: 2px 2px 2px 2px #71b2db;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #b3d7ed;
+}
+.contenedor-new-ord{
+  background-color: rgb(248, 237, 237);
+  // width: 650px;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 1px #c5e5f9;
 }
 .contenedor-order-main{
   display: block;
@@ -80,6 +88,7 @@
   background-color: white;
   width: auto;
   justify-content: space-around;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 2px #71b2db;
   padding-left: 50px;
   padding-right: 50px;
