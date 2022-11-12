@@ -1,5 +1,4 @@
 <a href="#" class="nav-toggle">
-
 </a>
 
 <%= image_tag "new.png", class:"page-background" %>
@@ -46,22 +45,22 @@
 
     <div class="container container-padding py-5">
     <h1 class="my-4 text-center">Bienvenido a <strong>Zero Waste</strong></h2>
+
+<div class="row">
+  <div class="col-5 mx-5">
+
     <h2>Regístrate:</h2>
-
-
-<div class="py-3">
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= button_to user_google_oauth2_omniauth_authorize_path, class: "py-2 google", method: :post, data: {turbo: "false"} do %>
-          <%= image_tag "google.png" %>
-  <% end %>
+    
+  <div class="py-3 text-center">
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= button_to user_google_oauth2_omniauth_authorize_path, class: "py-2 google bg-white", method: :post, data: {turbo: "false"} do %>
+            <%= image_tag "google.png" %>
     <% end %>
-  <% end %>
-    <h5 class="pt-2 my-2">o</h5>
-</div>
-
-      <div class="row">
-        <div class="col-6">
+      <% end %>
+    <% end %>
+      <h5 class="pt-2 my-2 text-center">o</h5>
+  </div>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
           <%= f.error_notification %>
