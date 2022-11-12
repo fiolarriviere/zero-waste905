@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if current_user.ruc.empty?
+    if current_user.ruc.nil?
       redirect_to edit_user_registration_path(current_user.id)
       flash[:notice] = "Debe tener 'RUC' en los datos para vender"
     else
