@@ -2,17 +2,17 @@
 
 <div id="carouselExampleInterval" class="carousel slide container-padding" data-bs-ride="carousel">
   <div class="carousel-inner carousel-height">
-    <%= link_to products_path(category_id: 2) do %>
-    <div class="carousel-item active" data-bs-interval="10000">
+    <%= link_to products_path(category_id: 5) do %>
+    <div class="carousel-item active" data-bs-interval="2000">
           <%= image_tag "dsctolibros.png", alt:"descuento en libros", class:"d-block w-100 link-a"%>
     </div>
     <% end %>
-        <%= link_to products_path(category_id: 3) do %>
+        <%= link_to products_path(category_id: 1) do %>
     <div class="carousel-item" data-bs-interval="2000">
           <%= image_tag "dsctomakeup.png", alt:"descuento en maquillaje", class:"d-block w-100 link-a"%>
     </div>
         <% end %>
-        <%= link_to products_path(category_id: 5) do %>
+        <%= link_to products_path do %>
     <div class="carousel-item">
           <%= image_tag "envio.png", alt:"delivery", class:"d-block w-100 link-a"%>
     </div>
