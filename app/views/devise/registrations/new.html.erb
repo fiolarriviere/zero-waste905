@@ -2,8 +2,7 @@
 
 </a>
 
-<img src="https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" class="page-background">
-<%# <img src="https://picsum.photos/1200/1200?image=46&blur" class="page-background blurred"> %>
+<%= image_tag "new.png", class:"page-background" %>
 
 <div class="slides" data-slides-role="slides">
     <section class="slide" data-slides-role="slide">
@@ -46,8 +45,20 @@
 
 
     <div class="container container-padding py-5">
-    <h1 class="my-4">Bienvenido a <strong>Zero Waste</strong></h2>
+    <h1 class="my-4 text-center">Bienvenido a <strong>Zero Waste</strong></h2>
     <h2>Regístrate:</h2>
+
+
+<div class="py-3">
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= button_to user_google_oauth2_omniauth_authorize_path, class: "py-2 google", method: :post, data: {turbo: "false"} do %>
+          <%= image_tag "google.png" %>
+  <% end %>
+    <% end %>
+  <% end %>
+    <h5 class="pt-2 my-2">o</h5>
+</div>
 
       <div class="row">
         <div class="col-6">
@@ -55,7 +66,7 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
           <%= f.error_notification %>
 
-          <div class="form-inputs mt-3">
+          <div class="form-inputs">
             <%= f.input :email,label: "Correo Electrónico",
                         required: true,
                         autofocus: true,
@@ -70,10 +81,9 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Crear cuenta", class:"btn btn-ghost" %>
+            <%= f.button :submit, "Crear cuenta", class:"btn btn-ghost mt-2" %>
           </div>
         <% end %>
-
 
         <%= render "devise/shared/links" %>
 
