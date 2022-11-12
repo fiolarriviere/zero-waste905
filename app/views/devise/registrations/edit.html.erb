@@ -4,7 +4,7 @@
       <div class="container-pro-new">
         <div class="row">
           <div class="col-6">
-            <h1 class="rounded pt-2 pb-4"><strong>Editar perfil</strong></h1>
+            <h1 class="text-center rounded pt-1 pb-4"><strong>Editar perfil</strong></h1>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
             <div class="row">
@@ -28,13 +28,13 @@
                 <%= f.input :photo, label: "Foto de perfil", as: :file %>
               </div>
               <div class="col-12 col-lg-6">
+                <%= f.input :ruc, label: "RUC",
+                input_html: { autocomplete: "ruc" } %>
                 <!-- <%= f.input :email, required: true, autofocus: true, input_html: { disable: true } %>
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
                 <% end %>
                 <input type="text" id="lname" name="lname" disabled> -->
-                <%= f.input :ruc, label: "RUC",
-                input_html: { autocomplete: "ruc" } %>
                 <%= f.input :password, label: "Nueva contraseña",
                 hint: "Deja el espacio en blanco si no deseas cambiarla", required: false,
                 input_html: { autocomplete: "new-password" } %>
