@@ -3,7 +3,7 @@
     <div class="col-6">
 
 <div class="container container-padding py-5">
-<h2 class="pb-3 text-center"><strong>INICIAR SESIÓN</strong></h2>
+<h2 class="pb-5 text-center"><strong>INICIAR SESIÓN</strong></h2>
 
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -19,17 +19,17 @@
     </div>
 
   <div class="row">
-      <div class="form-actions">
-        <%= f.button :submit, "Ingresar", class:"btn btn-ghost-devise mt-1 w-100" %>
+      <div class="form-actions text-center">
+        <%= f.button :submit, "Ingresar", class:"btn btn-ghost-devise mt-1" %>
       </div>
     <% end %>
   </div>
 
-<div class="text-center">
-  <p class="py-2 my-2">o</p>
+<div class="text-center pb-4">
+  <h5 class="py-2 my-2">o</h5>
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= button_to user_google_oauth2_omniauth_authorize_path, class: "py-2 google", method: :post, data: {turbo: "false"} do %>
+      <%= button_to user_google_oauth2_omniauth_authorize_path, class: " google bg-white", method: :post, data: {turbo: "false"} do %>
           <%= image_tag "google.png" %>
   <% end %>
     <% end %>
@@ -41,7 +41,7 @@
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
       <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name)%>
     <% end %>
-  </div>
+</div>
 
   <%= render "devise/shared/links" %>
   </div>
