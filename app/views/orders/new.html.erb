@@ -1,178 +1,138 @@
-<div class="container-order-main py-5">
-  <div class="container py-5">
-    <div class="d-flex justify-content-around p-5">
+<div class="contenedor-order-main py-5">
+  <div class="d-flex justify-content-around py-5">
+    <div class="contenedor-new-order py-5">
+      <div class="row ">
 
-      <div class="contenedor-new-order p-5 mx-3">
-        <h1 class="text-center pt-2 pb-2"><strong> MEDIO DE PAGO </strong></h1>
-          <div class="row py-5">
+<div class="col-7">
 
-            <div>
-              <section>
-  <div class="row">
-    <div class="col-12 col-lg-12">
-      <div class="card mb-4">
-        <div class="card-header py-3">
-          <h5 class="mb-0">Detalle de la cuenta</h5>
-        </div>
-        <div class="card-body">
-          <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col-12 col-lg-12">
-                <div class="form-outline">
-                  <input type="text" id="form6Example1" class="form-control" />
-                  <label class="form-label" for="form6Example1">First name</label>
+    <div class="col-10 mx-5">
+
+                <div class="mx-4"> <%# Resumen Compra %>
+                  <h2 class="text-center pt-2 pb-2"><strong> RESUMEN DE LA COMPRA </strong></h2><br>
+                  <h3 class="pt-2 pb-2"> Datos del comprador: </h3>
+                  <% if current_user.first_name.nil? && current_user.last_name.nil? %>
+                    <h5 class="pt-2 pb-2"> <strong>Nombre:</strong> </h5>
+                    <h5 class="px-5 pt-2 pb-2"> <%= link_to "Falta actualizar datos", "/users/edit" %>  </h5>
+                  <% else %>
+                    <h5 class="text-uppercase px-5"><%= current_user.first_name.upcase  %> <%= current_user.last_name.upcase %> </h5>
+                  <% end %>
+                  <% if current_user.address.nil? %>
+                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong> </h5>
+                    <h5 class="px-5 pt-2 pb-2"> <%= link_to "Falta actualizar datos", "/users/edit" %> </h5>
+                  <% else %>
+                    <h5 class="pt-2 pb-2"> <strong>Direccion:</strong></h5>
+                    <h5 class="text-uppercase px-5"> <%= current_user.address %> </h5>
+                  <% end %>
+                  <h5 class="pt-2 pb-2"> <strong>Email: </strong> </h5>
+                  <h5 class="text-uppercase px-5"> <%= current_user.email %> </h5> <br>
+                  <hr class="w-90">
+                  <div>
+                    <div class="py-3">
+                      <h4 class="text-end "> Subtotal
+                        <%= number_to_currency(@current_cart.sub_total) %>
+                      </h4>
+                    </div>
+                    <div class="py-4">
+                      <h4 class="text-end">Envio $ 10.00</h4>
+                    </div>
+                    <hr class="w-90">
+                    <div class="py-4">
+                      <h3 class="text-end"> Total	<%= number_to_currency(@current_cart.sub_total + 10.00) %></h3> <br>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                  <input type="text" id="form6Example2" class="form-control" />
-                  <label class="form-label" for="form6Example2">Last name</label>
-                </div>
-              </div>
-            </div>
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example3" class="form-control" />
-              <label class="form-label" for="form6Example3">Company name</label>
-            </div>
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example4" class="form-control" />
-              <label class="form-label" for="form6Example4">Address</label>
-            </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form6Example5" class="form-control" />
-              <label class="form-label" for="form6Example5">Email</label>
-            </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="checkoutForm1" />
-              <label class="form-check-label" for="checkoutForm1">
-                La dirección es la misma de mi cuenta
-              </label>
-            </div>
-
-            <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox" value="" id="checkoutForm2" checked />
-              <label class="form-check-label" for="checkoutForm2">
-                Guardar información
-              </label>
-            </div>
-
-            <hr class="my-4" />
-
-            <h5 class="mb-4">Payment</h5>
-
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3" checked />
-              <label class="form-check-label" for="checkoutForm3">
-                Credit card
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
-              <label class="form-check-label" for="checkoutForm4">
-                Debit card
-              </label>
-            </div>
-
-            <div class="form-check mb-4">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm5" />
-              <label class="form-check-label" for="checkoutForm5">
-                Paypal
-              </label>
-            </div>
-
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                  <input type="text" id="formNameOnCard" class="form-control" />
-                  <label class="form-label" for="formNameOnCard">Name on card</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                  <input type="text" id="formCardNumber" class="form-control" />
-                  <label class="form-label" for="formCardNumber"
-                    >Credit card number</label
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="row mb-4">
-              <div class="col-6">
-                <div class="form-outline">
-                  <input type="text" id="formExpiration" class="form-control" />
-                  <label class="form-label" for="formExpiration">Expiración</label>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="form-outline">
-                  <input type="text" id="formCVV" class="form-control" />
-                  <label class="form-label" for="formCVV">CVV</label>
-                </div>
-              </div>
-            </div>
-
-        <%= simple_form_for (@order) do |f| %>
-          <div class="row py-5">
-          <div class="d-flex justify-content-around pt-2 pb-3">
-            <%= f.submit "Enviar", class: "btn btn-ghost" %>
-          </div>
-
-        <% end %>
-          </form>
-        </div>
     </div>
 
-
-  </div>
-</section>
-
-
-            </div>
-          </div>
-        <div class="d-flex justify-content-around mx-3">
-        </div>
-      </div>
-
-      <div class="contenedor-new-order p-5">
-        <h1 class="text-center pt-2 pb-2"><strong> RESUMEN DE LA COMPRA </strong></h1>
-          <div class="row py-5">
-            <div class="col-12 col-lg-8 ">
-
-
-      <h1 class="text-center pt-2 pb-2"><strong> IDENTIFICACION </strong></h1>
-      <h4>
-       <%= current_user.first_name  %> <%= current_user.last_name  %>
-      </h4>
-      <br>
-      <h4>
-      <%= current_user.address %>
-      </h4>
-
-
-
-<div>
-  <div class="text-justify  py-3">
-    Subtotal	<%= number_to_currency(@current_cart.sub_total)  %> <br>
-  </div>
-  <div class="text-justify  py-3">
-    Envio $ 10.00 <br>
-  </div>
-  <div class="text-justify  py-3">
-    Total	<%= number_to_currency(@current_cart.sub_total + 10.00)  %> <br>
-  </div>
 </div>
 
-            </div>
-          </div>
-      </div>
+<div class="col-5">
+
+    <div class="col-10 justify-content-around mx-5 ">
+
+                <div class="linea-border"> <%# Medio de Pago %>
+                  <h2 class="text-center pt-1 pb-4"><strong> MEDIO DE PAGO </strong></h2>
+                  <section>
+                    <div class="row">
+                              <div class="col-12 col-lg-12">
+                                <div class="card mb-1">
+                                  <div class="card-header py-2 pb-2"> <h5 class="mb-0">Detalle de la cuenta</h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <form>
+                                      <!-- 2 column grid layout with text inputs for the first and last names -->
+                                      <div class="row mb-1">
+                                        <div class="col-12 col-lg-6">
+                                          <div class="form-outline py-2">
+                                            <input type="text" id="form6Example1" class="form-control" />
+                                            <label class="form-label" for="form6Example1">First name</label>
+                                          </div>
+                                        </div>
+                                        <div class="col">
+                                          <div class="form-outline py-2">
+                                            <input type="text" id="form6Example2" class="form-control" />
+                                            <label class="form-label" for="form6Example2">Last name</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- Email input -->
+                                      <div class="form-outline mb-1">
+                                        <input type="email" id="form6Example5" class="form-control" />
+                                        <label class="form-label" for="form6Example5">Email</label>
+                                      </div>
+                                      <hr class="my-1" />
+                                      <h5 class="mb-3 pt-3"></h5>
+                                      <div class="row mb-1">
+                                        <div class="col">
+                                          <div class="form-outline">
+                                            <input type="text" id="formNameOnCard" class="form-control" />
+                                            <label class="form-label" for="formNameOnCard">Name on card</label>
+                                          </div>
+                                        </div>
+                                        <div class="col">
+                                          <div class="form-outline">
+                                            <input type="text" id="formCardNumber" class="form-control" />
+                                            <label class="form-label" for="formCardNumber">Credit card number</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row mb-4">
+                                        <div class="col-6">
+                                          <div class="form-outline">
+                                            <input type="text" id="formExpiration" class="form-control" />
+                                            <label class="form-label" for="formExpiration">Expiración</label>
+                                          </div>
+                                        </div>
+                                        <div class="col-6">
+                                          <div class="form-outline">
+                                            <input type="text" id="formCVV" class="form-control" />
+                                            <label class="form-label" for="formCVV">CVV</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <%= simple_form_for (@order) do |f| %>
+                                        <div class="row py-0">
+                                          <div class="d-flex justify-content-around pt-1 pb-2">
+                                            <%= f.submit "Enviar", class: "btn btn-ghost" %>
+                                          </div>
+                                      <% end %>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                  </section>
+                </div>
 
     </div>
-  </div>
+
 </div>
+
+</div> <%# col 12 general %>
+
+
+      </div> <%# row MAIN %>
+    </div> <%# container MAIN %>
+  </div> <%# container MAIN %>
+</div> <%# container MAIN %>
