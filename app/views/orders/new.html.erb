@@ -45,6 +45,9 @@
               </div>
             </div>
           </div>
+
+
+
           <div class="col-6">
             <div class="contenedor-new-ord py-5 mx-3">
                 <div class="col-10 justify-content-around mx-5">
@@ -106,14 +109,15 @@
                                     </div>
                                   </div>
                                 </div>
-                                <%= simple_form_for (@order) do |f| %>
-                                  <div class="row py-0">
-                                    <div class="d-flex justify-content-around pt-1 pb-2">
-                                      <%= f.submit "Enviar", class: "btn btn-ghost" %>
-                                    </div>
-                                <% end %>
-                                </div>
+                              </div>
                               </form>
+                              <%= simple_form_for (@order) do |f| %>
+                                <div class="row py-0">
+                                  <div class="d-flex justify-content-around pt-1 pb-2">
+                                    <%= f.hidden_field :name, :value => current_user.first_name %>
+                                    <%= f.submit "Enviar", class: "btn btn-ghost" %>
+                                  </div>
+                              <% end %>
                             </div>
                           </div>
                         </div>
